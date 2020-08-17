@@ -4,7 +4,7 @@ import os
 
 root_dir = os.path.abspath(os.path.dirname(__file__))
 root_dir = root_dir.replace("\\", "/")
-df = pd.read_csv('gps-loc.csv')
+df = pd.read_csv('../gps-loc.csv')
 
 center = df.iloc[0]
 
