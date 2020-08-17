@@ -1,5 +1,7 @@
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib import cm
 from scipy.interpolate import griddata
 import os
 from os.path import join as pjoin
@@ -72,4 +74,13 @@ plt.subplot(224)
 plt.imshow(grid_z2.T, extent=(0, 1, 0, 1), origin='lower')
 plt.title('Cubic')
 plt.gcf().set_size_inches(6, 6)
+plt.show()
+
+plt.cla()
+#plt.imshow(img, cmap='gray')
+a = grid_z0.T
+
+my_cmap = cm.jet
+my_cmap.set_under('k', alpha=0)
+ax.imshow(a, cmap=my_cmap)
 plt.show()
