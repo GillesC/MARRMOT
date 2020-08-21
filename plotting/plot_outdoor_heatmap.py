@@ -18,7 +18,10 @@ corner = (4.68669, 50.86327)
 delta_x = abs(origin[0] - corner[0])
 delta_y = abs(origin[1] - corner[1])
 
-points = []
+points = {"ULA": [], "URA": []}
+
+evm_values = {"ULA": [], "URA": []}
+power_values = {"ULA": [], "URA": []}
 
 data_path = "D:\Stack\measurement-data"
 current_path = os.path.dirname(os.path.abspath(__file__))
@@ -30,7 +33,7 @@ dirs = [f.path for f in os.scandir(data_path) if f.is_dir()]
 def compute(meas):
     path, point, num, conf, freq = util_loc.extract_info_from_dir(meas)
 
-    if point == 0 or conf != "ULA":
+    if point == 0:
         return None
 
     loc = util_loc.get_meas(path, point)
@@ -49,11 +52,9 @@ def compute(meas):
 
     H = 10 * np.log10(np.abs(H))
 
-    return np.median(raw_evm), np.median(H), (pos_x, pos_y)
+    return np.median(raw_evm), np.median(H), (pos_x, pos_y), conf, freq
 
 
-evm_values = []
-power_values = []
 if __name__ == '__main__':
     pbar = tqdm(total=len(dirs))
     with ThreadPoolExecutor(max_workers=3) as executor:
@@ -63,38 +64,34 @@ if __name__ == '__main__':
             pbar.update()
             res = future.result()
             if res is not None:
-                evm, H_median, (pos_x, pos_y) = res
-                points.append([pos_y, pos_x])
-                evm_values.append(evm)
-                power_values.append(H_median)
+                evm, H_median, (pos_x, pos_y), conf, _ = res
+                points[conf].append([pos_y, pos_x])
+                evm_values[conf].append(evm)
+                power_values[conf].append(H_median)
 
         print("Done processing points")
 
         grid_x, grid_y = np.mgrid[0:1:100j, 0:1:100j]
 
-        grid_z0 = griddata(points, power_values, (grid_x, grid_y), method='nearest')
-        grid_z1 = griddata(points, power_values, (grid_x, grid_y), method='linear')
-        grid_z2 = griddata(points, power_values, (grid_x, grid_y), method='cubic')
+        for conf in points.keys():
+            grid_h = griddata(points[conf], power_values[conf], (grid_x, grid_y), method='linear')
+            grid_evm = griddata(points[conf], evm_values[conf], (grid_x, grid_y), method='linear')
 
-        plt.cla()
-        fig, ax = plt.subplots()
-        #plt.imshow(img, extent=[0, 1, 0, 1])
-        a = grid_z1.T
-        a = np.ma.array(a, mask=np.isnan(a))
-        plt.imshow(a, extent=[0, 1, 0, 1], origin='lower')
-        plt.colorbar()
-        plt.savefig(pjoin(current_path,'heatmap_median_h.pdf'))
+            plt.cla()
+            plt.subplots()
+            # plt.imshow(img, extent=[0, 1, 0, 1])
+            a = grid_h.T
+            a = np.ma.array(a, mask=np.isnan(a))
+            plt.imshow(a, extent=[0, 1, 0, 1], origin='lower')
+            plt.colorbar()
+            plt.savefig(pjoin(current_path, f'heatmap_median_h_{conf}.pdf'))
 
-        grid_z0 = griddata(points, evm_values, (grid_x, grid_y), method='nearest')
-        grid_z1 = griddata(points, evm_values, (grid_x, grid_y), method='linear')
-        grid_z2 = griddata(points, evm_values, (grid_x, grid_y), method='cubic')
 
-        plt.cla()
-        fig, ax = plt.subplots()
-        #plt.imshow(img, origin = 'lower',  extent = [0, img.shape[0], 0, img.shape[1]], aspect = 1000)
-        a = grid_z1.T
-        a = np.ma.array(a, mask=np.isnan(a))
-        plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', cmap='viridis_r')
-        plt.colorbar()
-        plt.savefig(pjoin(current_path,'heatmap_median_evm.pdf'))
-
+            plt.cla()
+            plt.subplots()
+            # plt.imshow(img, extent=[0, 1, 0, 1])
+            a = grid_evm.T
+            a = np.ma.array(a, mask=np.isnan(a))
+            plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', cmap='viridis_r')
+            plt.colorbar()
+            plt.savefig(pjoin(current_path, f'heatmap_median_evm_conf.pdf'))
