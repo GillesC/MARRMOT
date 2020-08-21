@@ -76,7 +76,7 @@ if __name__ == '__main__':
         power_min = 100
         power_max = -100
 
-        evm_min= 100
+        evm_min = 100
         evm_max = -1
 
         for conf in points.keys():
@@ -90,21 +90,21 @@ if __name__ == '__main__':
             if evm_max < np.max(evm_values[conf]):
                 evm_max = np.max(evm_values[conf])
 
-
-
         for conf in points.keys():
             grid_h = griddata(points[conf], power_values[conf], (grid_x, grid_y), method='linear')
             grid_evm = griddata(points[conf], evm_values[conf], (grid_x, grid_y), method='linear')
 
+            circles = [plt.Circle((p[0], p[1]), 0.01, fill=False) for p in points[conf]]
+
             plt.cla()
-            plt.subplots()
+            fig, ax = plt.subplots()
             # plt.imshow(img, extent=[0, 1, 0, 1])
+            [ax.add_artist(circles) for c in circles]
             a = grid_h.T
             a = np.ma.array(a, mask=np.isnan(a))
             plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', vmin=power_min, vmax=power_max)
             plt.colorbar()
             plt.savefig(pjoin(current_path, f'heatmap_median_h_{conf}.pdf'))
-
 
             plt.cla()
             plt.subplots()
