@@ -42,8 +42,8 @@ def compute(meas):
     pos_y = (pos_y - origin[1]) / delta_x
 
     raw_evm = np.loadtxt(pjoin(meas, "raw-evm.txt"))[:, 0]
-    if os.path.isfile(pjoin(meas, "norm-channel.npy")):
-        H = np.load(pjoin(meas, "norm-channel.npy"))
+    if os.path.isfile(pjoin(meas, "small-channel.npy")):
+        H = np.load(pjoin(meas, "small-channel.npy"))
     else:
         return None
 
@@ -95,7 +95,7 @@ if __name__ == '__main__':
         plt.cla()
         fig, ax = plt.subplots()
         #plt.imshow(img, extent=[0, 1, 0, 1])
-        a = grid_z2.T
+        a = grid_z1.T
         a = np.ma.array(a, mask=np.isnan(a))
         plt.imshow(a, extent=[0, 1, 0, 1], origin='lower')
         plt.colorbar()

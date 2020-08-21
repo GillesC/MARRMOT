@@ -7,18 +7,18 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from tqdm import tqdm
 
-root_dir = os.path.dirname(os.path.abspath(__file__))
-subdir, dirs, files = next(os.walk(os.path.join(root_dir, "measurements")))
+root_dir = "D:\Stack\measurement-data"
+subdir, dirs, files = next(os.walk(os.path.join(root_dir)))
 
 
-def compute_cov_matrix(H_norm, path):
+def compute_cov_matrix(path):
     R = np.load(pjoin(path, "cov-matrix.npy"))
     return 10 * np.log10(np.abs(R))
 
 
 def _plot(d):
-    path = pjoin(root_dir, "measurements", d)
-    input = pjoin(path, "norm-channel.npy")
+    path = pjoin(root_dir, d)
+    input = pjoin(path, "small-channel.npy")
     input_evm = pjoin(path, "raw-evm.txt")
     evm = np.loadtxt(input_evm, delimiter="\t")[:, 0]
 
@@ -41,7 +41,7 @@ def _plot(d):
 
     fig = make_subplots(rows=2, cols=2,
                         specs=[[{'type': 'surface', 'rowspan': 2}, {'type': 'xy'}], [None, {'type': 'xy'}]],
-                        subplot_titles=["Normalised channel gain", "EVM histogram","Normalised covariance matrix"])
+                        subplot_titles=["Channel gain", "EVM histogram","Normalised covariance matrix"])
 
     fig.add_trace(go.Surface(z=z, cmin=z.min(), cmax=z.max(), showscale=True, colorbar=dict(x=0.45, y=0.5)), row=1,
                   col=1)
@@ -58,7 +58,7 @@ def _plot(d):
         scene=dict(
             xaxis_title="Antenna #",
             yaxis_title="Time",
-            zaxis_title="Norm. Gain (dB)",
+            zaxis_title="Gain (dB)",
         ),
         font=dict(
             family="Courier New, monospace",
@@ -70,7 +70,7 @@ def _plot(d):
     fig.update_layout(xaxis_title="EVM (%)",
                       yaxis_title="Count")
 
-    R_norm = compute_cov_matrix(H_norm, path)
+    R_norm = compute_cov_matrix(path)
 
     fig.add_trace(go.Heatmap(z=R_norm, colorscale='Viridis', colorbar=dict(xanchor="right", yanchor="top", len=0.5)),
                   row=2, col=2)
@@ -81,7 +81,7 @@ def _plot(d):
 
 if __name__ == '__main__':
     pbar = tqdm(total=len(dirs))
-    with ProcessPoolExecutor(max_workers=3) as executor:
+    with ProcessPoolExecutor(max_workers=5) as executor:
         for d in dirs:
             future = executor.submit(_plot, d)
             future.add_done_callback(lambda p: pbar.update())
