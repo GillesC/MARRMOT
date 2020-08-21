@@ -94,4 +94,4 @@ if __name__ == '__main__':
             a = np.ma.array(a, mask=np.isnan(a))
             plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', cmap='viridis_r')
             plt.colorbar()
-            plt.savefig(pjoin(current_path, f'heatmap_median_evm_conf.pdf'))
+            plt.savefig(pjoin(current_path, f'heatmap_median_evm_{conf}.pdf'))
