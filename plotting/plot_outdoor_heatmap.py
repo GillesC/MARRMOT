@@ -73,6 +73,25 @@ if __name__ == '__main__':
 
         grid_x, grid_y = np.mgrid[0:1:100j, 0:1:100j]
 
+        power_min = 100
+        power_max = -100
+
+        evm_min= -1
+        evm_max = 100
+
+        for conf in points.keys():
+            if power_min > np.min(power_values[conf]):
+                power_min = np.min(power_values[conf])
+            if power_max < np.max(power_values[conf]):
+                power_max = np.max(power_values[conf])
+
+            if evm_min > np.min(evm_values[conf]):
+                evm_min = np.min(evm_values[conf])
+            if evm_max < np.max(evm_values[conf]):
+                evm_max = np.max(evm_values[conf])
+
+
+
         for conf in points.keys():
             grid_h = griddata(points[conf], power_values[conf], (grid_x, grid_y), method='linear')
             grid_evm = griddata(points[conf], evm_values[conf], (grid_x, grid_y), method='linear')
@@ -82,7 +101,7 @@ if __name__ == '__main__':
             # plt.imshow(img, extent=[0, 1, 0, 1])
             a = grid_h.T
             a = np.ma.array(a, mask=np.isnan(a))
-            plt.imshow(a, extent=[0, 1, 0, 1], origin='lower')
+            plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', vmin=power_min, vmax=power_max)
             plt.colorbar()
             plt.savefig(pjoin(current_path, f'heatmap_median_h_{conf}.pdf'))
 
@@ -92,6 +111,6 @@ if __name__ == '__main__':
             # plt.imshow(img, extent=[0, 1, 0, 1])
             a = grid_evm.T
             a = np.ma.array(a, mask=np.isnan(a))
-            plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', cmap='viridis_r')
+            plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', cmap='viridis_r', vmin=evm_min, vmax=evm_max)
             plt.colorbar()
             plt.savefig(pjoin(current_path, f'heatmap_median_evm_{conf}.pdf'))
