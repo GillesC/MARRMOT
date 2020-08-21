@@ -1,12 +1,12 @@
 paths = ["A", "B", "C", "D"]
-points = [14, 16, 14, 3]
+points = [14, 14, 11, 3]
 confs = ["ULA", "URA"]
-freqs = ["868"]
+freqs = ["2610"]
 
 import os
 from os.path import join as pjoin
 
-root_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = "I:\MARRMOT"
 subdir, dirs, files = next(os.walk(os.path.join(root_dir, "measurements")))
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
 import os
 import shutil
 
-root_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = "I:\MARRMOT"
 subdir, dirs, files = next(os.walk(os.path.join(root_dir, "measurements")))
 
 for dir in dirs:
