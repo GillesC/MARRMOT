@@ -76,8 +76,8 @@ if __name__ == '__main__':
         power_min = 100
         power_max = -100
 
-        evm_min= -1
-        evm_max = 100
+        evm_min= 100
+        evm_max = -1
 
         for conf in points.keys():
             if power_min > np.min(power_values[conf]):
