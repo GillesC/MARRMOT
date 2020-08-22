@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_751a5c6ed38442d5955c3cee6dd43c22 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.css"/>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_751a5c6ed38442d5955c3cee6dd43c22" ></div>
+        
+</body>
+<script>    
+    
+            var map_751a5c6ed38442d5955c3cee6dd43c22 = L.map(
+                "map_751a5c6ed38442d5955c3cee6dd43c22",
+                {
+                    center: [50.861978799999996, 4.685584400000001],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 18,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a26028cc7ae745e8bd657ee29e4151d0 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var marker_0a0470e4a5214bcdaff1867597177b5b = L.marker(
+                [50.861978799999996, 4.685584400000001],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_8f9325eedb0645f7a1cd2aa273b09585 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_0a0470e4a5214bcdaff1867597177b5b.setIcon(icon_8f9325eedb0645f7a1cd2aa273b09585);
+        
+    
+            var marker_00e1a632d35f4deaade3a9ed7c5f8189 = L.marker(
+                [50.861830600000005, 4.6855183],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_f275247e02fb474ab2a26517213cc269 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_00e1a632d35f4deaade3a9ed7c5f8189.setIcon(icon_f275247e02fb474ab2a26517213cc269);
+        
+    
+        var popup_a709f8ec82e04ec2b796140dccdbcc82 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b230580afec843b4b8a527ef52d00309 = $(`<div id="html_b230580afec843b4b8a527ef52d00309" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-1-a-ULA-868/snapshots.html" target="_blank">A1 (ESAT) ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-1-a-URA-868/snapshots.html" target="_blank">A1 (ESAT) URA</a></div>`)[0];
+            popup_a709f8ec82e04ec2b796140dccdbcc82.setContent(html_b230580afec843b4b8a527ef52d00309);
+        
+
+        marker_00e1a632d35f4deaade3a9ed7c5f8189.bindPopup(popup_a709f8ec82e04ec2b796140dccdbcc82)
+        ;
+
+        
+    
+    
+            var marker_a1dc95caf22f4c49baa5760a2482c098 = L.marker(
+                [50.8619136, 4.6856383],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_7650e2c0a9174a0783947040e1eef920 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a1dc95caf22f4c49baa5760a2482c098.setIcon(icon_7650e2c0a9174a0783947040e1eef920);
+        
+    
+        var popup_bcc22a54d57743f9b160763e681d30ba = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2c6aee741810436c89b778bc14f1fee3 = $(`<div id="html_2c6aee741810436c89b778bc14f1fee3" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-2-a-ULA-868/snapshots.html" target="_blank">A2 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-2-a-URA-868/snapshots.html" target="_blank">A2 URA</a></div>`)[0];
+            popup_bcc22a54d57743f9b160763e681d30ba.setContent(html_2c6aee741810436c89b778bc14f1fee3);
+        
+
+        marker_a1dc95caf22f4c49baa5760a2482c098.bindPopup(popup_bcc22a54d57743f9b160763e681d30ba)
+        ;
+
+        
+    
+    
+            var marker_8e154ab32d2f47ad888e62eb873a9d6b = L.marker(
+                [50.86182879999999, 4.6855519999999995],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_17e0b007b06346328320f3dab22defc0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8e154ab32d2f47ad888e62eb873a9d6b.setIcon(icon_17e0b007b06346328320f3dab22defc0);
+        
+    
+        var popup_ed0c2c66b050476bba83d08b789bab25 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_55d7745ca9454654b1091e404e1a1dc0 = $(`<div id="html_55d7745ca9454654b1091e404e1a1dc0" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-3-a-ULA-868/snapshots.html" target="_blank">A3 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-3-a-URA-868/snapshots.html" target="_blank">A3 URA</a></div>`)[0];
+            popup_ed0c2c66b050476bba83d08b789bab25.setContent(html_55d7745ca9454654b1091e404e1a1dc0);
+        
+
+        marker_8e154ab32d2f47ad888e62eb873a9d6b.bindPopup(popup_ed0c2c66b050476bba83d08b789bab25)
+        ;
+
+        
+    
+    
+            var marker_edebcbcb12464683b4ba96478ffb9a20 = L.marker(
+                [50.86174570000001, 4.685499],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_1a3c2f79ec7048d799625805b4600f25 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_edebcbcb12464683b4ba96478ffb9a20.setIcon(icon_1a3c2f79ec7048d799625805b4600f25);
+        
+    
+        var popup_c9e631a0d5c9463d8439ef4665148291 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_062abd00091b4c6c97b9f8b0d95ca282 = $(`<div id="html_062abd00091b4c6c97b9f8b0d95ca282" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-4-a-ULA-868/snapshots.html" target="_blank">A4 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-4-a-URA-868/snapshots.html" target="_blank">A4 URA</a></div>`)[0];
+            popup_c9e631a0d5c9463d8439ef4665148291.setContent(html_062abd00091b4c6c97b9f8b0d95ca282);
+        
+
+        marker_edebcbcb12464683b4ba96478ffb9a20.bindPopup(popup_c9e631a0d5c9463d8439ef4665148291)
+        ;
+
+        
+    
+    
+            var marker_34419f8a1891489ab102fb2218aea432 = L.marker(
+                [50.8616782, 4.68539],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_4f41fcb93b2c4a5bbf5dc66b0869ae32 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_34419f8a1891489ab102fb2218aea432.setIcon(icon_4f41fcb93b2c4a5bbf5dc66b0869ae32);
+        
+    
+        var popup_20ddf0b6d74a44a8934005a29438b33c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e3d8f3f59a8c456590d24baf787e4d1f = $(`<div id="html_e3d8f3f59a8c456590d24baf787e4d1f" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-5-a-ULA-868/snapshots.html" target="_blank">A5 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-5-a-URA-868/snapshots.html" target="_blank">A5 URA</a></div>`)[0];
+            popup_20ddf0b6d74a44a8934005a29438b33c.setContent(html_e3d8f3f59a8c456590d24baf787e4d1f);
+        
+
+        marker_34419f8a1891489ab102fb2218aea432.bindPopup(popup_20ddf0b6d74a44a8934005a29438b33c)
+        ;
+
+        
+    
+    
+            var marker_b8a3509366ec47d4a8050c0c804aaed4 = L.marker(
+                [50.8616263, 4.6852851],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_13aea6deffd54316bf66a2ddcf4ae1ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b8a3509366ec47d4a8050c0c804aaed4.setIcon(icon_13aea6deffd54316bf66a2ddcf4ae1ed);
+        
+    
+        var popup_d9e0a66d6c914778b02114a0faabaa97 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_88a0a5683bc54c33912f928741f6aa7f = $(`<div id="html_88a0a5683bc54c33912f928741f6aa7f" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-6-a-ULA-868/snapshots.html" target="_blank">A6 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-6-a-URA-868/snapshots.html" target="_blank">A6 URA</a></div>`)[0];
+            popup_d9e0a66d6c914778b02114a0faabaa97.setContent(html_88a0a5683bc54c33912f928741f6aa7f);
+        
+
+        marker_b8a3509366ec47d4a8050c0c804aaed4.bindPopup(popup_d9e0a66d6c914778b02114a0faabaa97)
+        ;
+
+        
+    
+    
+            var marker_4fe41e395f644ae9ae24b053aa937440 = L.marker(
+                [50.8615607, 4.6851772],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_429666d95ef349a2a2892571bea8d6af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4fe41e395f644ae9ae24b053aa937440.setIcon(icon_429666d95ef349a2a2892571bea8d6af);
+        
+    
+        var popup_c960420ff65d450bb3879731f75efbee = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3c8c97d87e5745bfaecf5fe82717ab62 = $(`<div id="html_3c8c97d87e5745bfaecf5fe82717ab62" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-7-a-ULA-868/snapshots.html" target="_blank">A7 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-7-a-URA-868/snapshots.html" target="_blank">A7 URA</a></div>`)[0];
+            popup_c960420ff65d450bb3879731f75efbee.setContent(html_3c8c97d87e5745bfaecf5fe82717ab62);
+        
+
+        marker_4fe41e395f644ae9ae24b053aa937440.bindPopup(popup_c960420ff65d450bb3879731f75efbee)
+        ;
+
+        
+    
+    
+            var marker_104d5e37828d4bc4a14f8ea8c9b6934c = L.marker(
+                [50.861498600000004, 4.6850528],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_b2a536f110ba45c99d829e987c0b00f0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_104d5e37828d4bc4a14f8ea8c9b6934c.setIcon(icon_b2a536f110ba45c99d829e987c0b00f0);
+        
+    
+        var popup_f858c3f782c645839a865184b66ae29b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bca62f3da4c64caaa77910cbfabd254f = $(`<div id="html_bca62f3da4c64caaa77910cbfabd254f" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-8-a-ULA-868/snapshots.html" target="_blank">A8 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-8-a-URA-868/snapshots.html" target="_blank">A8 URA</a></div>`)[0];
+            popup_f858c3f782c645839a865184b66ae29b.setContent(html_bca62f3da4c64caaa77910cbfabd254f);
+        
+
+        marker_104d5e37828d4bc4a14f8ea8c9b6934c.bindPopup(popup_f858c3f782c645839a865184b66ae29b)
+        ;
+
+        
+    
+    
+            var marker_0c18f21714504d609062efe6b78830ed = L.marker(
+                [50.8614297, 4.684957],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_2f27b970a821445e8eff42643176462c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0c18f21714504d609062efe6b78830ed.setIcon(icon_2f27b970a821445e8eff42643176462c);
+        
+    
+        var popup_94fc4279ebe84d3b942da9278f3bc24b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f5c344933a0643988c857bc2eec8e393 = $(`<div id="html_f5c344933a0643988c857bc2eec8e393" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-9-a-ULA-868/snapshots.html" target="_blank">A9 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-9-a-URA-868/snapshots.html" target="_blank">A9 URA</a></div>`)[0];
+            popup_94fc4279ebe84d3b942da9278f3bc24b.setContent(html_f5c344933a0643988c857bc2eec8e393);
+        
+
+        marker_0c18f21714504d609062efe6b78830ed.bindPopup(popup_94fc4279ebe84d3b942da9278f3bc24b)
+        ;
+
+        
+    
+    
+            var marker_7bc35d9a540c468787d055ca9559d822 = L.marker(
+                [50.8615562, 4.6848683],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_992bae54f8ed49a0b72e8c1800dbbba5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7bc35d9a540c468787d055ca9559d822.setIcon(icon_992bae54f8ed49a0b72e8c1800dbbba5);
+        
+    
+        var popup_609f8834434542f6a8f899e613774c5f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3d43e3a9ce9d432e9cc5d0218c5e5732 = $(`<div id="html_3d43e3a9ce9d432e9cc5d0218c5e5732" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-10-a-ULA-868/snapshots.html" target="_blank">A10 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-10-a-URA-868/snapshots.html" target="_blank">A10 URA</a></div>`)[0];
+            popup_609f8834434542f6a8f899e613774c5f.setContent(html_3d43e3a9ce9d432e9cc5d0218c5e5732);
+        
+
+        marker_7bc35d9a540c468787d055ca9559d822.bindPopup(popup_609f8834434542f6a8f899e613774c5f)
+        ;
+
+        
+    
+    
+            var marker_5bcd050b793246c28d9d90784fb632f9 = L.marker(
+                [50.861509000000005, 4.6847089],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_05f7de3c9c0f4a8bb986c2ca1bfd5312 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5bcd050b793246c28d9d90784fb632f9.setIcon(icon_05f7de3c9c0f4a8bb986c2ca1bfd5312);
+        
+    
+        var popup_1d321621023648dd9b5209a8f4347e49 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b94112e9e7ee46a291976fa49ba4d9b6 = $(`<div id="html_b94112e9e7ee46a291976fa49ba4d9b6" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-11-a-ULA-868/snapshots.html" target="_blank">A11 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-11-a-URA-868/snapshots.html" target="_blank">A11 URA</a></div>`)[0];
+            popup_1d321621023648dd9b5209a8f4347e49.setContent(html_b94112e9e7ee46a291976fa49ba4d9b6);
+        
+
+        marker_5bcd050b793246c28d9d90784fb632f9.bindPopup(popup_1d321621023648dd9b5209a8f4347e49)
+        ;
+
+        
+    
+    
+            var marker_93fcd9e82b7f4058a224aa934e1b977b = L.marker(
+                [50.861444899999995, 4.6845703],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_e47ee60654b048acab82c2272e7e39b4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_93fcd9e82b7f4058a224aa934e1b977b.setIcon(icon_e47ee60654b048acab82c2272e7e39b4);
+        
+    
+        var popup_9faf892680e6458ca1092f6adbe12614 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e8f67f9c124e461e9e983a7e1202b88e = $(`<div id="html_e8f67f9c124e461e9e983a7e1202b88e" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-12-a-ULA-868/snapshots.html" target="_blank">A12 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-12-a-URA-868/snapshots.html" target="_blank">A12 URA</a></div>`)[0];
+            popup_9faf892680e6458ca1092f6adbe12614.setContent(html_e8f67f9c124e461e9e983a7e1202b88e);
+        
+
+        marker_93fcd9e82b7f4058a224aa934e1b977b.bindPopup(popup_9faf892680e6458ca1092f6adbe12614)
+        ;
+
+        
+    
+    
+            var marker_41117777b43d48698528cd7a11697dd0 = L.marker(
+                [50.8614041, 4.684472599999999],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_89fb33f69c0e47d4874428bc9ffce767 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_41117777b43d48698528cd7a11697dd0.setIcon(icon_89fb33f69c0e47d4874428bc9ffce767);
+        
+    
+        var popup_178650116d6c4bcda40b94f831eb19be = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7df5cc2d285c4de1a0b16049f3bb07b7 = $(`<div id="html_7df5cc2d285c4de1a0b16049f3bb07b7" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-13-a-ULA-868/snapshots.html" target="_blank">A13 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-13-a-URA-868/snapshots.html" target="_blank">A13 URA</a></div>`)[0];
+            popup_178650116d6c4bcda40b94f831eb19be.setContent(html_7df5cc2d285c4de1a0b16049f3bb07b7);
+        
+
+        marker_41117777b43d48698528cd7a11697dd0.bindPopup(popup_178650116d6c4bcda40b94f831eb19be)
+        ;
+
+        
+    
+    
+            var marker_5bc4e6f495e24335aff431dedc66121d = L.marker(
+                [50.861346999999995, 4.684345400000001],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_1c2dc6d16575435a96e752188f6590dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5bc4e6f495e24335aff431dedc66121d.setIcon(icon_1c2dc6d16575435a96e752188f6590dc);
+        
+    
+        var popup_55d434dffb904eceaeb2c28a90974339 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_08bf50919c2c4603bdcdfd5f78781c3b = $(`<div id="html_08bf50919c2c4603bdcdfd5f78781c3b" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-14-a-ULA-868/snapshots.html" target="_blank">A14 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/A-14-a-URA-868/snapshots.html" target="_blank">A14 URA</a></div>`)[0];
+            popup_55d434dffb904eceaeb2c28a90974339.setContent(html_08bf50919c2c4603bdcdfd5f78781c3b);
+        
+
+        marker_5bc4e6f495e24335aff431dedc66121d.bindPopup(popup_55d434dffb904eceaeb2c28a90974339)
+        ;
+
+        
+    
+    
+            var marker_5e9edaea9d5941fb9776e6ede6c6547d = L.marker(
+                [50.86122460000001, 4.6852169],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_4b7ab02b10df4be899cc4e7c223eb42b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5e9edaea9d5941fb9776e6ede6c6547d.setIcon(icon_4b7ab02b10df4be899cc4e7c223eb42b);
+        
+    
+        var popup_74014b37a6e047b188a8a5b117e3eb34 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_65d42346e9284e92b145f541cc0a03f4 = $(`<div id="html_65d42346e9284e92b145f541cc0a03f4" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-1-a-ULA-868/snapshots.html" target="_blank">C1 (straatkant) ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-1-a-URA-868/snapshots.html" target="_blank">C1 (straatkant) URA</a></div>`)[0];
+            popup_74014b37a6e047b188a8a5b117e3eb34.setContent(html_65d42346e9284e92b145f541cc0a03f4);
+        
+
+        marker_5e9edaea9d5941fb9776e6ede6c6547d.bindPopup(popup_74014b37a6e047b188a8a5b117e3eb34)
+        ;
+
+        
+    
+    
+            var marker_c89aab4648294e5fa5b69c25a53a7785 = L.marker(
+                [50.861297, 4.6851494],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_2f499ca941854a1a8215054b50a7ad73 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c89aab4648294e5fa5b69c25a53a7785.setIcon(icon_2f499ca941854a1a8215054b50a7ad73);
+        
+    
+        var popup_6798d362603a4d2e929b1a0abcd0ec41 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d121db481bc247fda6c74de4d61ead6d = $(`<div id="html_d121db481bc247fda6c74de4d61ead6d" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-2-a-ULA-868/snapshots.html" target="_blank">C2 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-2-a-URA-868/snapshots.html" target="_blank">C2 URA</a></div>`)[0];
+            popup_6798d362603a4d2e929b1a0abcd0ec41.setContent(html_d121db481bc247fda6c74de4d61ead6d);
+        
+
+        marker_c89aab4648294e5fa5b69c25a53a7785.bindPopup(popup_6798d362603a4d2e929b1a0abcd0ec41)
+        ;
+
+        
+    
+    
+            var marker_a58f8ad8f27443348030c6392db8b81d = L.marker(
+                [50.8613554, 4.6850677],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_c98d0eb9c96548fab644413fd47b6ef9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a58f8ad8f27443348030c6392db8b81d.setIcon(icon_c98d0eb9c96548fab644413fd47b6ef9);
+        
+    
+        var popup_850fa24ec99948f881e635afcc590db3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_68fc6595fa664a6fa5ebd12e67900aee = $(`<div id="html_68fc6595fa664a6fa5ebd12e67900aee" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-3-a-ULA-868/snapshots.html" target="_blank">C3 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-3-a-URA-868/snapshots.html" target="_blank">C3 URA</a></div>`)[0];
+            popup_850fa24ec99948f881e635afcc590db3.setContent(html_68fc6595fa664a6fa5ebd12e67900aee);
+        
+
+        marker_a58f8ad8f27443348030c6392db8b81d.bindPopup(popup_850fa24ec99948f881e635afcc590db3)
+        ;
+
+        
+    
+    
+            var marker_e0df7d1cf3574af9b6b4756eaa77699f = L.marker(
+                [50.861425, 4.684993],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_459762a2e312486398d1ee312e48d67f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e0df7d1cf3574af9b6b4756eaa77699f.setIcon(icon_459762a2e312486398d1ee312e48d67f);
+        
+    
+        var popup_3c46405c7e284a25b2a2c14532f591cf = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2ac91edb005e47b3bffde79d91e1bbc6 = $(`<div id="html_2ac91edb005e47b3bffde79d91e1bbc6" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-4-a-ULA-868/snapshots.html" target="_blank">C4 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-4-a-URA-868/snapshots.html" target="_blank">C4 URA</a></div>`)[0];
+            popup_3c46405c7e284a25b2a2c14532f591cf.setContent(html_2ac91edb005e47b3bffde79d91e1bbc6);
+        
+
+        marker_e0df7d1cf3574af9b6b4756eaa77699f.bindPopup(popup_3c46405c7e284a25b2a2c14532f591cf)
+        ;
+
+        
+    
+    
+            var marker_5acfa7f082ea4081aa338024ed75c88a = L.marker(
+                [50.8614945, 4.6849062],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_dd60e5ecca7c433c96b6304280adbe69 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5acfa7f082ea4081aa338024ed75c88a.setIcon(icon_dd60e5ecca7c433c96b6304280adbe69);
+        
+    
+        var popup_d460964e21934780accee87080d21118 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_41960f465039428e81ec604329241913 = $(`<div id="html_41960f465039428e81ec604329241913" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-5-a-ULA-868/snapshots.html" target="_blank">C5 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-5-a-URA-868/snapshots.html" target="_blank">C5 URA</a></div>`)[0];
+            popup_d460964e21934780accee87080d21118.setContent(html_41960f465039428e81ec604329241913);
+        
+
+        marker_5acfa7f082ea4081aa338024ed75c88a.bindPopup(popup_d460964e21934780accee87080d21118)
+        ;
+
+        
+    
+    
+            var marker_347096580fe144f7a5e77b848489619c = L.marker(
+                [50.86156810000001, 4.6848678],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_f5ec033899a049b4bed5f4a669863b57 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_347096580fe144f7a5e77b848489619c.setIcon(icon_f5ec033899a049b4bed5f4a669863b57);
+        
+    
+        var popup_b491c0ce44d749b3bacece594ea2de51 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_725c1217c7414655a9461ef0f8d929bf = $(`<div id="html_725c1217c7414655a9461ef0f8d929bf" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-6-a-ULA-868/snapshots.html" target="_blank">C6 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-6-a-URA-868/snapshots.html" target="_blank">C6 URA</a></div>`)[0];
+            popup_b491c0ce44d749b3bacece594ea2de51.setContent(html_725c1217c7414655a9461ef0f8d929bf);
+        
+
+        marker_347096580fe144f7a5e77b848489619c.bindPopup(popup_b491c0ce44d749b3bacece594ea2de51)
+        ;
+
+        
+    
+    
+            var marker_5601d0837a2c49d587e32e8eba79af35 = L.marker(
+                [50.861626799999996, 4.6847433],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_8218c334280c4c2f8ef03fe85137d196 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5601d0837a2c49d587e32e8eba79af35.setIcon(icon_8218c334280c4c2f8ef03fe85137d196);
+        
+    
+        var popup_dc72c3c4ea864e2184b9af5683ef942f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_27c97d56ef72426a9ed067efe86d9c8d = $(`<div id="html_27c97d56ef72426a9ed067efe86d9c8d" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-7-a-ULA-868/snapshots.html" target="_blank">C7 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-7-a-URA-868/snapshots.html" target="_blank">C7 URA</a></div>`)[0];
+            popup_dc72c3c4ea864e2184b9af5683ef942f.setContent(html_27c97d56ef72426a9ed067efe86d9c8d);
+        
+
+        marker_5601d0837a2c49d587e32e8eba79af35.bindPopup(popup_dc72c3c4ea864e2184b9af5683ef942f)
+        ;
+
+        
+    
+    
+            var marker_ff9e56fb033a482c931582bc080e4786 = L.marker(
+                [50.8617138, 4.6846441],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_c457b2e67e2647229599ce03d2ea4efe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ff9e56fb033a482c931582bc080e4786.setIcon(icon_c457b2e67e2647229599ce03d2ea4efe);
+        
+    
+        var popup_c18cf726a5aa438aa535955327ced7bc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3dea207c61dc4f359b2f5a4459e42015 = $(`<div id="html_3dea207c61dc4f359b2f5a4459e42015" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-8-a-ULA-868/snapshots.html" target="_blank">C8 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-8-a-URA-868/snapshots.html" target="_blank">C8 URA</a></div>`)[0];
+            popup_c18cf726a5aa438aa535955327ced7bc.setContent(html_3dea207c61dc4f359b2f5a4459e42015);
+        
+
+        marker_ff9e56fb033a482c931582bc080e4786.bindPopup(popup_c18cf726a5aa438aa535955327ced7bc)
+        ;
+
+        
+    
+    
+            var marker_15c41a167bdb4d208889d7da775f8770 = L.marker(
+                [50.861782700000006, 4.6845495999999995],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_cdf74cddebe74d998ccf9fce069503f1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_15c41a167bdb4d208889d7da775f8770.setIcon(icon_cdf74cddebe74d998ccf9fce069503f1);
+        
+    
+        var popup_61eb66c53cf04cd79c628c68808d3f44 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_81f092c174f94cc397d9d81bd418c6d3 = $(`<div id="html_81f092c174f94cc397d9d81bd418c6d3" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-9-a-ULA-868/snapshots.html" target="_blank">C9 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-9-a-URA-868/snapshots.html" target="_blank">C9 URA</a></div>`)[0];
+            popup_61eb66c53cf04cd79c628c68808d3f44.setContent(html_81f092c174f94cc397d9d81bd418c6d3);
+        
+
+        marker_15c41a167bdb4d208889d7da775f8770.bindPopup(popup_61eb66c53cf04cd79c628c68808d3f44)
+        ;
+
+        
+    
+    
+            var marker_8355a4748c334191ae2f01b16e5381a2 = L.marker(
+                [50.861844700000006, 4.6844641],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_6badb77c66d74f30b3121fed4d42d17b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8355a4748c334191ae2f01b16e5381a2.setIcon(icon_6badb77c66d74f30b3121fed4d42d17b);
+        
+    
+        var popup_d990124e84324ba081d0b2f37eabbfe5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fb6b9d05c3204deabfb7688c228c3404 = $(`<div id="html_fb6b9d05c3204deabfb7688c228c3404" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-10-a-ULA-868/snapshots.html" target="_blank">C10 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-10-a-URA-868/snapshots.html" target="_blank">C10 URA</a></div>`)[0];
+            popup_d990124e84324ba081d0b2f37eabbfe5.setContent(html_fb6b9d05c3204deabfb7688c228c3404);
+        
+
+        marker_8355a4748c334191ae2f01b16e5381a2.bindPopup(popup_d990124e84324ba081d0b2f37eabbfe5)
+        ;
+
+        
+    
+    
+            var marker_9d07656da4724098a41b90dd21d1e1a8 = L.marker(
+                [50.8619154, 4.6843721],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_1de20845d4de43eaaf864955c4e27047 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9d07656da4724098a41b90dd21d1e1a8.setIcon(icon_1de20845d4de43eaaf864955c4e27047);
+        
+    
+        var popup_c282ed0be7024ff780bc86ebfa712cc8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e59d84e444564c6daf8f7def495fc5bc = $(`<div id="html_e59d84e444564c6daf8f7def495fc5bc" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-11-a-ULA-868/snapshots.html" target="_blank">C11 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-11-a-URA-868/snapshots.html" target="_blank">C11 URA</a></div>`)[0];
+            popup_c282ed0be7024ff780bc86ebfa712cc8.setContent(html_e59d84e444564c6daf8f7def495fc5bc);
+        
+
+        marker_9d07656da4724098a41b90dd21d1e1a8.bindPopup(popup_c282ed0be7024ff780bc86ebfa712cc8)
+        ;
+
+        
+    
+    
+            var marker_6a08f9f409dd4ddca1e26905bb4dd0ea = L.marker(
+                [50.8619804, 4.6842926],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_3d1d1e76ac17413e85f07a5b399e8c6e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6a08f9f409dd4ddca1e26905bb4dd0ea.setIcon(icon_3d1d1e76ac17413e85f07a5b399e8c6e);
+        
+    
+        var popup_2c18f12006f04dacbb5bcd8de65c0080 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1cedfff6567b484e9b043e683ffa298f = $(`<div id="html_1cedfff6567b484e9b043e683ffa298f" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-12-a-ULA-868/snapshots.html" target="_blank">C12 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-12-a-URA-868/snapshots.html" target="_blank">C12 URA</a></div>`)[0];
+            popup_2c18f12006f04dacbb5bcd8de65c0080.setContent(html_1cedfff6567b484e9b043e683ffa298f);
+        
+
+        marker_6a08f9f409dd4ddca1e26905bb4dd0ea.bindPopup(popup_2c18f12006f04dacbb5bcd8de65c0080)
+        ;
+
+        
+    
+    
+            var marker_b8ca08c75e4b425b84313a4bf13642c2 = L.marker(
+                [50.8620526, 4.6841921],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_3ce14093908b46dc94defec8e044a54f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b8ca08c75e4b425b84313a4bf13642c2.setIcon(icon_3ce14093908b46dc94defec8e044a54f);
+        
+    
+        var popup_e87da48f6dcc487a8018e02834d5247c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_522de0489e4746319c5003b697a3efbf = $(`<div id="html_522de0489e4746319c5003b697a3efbf" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-13-a-ULA-868/snapshots.html" target="_blank">C13 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-13-a-URA-868/snapshots.html" target="_blank">C13 URA</a></div>`)[0];
+            popup_e87da48f6dcc487a8018e02834d5247c.setContent(html_522de0489e4746319c5003b697a3efbf);
+        
+
+        marker_b8ca08c75e4b425b84313a4bf13642c2.bindPopup(popup_e87da48f6dcc487a8018e02834d5247c)
+        ;
+
+        
+    
+    
+            var marker_31f7f4b2ded147e9a6dfe6ba635f61ae = L.marker(
+                [50.8621283, 4.6841208],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_364cf35b40dd49a688f91290b3887406 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_31f7f4b2ded147e9a6dfe6ba635f61ae.setIcon(icon_364cf35b40dd49a688f91290b3887406);
+        
+    
+        var popup_0bc58a7805b446b884b12e2b5d407303 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4b0aca1cac7f429c8f7fe763606456d1 = $(`<div id="html_4b0aca1cac7f429c8f7fe763606456d1" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-14-a-ULA-868/snapshots.html" target="_blank">C14 (kasteel) ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/C-14-a-URA-868/snapshots.html" target="_blank">C14 (kasteel) URA</a></div>`)[0];
+            popup_0bc58a7805b446b884b12e2b5d407303.setContent(html_4b0aca1cac7f429c8f7fe763606456d1);
+        
+
+        marker_31f7f4b2ded147e9a6dfe6ba635f61ae.bindPopup(popup_0bc58a7805b446b884b12e2b5d407303)
+        ;
+
+        
+    
+    
+            var marker_1b7738fb2c394c1b8c6465a90434ca82 = L.marker(
+                [50.8614528, 4.6860351],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_bb13c6bf31f04be387aebbe4cab30861 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_1b7738fb2c394c1b8c6465a90434ca82.setIcon(icon_bb13c6bf31f04be387aebbe4cab30861);
+        
+    
+        var popup_676a62a0176d4ef2897c18211f314e0d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f6b0c4cf3d2c4fce9938c092721106ec = $(`<div id="html_f6b0c4cf3d2c4fce9938c092721106ec" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D-1-a-ULA-868/snapshots.html" target="_blank">D1 (the lodge) ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/D-1-a-URA-868/snapshots.html" target="_blank">D1 (the lodge) URA</a></div>`)[0];
+            popup_676a62a0176d4ef2897c18211f314e0d.setContent(html_f6b0c4cf3d2c4fce9938c092721106ec);
+        
+
+        marker_1b7738fb2c394c1b8c6465a90434ca82.bindPopup(popup_676a62a0176d4ef2897c18211f314e0d)
+        ;
+
+        
+    
+    
+            var marker_e1c6cc0aa86c4bfdab8f07359d02339b = L.marker(
+                [50.86138820000001, 4.6859087],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_08f87c6d709748ada4334821f8fc03be = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_e1c6cc0aa86c4bfdab8f07359d02339b.setIcon(icon_08f87c6d709748ada4334821f8fc03be);
+        
+    
+        var popup_9e9021d6652140ae93112eb979a11c5d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_33f25e9dd7ac412ab61db25ee97f83c7 = $(`<div id="html_33f25e9dd7ac412ab61db25ee97f83c7" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D-2-a-ULA-868/snapshots.html" target="_blank">D2 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/D-2-a-URA-868/snapshots.html" target="_blank">D2 URA</a></div>`)[0];
+            popup_9e9021d6652140ae93112eb979a11c5d.setContent(html_33f25e9dd7ac412ab61db25ee97f83c7);
+        
+
+        marker_e1c6cc0aa86c4bfdab8f07359d02339b.bindPopup(popup_9e9021d6652140ae93112eb979a11c5d)
+        ;
+
+        
+    
+    
+            var marker_b261900262e64896bcc5e8395b810ba0 = L.marker(
+                [50.8613252, 4.6858300999999996],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_980852efe4e64685a4282056f85a2d8e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_b261900262e64896bcc5e8395b810ba0.setIcon(icon_980852efe4e64685a4282056f85a2d8e);
+        
+    
+        var popup_217402ad26fd4fbfba0d681c5be648f8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_003cbdcc2a5242bab389fcc009da3eeb = $(`<div id="html_003cbdcc2a5242bab389fcc009da3eeb" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D-3-a-ULA-868/snapshots.html" target="_blank">D3 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/D-3-a-URA-868/snapshots.html" target="_blank">D3 URA</a></div>`)[0];
+            popup_217402ad26fd4fbfba0d681c5be648f8.setContent(html_003cbdcc2a5242bab389fcc009da3eeb);
+        
+
+        marker_b261900262e64896bcc5e8395b810ba0.bindPopup(popup_217402ad26fd4fbfba0d681c5be648f8)
+        ;
+
+        
+    
+    
+            var marker_55039237a25444f3bb6df72539cdb35d = L.marker(
+                [50.8612604, 4.685668499999999],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_84322b4aa4984113b7a7b2670d223c74 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_55039237a25444f3bb6df72539cdb35d.setIcon(icon_84322b4aa4984113b7a7b2670d223c74);
+        
+    
+        var popup_f41b64576f274109b7ccd3f8a434929f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2962e8e326f74fa1947cc4fed95a33bd = $(`<div id="html_2962e8e326f74fa1947cc4fed95a33bd" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D-4-a-ULA-868/snapshots.html" target="_blank">D4 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/D-4-a-URA-868/snapshots.html" target="_blank">D4 URA</a></div>`)[0];
+            popup_f41b64576f274109b7ccd3f8a434929f.setContent(html_2962e8e326f74fa1947cc4fed95a33bd);
+        
+
+        marker_55039237a25444f3bb6df72539cdb35d.bindPopup(popup_f41b64576f274109b7ccd3f8a434929f)
+        ;
+
+        
+    
+    
+            var marker_c9b87f81f1124286917ef3f7452faf67 = L.marker(
+                [50.8615925, 4.685877],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_213ed77ed9f64be9a3c2d8bc7fbd63d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c9b87f81f1124286917ef3f7452faf67.setIcon(icon_213ed77ed9f64be9a3c2d8bc7fbd63d9);
+        
+    
+        var popup_329c47de00bf4d4d959ff1a7adaefaf8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0324a4c68056401e8871e3dfbe47cb39 = $(`<div id="html_0324a4c68056401e8871e3dfbe47cb39" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-1-a-ULA-868/snapshots.html" target="_blank">B1 (straatkant) ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-1-a-URA-868/snapshots.html" target="_blank">B1 (straatkant) URA</a></div>`)[0];
+            popup_329c47de00bf4d4d959ff1a7adaefaf8.setContent(html_0324a4c68056401e8871e3dfbe47cb39);
+        
+
+        marker_c9b87f81f1124286917ef3f7452faf67.bindPopup(popup_329c47de00bf4d4d959ff1a7adaefaf8)
+        ;
+
+        
+    
+    
+            var marker_12ed241ca35146e49c0bf30297d27a24 = L.marker(
+                [50.8616422, 4.685765],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_ffa13334d5e4494a94d9a18b560b6c6a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_12ed241ca35146e49c0bf30297d27a24.setIcon(icon_ffa13334d5e4494a94d9a18b560b6c6a);
+        
+    
+        var popup_820c322aab6545c0bf570756711c34db = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4c0a9094f468467ab944ce4007266975 = $(`<div id="html_4c0a9094f468467ab944ce4007266975" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-2-a-ULA-868/snapshots.html" target="_blank">B2 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-2-a-URA-868/snapshots.html" target="_blank">B2 URA</a></div>`)[0];
+            popup_820c322aab6545c0bf570756711c34db.setContent(html_4c0a9094f468467ab944ce4007266975);
+        
+
+        marker_12ed241ca35146e49c0bf30297d27a24.bindPopup(popup_820c322aab6545c0bf570756711c34db)
+        ;
+
+        
+    
+    
+            var marker_761137b341044eb5b62831c5c978451e = L.marker(
+                [50.86169279999999, 4.6856898000000005],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_309f25e25da140a09d1239711c0ef93b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_761137b341044eb5b62831c5c978451e.setIcon(icon_309f25e25da140a09d1239711c0ef93b);
+        
+    
+        var popup_a42a357f0ebd4a6bafa90e3f83fa6e63 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_079f23a9956d436187d6fee206096fb3 = $(`<div id="html_079f23a9956d436187d6fee206096fb3" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-3-a-ULA-868/snapshots.html" target="_blank">B3 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-3-a-URA-868/snapshots.html" target="_blank">B3 URA</a></div>`)[0];
+            popup_a42a357f0ebd4a6bafa90e3f83fa6e63.setContent(html_079f23a9956d436187d6fee206096fb3);
+        
+
+        marker_761137b341044eb5b62831c5c978451e.bindPopup(popup_a42a357f0ebd4a6bafa90e3f83fa6e63)
+        ;
+
+        
+    
+    
+            var marker_a024ee9266c34380afaf8f57ca1a87d4 = L.marker(
+                [50.8617345, 4.6855961],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_26d5e485ac5a4b9cbbe87d4d941f62dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a024ee9266c34380afaf8f57ca1a87d4.setIcon(icon_26d5e485ac5a4b9cbbe87d4d941f62dd);
+        
+    
+        var popup_d0e2a15b2e4347558c9a873b51c89a1f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_60c9634f3ec94914b885f7bea8c1d280 = $(`<div id="html_60c9634f3ec94914b885f7bea8c1d280" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-4-a-ULA-868/snapshots.html" target="_blank">B4 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-4-a-URA-868/snapshots.html" target="_blank">B4 URA</a></div>`)[0];
+            popup_d0e2a15b2e4347558c9a873b51c89a1f.setContent(html_60c9634f3ec94914b885f7bea8c1d280);
+        
+
+        marker_a024ee9266c34380afaf8f57ca1a87d4.bindPopup(popup_d0e2a15b2e4347558c9a873b51c89a1f)
+        ;
+
+        
+    
+    
+            var marker_dd73523bb4d54aeaaf73654d38580b04 = L.marker(
+                [50.861824299999995, 4.6855231],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_bfe4f46878b04a5496b88288b03e38d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_dd73523bb4d54aeaaf73654d38580b04.setIcon(icon_bfe4f46878b04a5496b88288b03e38d6);
+        
+    
+        var popup_dcd215fa50cc4676ab08e0112a5ba13f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_13f9a2b16afb4eb5848a232bb8bbfa74 = $(`<div id="html_13f9a2b16afb4eb5848a232bb8bbfa74" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-5-a-ULA-868/snapshots.html" target="_blank">B5 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-5-a-URA-868/snapshots.html" target="_blank">B5 URA</a></div>`)[0];
+            popup_dcd215fa50cc4676ab08e0112a5ba13f.setContent(html_13f9a2b16afb4eb5848a232bb8bbfa74);
+        
+
+        marker_dd73523bb4d54aeaaf73654d38580b04.bindPopup(popup_dcd215fa50cc4676ab08e0112a5ba13f)
+        ;
+
+        
+    
+    
+            var marker_cce0808aef964174b5f8bd0cd1df99a1 = L.marker(
+                [50.8618802, 4.68542],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_013084053cba48c68fcd158ac8b57267 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cce0808aef964174b5f8bd0cd1df99a1.setIcon(icon_013084053cba48c68fcd158ac8b57267);
+        
+    
+        var popup_3420f20b7d9d4f0587b7468dc1ee53df = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8490c277cd224c5687f934db5fd0656c = $(`<div id="html_8490c277cd224c5687f934db5fd0656c" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-6-a-ULA-868/snapshots.html" target="_blank">B6 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-6-a-URA-868/snapshots.html" target="_blank">B6 URA</a></div>`)[0];
+            popup_3420f20b7d9d4f0587b7468dc1ee53df.setContent(html_8490c277cd224c5687f934db5fd0656c);
+        
+
+        marker_cce0808aef964174b5f8bd0cd1df99a1.bindPopup(popup_3420f20b7d9d4f0587b7468dc1ee53df)
+        ;
+
+        
+    
+    
+            var marker_960284b87e564d92acedadad4d9d11b2 = L.marker(
+                [50.8619484, 4.6853175],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_b68e6a9c91a24605a9a9ba6aa09f6dfa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_960284b87e564d92acedadad4d9d11b2.setIcon(icon_b68e6a9c91a24605a9a9ba6aa09f6dfa);
+        
+    
+        var popup_261993d36bd14203bfbdcf12bc30c9de = L.popup({"maxWidth": "100%"});
+
+        
+            var html_715743475b1744e49669ec9c7158f7fd = $(`<div id="html_715743475b1744e49669ec9c7158f7fd" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-7-a-ULA-868/snapshots.html" target="_blank">B7 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-7-a-URA-868/snapshots.html" target="_blank">B7 URA</a></div>`)[0];
+            popup_261993d36bd14203bfbdcf12bc30c9de.setContent(html_715743475b1744e49669ec9c7158f7fd);
+        
+
+        marker_960284b87e564d92acedadad4d9d11b2.bindPopup(popup_261993d36bd14203bfbdcf12bc30c9de)
+        ;
+
+        
+    
+    
+            var marker_1590fa39bce54f9aaf8d12572e89bb9c = L.marker(
+                [50.862044299999994, 4.685304400000001],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_53bd32b852884c15993bd4f1ef669e03 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1590fa39bce54f9aaf8d12572e89bb9c.setIcon(icon_53bd32b852884c15993bd4f1ef669e03);
+        
+    
+        var popup_6c54e048b41d4731b0c7be6449b00de6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_adf93ff7e9bb42c69320eb05a5b3a523 = $(`<div id="html_adf93ff7e9bb42c69320eb05a5b3a523" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-8-a-ULA-868/snapshots.html" target="_blank">B8 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-8-a-URA-868/snapshots.html" target="_blank">B8 URA</a></div>`)[0];
+            popup_6c54e048b41d4731b0c7be6449b00de6.setContent(html_adf93ff7e9bb42c69320eb05a5b3a523);
+        
+
+        marker_1590fa39bce54f9aaf8d12572e89bb9c.bindPopup(popup_6c54e048b41d4731b0c7be6449b00de6)
+        ;
+
+        
+    
+    
+            var marker_491dfc28fdd940e1b81616c5baeeac57 = L.marker(
+                [50.862127799999996, 4.6852065000000005],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_f0984449cf554bf39311ad5485cb84ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_491dfc28fdd940e1b81616c5baeeac57.setIcon(icon_f0984449cf554bf39311ad5485cb84ff);
+        
+    
+        var popup_c59c1731a7dc4e7c8438b98ec1683f0b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_565319ee7d7442df9379bd09546b22cb = $(`<div id="html_565319ee7d7442df9379bd09546b22cb" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-9-a-ULA-868/snapshots.html" target="_blank">B9 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-9-a-URA-868/snapshots.html" target="_blank">B9 URA</a></div>`)[0];
+            popup_c59c1731a7dc4e7c8438b98ec1683f0b.setContent(html_565319ee7d7442df9379bd09546b22cb);
+        
+
+        marker_491dfc28fdd940e1b81616c5baeeac57.bindPopup(popup_c59c1731a7dc4e7c8438b98ec1683f0b)
+        ;
+
+        
+    
+    
+            var marker_5ec4e29e58f6479db4751904638cc355 = L.marker(
+                [50.8621894, 4.6851213],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_877d60fa337746d69cf23c60267c0bfa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5ec4e29e58f6479db4751904638cc355.setIcon(icon_877d60fa337746d69cf23c60267c0bfa);
+        
+    
+        var popup_d1db9859b2f44c42863584e8141a0c26 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1791de9b30be434dbaf49d6bf17b3849 = $(`<div id="html_1791de9b30be434dbaf49d6bf17b3849" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-10-a-ULA-868/snapshots.html" target="_blank">B10 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-10-a-URA-868/snapshots.html" target="_blank">B10 URA</a></div>`)[0];
+            popup_d1db9859b2f44c42863584e8141a0c26.setContent(html_1791de9b30be434dbaf49d6bf17b3849);
+        
+
+        marker_5ec4e29e58f6479db4751904638cc355.bindPopup(popup_d1db9859b2f44c42863584e8141a0c26)
+        ;
+
+        
+    
+    
+            var marker_1b117beaad364a61b8cc8236e3b480bd = L.marker(
+                [50.862275700000005, 4.6850522],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_c1564776ea714618b90b226b74a32fb6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1b117beaad364a61b8cc8236e3b480bd.setIcon(icon_c1564776ea714618b90b226b74a32fb6);
+        
+    
+        var popup_cda70101787240fca1ae89798cf36bb4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3358e26a3a0d4b788d4f240e4210dfd3 = $(`<div id="html_3358e26a3a0d4b788d4f240e4210dfd3" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-11-a-ULA-868/snapshots.html" target="_blank">B11 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-11-a-URA-868/snapshots.html" target="_blank">B11 URA</a></div>`)[0];
+            popup_cda70101787240fca1ae89798cf36bb4.setContent(html_3358e26a3a0d4b788d4f240e4210dfd3);
+        
+
+        marker_1b117beaad364a61b8cc8236e3b480bd.bindPopup(popup_cda70101787240fca1ae89798cf36bb4)
+        ;
+
+        
+    
+    
+            var marker_92730a68ee254e11a8637d9ad8010cd4 = L.marker(
+                [50.8623268, 4.6849453],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_fb9050332d714920aeb4cb01f782bd4b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_92730a68ee254e11a8637d9ad8010cd4.setIcon(icon_fb9050332d714920aeb4cb01f782bd4b);
+        
+    
+        var popup_75d9af1ca5e2413fb4e53b3bfc542d81 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7f1aa64475dd4ee4a6a2b3e8a94e6e4c = $(`<div id="html_7f1aa64475dd4ee4a6a2b3e8a94e6e4c" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-12-a-ULA-868/snapshots.html" target="_blank">B12 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-12-a-URA-868/snapshots.html" target="_blank">B12 URA</a></div>`)[0];
+            popup_75d9af1ca5e2413fb4e53b3bfc542d81.setContent(html_7f1aa64475dd4ee4a6a2b3e8a94e6e4c);
+        
+
+        marker_92730a68ee254e11a8637d9ad8010cd4.bindPopup(popup_75d9af1ca5e2413fb4e53b3bfc542d81)
+        ;
+
+        
+    
+    
+            var marker_9a832a8134014eb4a0e095edffbd6196 = L.marker(
+                [50.862389799999995, 4.6848591],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_b2e366e64b844b029561ac86d84c5476 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9a832a8134014eb4a0e095edffbd6196.setIcon(icon_b2e366e64b844b029561ac86d84c5476);
+        
+    
+        var popup_885ebc2c90c8438aaf954ca79b6c7d5d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7004ba6ab0bb4bc7907b8417d653d8c9 = $(`<div id="html_7004ba6ab0bb4bc7907b8417d653d8c9" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-13-a-ULA-868/snapshots.html" target="_blank">B13 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-13-a-URA-868/snapshots.html" target="_blank">B13 URA</a></div>`)[0];
+            popup_885ebc2c90c8438aaf954ca79b6c7d5d.setContent(html_7004ba6ab0bb4bc7907b8417d653d8c9);
+        
+
+        marker_9a832a8134014eb4a0e095edffbd6196.bindPopup(popup_885ebc2c90c8438aaf954ca79b6c7d5d)
+        ;
+
+        
+    
+    
+            var marker_a1ded609dfd94b9ab37ca6b0409bea10 = L.marker(
+                [50.862463299999995, 4.6847433],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_d13c6b98051d49f2a1cfdd1358a14d15 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a1ded609dfd94b9ab37ca6b0409bea10.setIcon(icon_d13c6b98051d49f2a1cfdd1358a14d15);
+        
+    
+        var popup_552007dc282d4c3db5112c55e736b8fb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_adc7971a3bdd4f85ad1c2f92c9311749 = $(`<div id="html_adc7971a3bdd4f85ad1c2f92c9311749" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-14-a-ULA-868/snapshots.html" target="_blank">B14 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-14-a-URA-868/snapshots.html" target="_blank">B14 URA</a></div>`)[0];
+            popup_552007dc282d4c3db5112c55e736b8fb.setContent(html_adc7971a3bdd4f85ad1c2f92c9311749);
+        
+
+        marker_a1ded609dfd94b9ab37ca6b0409bea10.bindPopup(popup_552007dc282d4c3db5112c55e736b8fb)
+        ;
+
+        
+    
+    
+            var marker_5a09bb94563a4a838983fcdc270b84f6 = L.marker(
+                [50.8625272, 4.684660500000001],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_ea58ee37ceef4ba68d07b3352a30ad1d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5a09bb94563a4a838983fcdc270b84f6.setIcon(icon_ea58ee37ceef4ba68d07b3352a30ad1d);
+        
+    
+        var popup_5a04829c51fb4b6ea4860313a5ae5a98 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2f8ae46ed872415aafcfa0c6748b868c = $(`<div id="html_2f8ae46ed872415aafcfa0c6748b868c" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-15-a-ULA-868/snapshots.html" target="_blank">B15 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-15-a-URA-868/snapshots.html" target="_blank">B15 URA</a></div>`)[0];
+            popup_5a04829c51fb4b6ea4860313a5ae5a98.setContent(html_2f8ae46ed872415aafcfa0c6748b868c);
+        
+
+        marker_5a09bb94563a4a838983fcdc270b84f6.bindPopup(popup_5a04829c51fb4b6ea4860313a5ae5a98)
+        ;
+
+        
+    
+    
+            var marker_1ce88dc218aa4ced9fcad4e317a42265 = L.marker(
+                [50.862601899999994, 4.6845574999999995],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_1b420b921fc343d0a756187fbe792b03 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1ce88dc218aa4ced9fcad4e317a42265.setIcon(icon_1b420b921fc343d0a756187fbe792b03);
+        
+    
+        var popup_ff733c46e21143c683d8a1ee9788e6b6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_93634a13275d41e385a14234f55f9bbd = $(`<div id="html_93634a13275d41e385a14234f55f9bbd" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-16-a-ULA-868/snapshots.html" target="_blank">B16 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-16-a-URA-868/snapshots.html" target="_blank">B16 URA</a></div>`)[0];
+            popup_ff733c46e21143c683d8a1ee9788e6b6.setContent(html_93634a13275d41e385a14234f55f9bbd);
+        
+
+        marker_1ce88dc218aa4ced9fcad4e317a42265.bindPopup(popup_ff733c46e21143c683d8a1ee9788e6b6)
+        ;
+
+        
+    
+    
+            var marker_1b65784e7c3548ebba4c11eb041140c8 = L.marker(
+                [50.862686, 4.684485400000001],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_648c700185ab4c9ea7f8808ca0165d48 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1b65784e7c3548ebba4c11eb041140c8.setIcon(icon_648c700185ab4c9ea7f8808ca0165d48);
+        
+    
+        var popup_d3da89449d0b440f9364026fffea1e30 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a416495ae6384458a0757916e8637a62 = $(`<div id="html_a416495ae6384458a0757916e8637a62" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-17-a-ULA-868/snapshots.html" target="_blank">B17 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-17-a-URA-868/snapshots.html" target="_blank">B17 URA</a></div>`)[0];
+            popup_d3da89449d0b440f9364026fffea1e30.setContent(html_a416495ae6384458a0757916e8637a62);
+        
+
+        marker_1b65784e7c3548ebba4c11eb041140c8.bindPopup(popup_d3da89449d0b440f9364026fffea1e30)
+        ;
+
+        
+    
+    
+            var marker_9af88ea2237744b896a0f4e9669e5a27 = L.marker(
+                [50.862756899999994, 4.6843889],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_8baaaa26fff5447cb441b2ad5bcf4f0b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9af88ea2237744b896a0f4e9669e5a27.setIcon(icon_8baaaa26fff5447cb441b2ad5bcf4f0b);
+        
+    
+        var popup_afa4d91c3bf84cb2867ac0c8431161b8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8782745ca03d4d65aea76c076b012a5b = $(`<div id="html_8782745ca03d4d65aea76c076b012a5b" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-18-a-ULA-868/snapshots.html" target="_blank">B18 ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-18-a-URA-868/snapshots.html" target="_blank">B18 URA</a></div>`)[0];
+            popup_afa4d91c3bf84cb2867ac0c8431161b8.setContent(html_8782745ca03d4d65aea76c076b012a5b);
+        
+
+        marker_9af88ea2237744b896a0f4e9669e5a27.bindPopup(popup_afa4d91c3bf84cb2867ac0c8431161b8)
+        ;
+
+        
+    
+    
+            var marker_0c260b21d7da436cbd327c577d5a4ea9 = L.marker(
+                [50.8628484, 4.6842926],
+                {}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+    
+            var icon_9bcf337a42484abc9902432196d80668 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0c260b21d7da436cbd327c577d5a4ea9.setIcon(icon_9bcf337a42484abc9902432196d80668);
+        
+    
+        var popup_44dcdfe2722d4b64994947de5b3f24b8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2f42a1f74ce1452e8c9d401d1c536e79 = $(`<div id="html_2f42a1f74ce1452e8c9d401d1c536e79" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-19-a-ULA-868/snapshots.html" target="_blank">B19 (kasteel) ULA</a><br><a href="https://dramco.be/projects/marrmot/balcony/measurements/B-19-a-URA-868/snapshots.html" target="_blank">B19 (kasteel) URA</a></div>`)[0];
+            popup_44dcdfe2722d4b64994947de5b3f24b8.setContent(html_2f42a1f74ce1452e8c9d401d1c536e79);
+        
+
+        marker_0c260b21d7da436cbd327c577d5a4ea9.bindPopup(popup_44dcdfe2722d4b64994947de5b3f24b8)
+        ;
+
+        
+    
+    
+        function geo_json_48565f58986042c0b68559ab0294f7d3_styler(feature) {
+            switch(feature.properties.fill) {
+                case "#482374": 
+                    return {"color": "#482374", "fillColor": "#482374", "opacity": 0.6, "weight": 1};
+                case "#404588": 
+                    return {"color": "#404588", "fillColor": "#404588", "opacity": 0.6, "weight": 1};
+                case "#32648e": 
+                    return {"color": "#32648e", "fillColor": "#32648e", "opacity": 0.6, "weight": 1};
+                case "#277f8e": 
+                    return {"color": "#277f8e", "fillColor": "#277f8e", "opacity": 0.6, "weight": 1};
+                case "#1f998a": 
+                    return {"color": "#1f998a", "fillColor": "#1f998a", "opacity": 0.6, "weight": 1};
+                case "#2eb37c": 
+                    return {"color": "#2eb37c", "fillColor": "#2eb37c", "opacity": 0.6, "weight": 1};
+                default:
+                    return {"color": "#63cb5f", "fillColor": "#63cb5f", "opacity": 0.6, "weight": 1};
+            }
+        }
+        function geo_json_48565f58986042c0b68559ab0294f7d3_onEachFeature(feature, layer) {
+            layer.on({
+                click: function(e) {
+                    map_751a5c6ed38442d5955c3cee6dd43c22.fitBounds(e.target.getBounds());
+                }
+            });
+        };
+        var geo_json_48565f58986042c0b68559ab0294f7d3 = L.geoJson(null, {
+                onEachFeature: geo_json_48565f58986042c0b68559ab0294f7d3_onEachFeature,
+            
+                style: geo_json_48565f58986042c0b68559ab0294f7d3_styler,
+        }).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+
+        function geo_json_48565f58986042c0b68559ab0294f7d3_add (data) {
+            geo_json_48565f58986042c0b68559ab0294f7d3.addData(data);
+        }
+            geo_json_48565f58986042c0b68559ab0294f7d3_add({"features": [{"geometry": {"coordinates": [[[[4.68479, 50.86129], [4.68479, 50.86129], [4.68479, 50.86129], [4.68443, 50.86138], [4.68443, 50.86138], [4.68443, 50.86139], [4.68443, 50.86139], [4.68439, 50.86151], [4.68438, 50.86151], [4.68438, 50.86151], [4.68438, 50.86151], [4.68436, 50.86151], [4.68436, 50.86151], [4.68436, 50.86149], [4.68435, 50.86149], [4.68435, 50.86149], [4.68435, 50.86142], [4.68435, 50.86142], [4.68435, 50.86142], [4.68435, 50.86135], [4.68435, 50.86135], [4.68436, 50.86135], [4.68436, 50.86135], [4.68437, 50.86135], [4.68437, 50.86134], [4.68438, 50.86134], [4.68439, 50.86134], [4.68439, 50.86134], [4.6844, 50.86134], [4.68441, 50.86134], [4.68441, 50.86134], [4.68442, 50.86134], [4.68443, 50.86134], [4.68443, 50.86134], [4.68444, 50.86134], [4.68445, 50.86134], [4.68445, 50.86133], [4.68446, 50.86133], [4.68447, 50.86133], [4.68447, 50.86133], [4.68447, 50.86133], [4.68449, 50.86133], [4.68449, 50.86133], [4.68449, 50.86133], [4.68451, 50.86133], [4.68451, 50.86132], [4.68451, 50.86132], [4.68453, 50.86132], [4.68453, 50.86132], [4.68454, 50.86132], [4.68455, 50.86132], [4.68455, 50.86132], [4.68456, 50.86132], [4.68457, 50.86132], [4.68457, 50.86132], [4.68457, 50.86132], [4.68459, 50.86132], [4.68459, 50.86131], [4.68459, 50.86131], [4.68461, 50.86131], [4.68461, 50.86131], [4.68461, 50.86131], [4.68463, 50.86131], [4.68463, 50.86131], [4.68463, 50.86131], [4.68465, 50.86131], [4.68465, 50.8613], [4.68465, 50.8613], [4.68466, 50.8613], [4.68467, 50.8613], [4.68467, 50.8613], [4.68468, 50.8613], [4.68469, 50.8613], [4.68469, 50.8613], [4.6847, 50.8613], [4.68471, 50.8613], [4.68471, 50.8613], [4.68472, 50.8613], [4.68473, 50.86129], [4.68473, 50.86129], [4.68474, 50.86129], [4.68475, 50.86129], [4.68475, 50.86129], [4.68476, 50.86129], [4.68477, 50.86129], [4.68477, 50.86129], [4.68479, 50.86129]]], [[[4.68454, 50.86143], [4.68463, 50.86144], [4.68463, 50.86145], [4.68463, 50.86147], [4.68463, 50.86147], [4.68462, 50.86147], [4.68458, 50.86147], [4.68458, 50.86148], [4.68458, 50.86148], [4.68457, 50.86148], [4.68457, 50.86148], [4.68457, 50.86148], [4.68457, 50.86148], [4.68456, 50.86147], [4.68454, 50.86143]]], [[[4.68457, 50.86235], [4.68458, 50.86235], [4.68458, 50.86235], [4.68473, 50.86247], [4.68473, 50.86247], [4.68474, 50.86247], [4.68476, 50.86246], [4.68477, 50.86245], [4.68477, 50.86245], [4.68477, 50.86245], [4.68477, 50.86244], [4.68478, 50.86244], [4.68478, 50.86244], [4.68479, 50.86244], [4.68479, 50.86243], [4.68479, 50.86243], [4.68479, 50.86243], [4.6848, 50.86243], [4.6848, 50.86243], [4.6848, 50.86243], [4.68481, 50.86242], [4.68481, 50.86242], [4.68481, 50.86242], [4.68484, 50.86236], [4.68484, 50.86236], [4.68484, 50.86236], [4.68484, 50.86237], [4.68484, 50.86237], [4.68486, 50.86239], [4.68486, 50.86239], [4.68486, 50.86239], [4.68485, 50.86239], [4.68485, 50.8624], [4.68485, 50.8624], [4.6847, 50.86251], [4.6847, 50.86251], [4.6847, 50.86251], [4.68469, 50.86252], [4.68468, 50.86252], [4.68468, 50.86252], [4.68467, 50.86253], [4.68467, 50.86253], [4.68467, 50.86253], [4.68466, 50.86254], [4.68465, 50.86254], [4.68465, 50.86254], [4.68464, 50.86255], [4.68464, 50.86255], [4.68464, 50.86255], [4.68463, 50.86256], [4.68462, 50.86256], [4.68462, 50.86256], [4.68461, 50.86257], [4.68461, 50.86257], [4.68461, 50.86257], [4.6846, 50.86258], [4.68459, 50.86258], [4.68459, 50.86258], [4.68458, 50.86259], [4.68458, 50.86259], [4.68457, 50.86259], [4.68457, 50.8626], [4.68456, 50.8626], [4.68456, 50.8626], [4.68456, 50.86259], [4.68456, 50.86259], [4.68456, 50.86258], [4.68455, 50.86258], [4.68455, 50.86258], [4.68455, 50.86257], [4.68455, 50.86257], [4.68455, 50.86257], [4.68455, 50.86256], [4.68455, 50.86255], [4.68455, 50.86255], [4.68455, 50.86254], [4.68454, 50.86254], [4.68454, 50.86254], [4.68454, 50.86253], [4.68454, 50.86253], [4.68454, 50.86253], [4.68454, 50.86252], [4.68454, 50.86252], [4.68454, 50.86251], [4.68454, 50.86251], [4.68453, 50.86251], [4.68453, 50.8625], [4.68453, 50.86249], [4.68453, 50.86249], [4.68453, 50.86249], [4.68453, 50.86248], [4.68452, 50.86248], [4.68452, 50.86248], [4.68452, 50.86247], [4.68452, 50.86247], [4.68452, 50.86246], [4.68452, 50.86246], [4.68452, 50.86246], [4.68452, 50.86245], [4.68452, 50.86244], [4.68451, 50.86244], [4.68451, 50.86244], [4.68451, 50.86243], [4.68451, 50.86243], [4.68451, 50.86243], [4.68451, 50.86242], [4.68451, 50.86242], [4.68451, 50.86241], [4.68451, 50.86241], [4.6845, 50.8624], [4.6845, 50.8624], [4.6845, 50.86239], [4.6845, 50.86239], [4.6845, 50.86239], [4.6845, 50.86238], [4.6845, 50.86238], [4.6845, 50.86238], [4.6845, 50.86237], [4.68449, 50.86237], [4.68449, 50.86236], [4.68449, 50.86236], [4.68449, 50.86236], [4.68457, 50.86235]]]], "type": "MultiPolygon"}, "properties": {"fill": "#482374", "fill-opacity": 0.5, "stroke": "#482374", "stroke-opacity": 1, "stroke-width": 1, "title": "-24.00--21.00 "}, "type": "Feature"}, {"geometry": {"coordinates": [[[[4.6852, 50.86123], [4.68523, 50.86123], [4.68524, 50.86123], [4.68524, 50.86123], [4.68525, 50.86123], [4.68525, 50.86123], [4.68526, 50.86123], [4.68527, 50.86123], [4.68527, 50.86124], [4.68527, 50.86124], [4.68528, 50.86124], [4.68529, 50.86124], [4.68529, 50.86124], [4.6853, 50.86124], [4.6853, 50.86124], [4.68531, 50.86124], [4.68532, 50.86124], [4.68532, 50.86124], [4.68532, 50.86124], [4.68533, 50.86124], [4.68534, 50.86125], [4.68534, 50.86125], [4.68535, 50.86125], [4.68535, 50.86125], [4.68536, 50.86125], [4.68537, 50.86125], [4.68537, 50.86125], [4.68537, 50.86125], [4.68538, 50.86125], [4.68538, 50.86125], [4.6853, 50.86143], [4.6853, 50.86144], [4.6853, 50.86144], [4.6853, 50.86163], [4.6853, 50.86163], [4.6853, 50.86163], [4.68529, 50.86163], [4.68529, 50.86164], [4.68529, 50.86164], [4.68528, 50.86163], [4.68526, 50.86161], [4.68526, 50.86161], [4.68526, 50.86161], [4.68526, 50.86161], [4.68524, 50.86153], [4.68524, 50.86153], [4.68524, 50.86153], [4.68524, 50.86152], [4.68524, 50.86152], [4.68524, 50.86151], [4.68517, 50.86128], [4.68517, 50.86128], [4.68517, 50.86127], [4.68517, 50.86127], [4.68517, 50.86127], [4.68517, 50.86127], [4.68517, 50.86127], [4.6847, 50.86138], [4.6847, 50.86139], [4.68471, 50.86139], [4.68471, 50.86139], [4.68497, 50.86142], [4.68497, 50.86142], [4.68497, 50.86142], [4.68496, 50.86143], [4.68496, 50.86143], [4.68496, 50.86143], [4.68497, 50.86143], [4.68498, 50.86145], [4.68498, 50.86145], [4.68498, 50.86145], [4.68498, 50.86145], [4.68498, 50.86145], [4.68492, 50.86147], [4.68492, 50.86147], [4.68489, 50.8615], [4.68489, 50.8615], [4.68489, 50.8615], [4.68489, 50.86151], [4.68489, 50.86152], [4.68489, 50.86152], [4.68489, 50.86152], [4.68489, 50.86152], [4.68489, 50.86153], [4.68489, 50.86153], [4.68488, 50.86153], [4.68488, 50.86153], [4.68488, 50.86153], [4.68488, 50.86154], [4.68488, 50.86154], [4.68488, 50.86154], [4.68488, 50.86154], [4.68487, 50.86155], [4.68487, 50.86155], [4.68487, 50.86155], [4.68487, 50.86155], [4.68487, 50.86156], [4.68487, 50.86156], [4.68487, 50.86156], [4.68486, 50.86156], [4.68486, 50.86156], [4.68485, 50.86156], [4.68485, 50.86156], [4.68472, 50.86155], [4.68472, 50.86156], [4.68472, 50.86156], [4.68472, 50.86156], [4.68466, 50.86165], [4.68466, 50.86166], [4.68466, 50.86166], [4.68466, 50.86166], [4.68463, 50.86166], [4.68463, 50.86166], [4.68462, 50.86166], [4.68456, 50.86169], [4.68455, 50.86169], [4.68455, 50.86169], [4.68455, 50.86169], [4.68452, 50.86165], [4.68452, 50.86165], [4.68452, 50.86165], [4.68452, 50.86165], [4.68452, 50.86165], [4.68446, 50.86183], [4.68446, 50.86183], [4.68446, 50.86183], [4.68437, 50.86183], [4.68437, 50.86183], [4.68437, 50.86178], [4.68437, 50.86178], [4.68437, 50.86178], [4.68437, 50.86171], [4.68436, 50.8617], [4.68436, 50.8617], [4.68436, 50.86164], [4.68436, 50.86163], [4.68436, 50.86163], [4.68436, 50.86156], [4.68436, 50.86156], [4.68436, 50.86156], [4.68436, 50.86151], [4.68436, 50.86151], [4.68438, 50.86151], [4.68439, 50.86151], [4.68439, 50.86151], [4.68443, 50.86138], [4.68443, 50.86138], [4.68443, 50.86138], [4.68479, 50.86129], [4.6848, 50.86129], [4.6848, 50.86129], [4.68481, 50.86128], [4.68481, 50.86128], [4.68482, 50.86128], [4.68483, 50.86128], [4.68483, 50.86128], [4.68484, 50.86128], [4.68485, 50.86128], [4.68485, 50.86128], [4.68486, 50.86128], [4.68486, 50.86127], [4.68487, 50.86127], [4.68488, 50.86127], [4.68488, 50.86127], [4.68489, 50.86127], [4.6849, 50.86127], [4.6849, 50.86127], [4.68491, 50.86127], [4.68492, 50.86127], [4.68492, 50.86127], [4.68493, 50.86127], [4.68494, 50.86127], [4.68494, 50.86126], [4.68495, 50.86126], [4.68496, 50.86126], [4.68496, 50.86126], [4.68497, 50.86126], [4.68498, 50.86126], [4.68498, 50.86126], [4.68499, 50.86126], [4.685, 50.86126], [4.685, 50.86125], [4.68501, 50.86125], [4.68502, 50.86125], [4.68502, 50.86125], [4.68503, 50.86125], [4.68504, 50.86125], [4.68504, 50.86125], [4.68505, 50.86125], [4.68506, 50.86125], [4.68506, 50.86125], [4.68506, 50.86125], [4.68508, 50.86125], [4.68508, 50.86124], [4.68508, 50.86124], [4.6851, 50.86124], [4.6851, 50.86124], [4.6851, 50.86124], [4.68512, 50.86124], [4.68512, 50.86124], [4.68512, 50.86124], [4.68514, 50.86124], [4.68514, 50.86124], [4.68514, 50.86124], [4.68515, 50.86124], [4.68516, 50.86123], [4.68516, 50.86123], [4.68518, 50.86123], [4.68518, 50.86123], [4.68518, 50.86123], [4.6852, 50.86123]], [[4.68454, 50.86143], [4.68457, 50.86148], [4.68457, 50.86148], [4.68457, 50.86148], [4.68457, 50.86148], [4.68458, 50.86148], [4.68458, 50.86147], [4.68458, 50.86147], [4.68463, 50.86147], [4.68463, 50.86147], [4.68463, 50.86147], [4.68463, 50.86144], [4.68463, 50.86144], [4.6846, 50.86144], [4.68454, 50.86143]]], [[[4.68448, 50.86186], [4.68448, 50.86186], [4.68448, 50.86187], [4.68448, 50.86187], [4.68492, 50.86235], [4.68492, 50.86235], [4.68492, 50.86235], [4.68492, 50.86235], [4.68496, 50.86233], [4.68496, 50.86233], [4.68496, 50.86233], [4.68496, 50.86233], [4.68496, 50.86233], [4.6849, 50.86238], [4.6849, 50.86238], [4.6849, 50.86238], [4.6849, 50.86238], [4.6849, 50.86238], [4.6849, 50.86238], [4.6849, 50.86238], [4.68489, 50.86239], [4.68489, 50.86239], [4.68488, 50.86239], [4.68487, 50.8624], [4.68487, 50.8624], [4.68487, 50.8624], [4.68486, 50.86241], [4.68486, 50.86241], [4.68485, 50.86241], [4.68484, 50.86242], [4.68484, 50.86242], [4.68484, 50.86242], [4.68483, 50.86243], [4.68483, 50.86243], [4.68482, 50.86243], [4.68481, 50.86244], [4.68481, 50.86244], [4.68481, 50.86244], [4.6848, 50.86245], [4.68479, 50.86245], [4.68479, 50.86245], [4.68478, 50.86246], [4.68478, 50.86246], [4.68478, 50.86246], [4.68477, 50.86247], [4.68476, 50.86247], [4.68476, 50.86247], [4.68475, 50.86248], [4.68475, 50.86248], [4.68474, 50.86248], [4.68473, 50.86249], [4.68473, 50.86249], [4.68473, 50.86249], [4.68472, 50.8625], [4.68472, 50.8625], [4.68471, 50.8625], [4.6847, 50.86251], [4.6847, 50.86251], [4.6847, 50.86251], [4.6847, 50.86251], [4.6847, 50.86251], [4.6847, 50.8625], [4.68485, 50.8624], [4.68485, 50.86239], [4.68485, 50.86239], [4.68486, 50.86239], [4.68486, 50.86239], [4.68486, 50.86239], [4.68486, 50.86238], [4.68484, 50.86237], [4.68484, 50.86236], [4.68484, 50.86236], [4.68484, 50.86236], [4.68484, 50.86236], [4.68481, 50.86242], [4.68481, 50.86242], [4.68481, 50.86242], [4.68481, 50.86242], [4.6848, 50.86243], [4.6848, 50.86243], [4.6848, 50.86243], [4.6848, 50.86243], [4.68479, 50.86243], [4.68479, 50.86243], [4.68479, 50.86243], [4.68479, 50.86244], [4.68478, 50.86244], [4.68478, 50.86244], [4.68478, 50.86244], [4.68478, 50.86244], [4.68477, 50.86244], [4.68477, 50.86245], [4.68477, 50.86245], [4.68477, 50.86245], [4.68477, 50.86245], [4.68476, 50.86246], [4.68476, 50.86246], [4.68473, 50.86247], [4.68473, 50.86247], [4.68473, 50.86247], [4.68458, 50.86235], [4.68457, 50.86235], [4.68457, 50.86235], [4.68449, 50.86236], [4.68449, 50.86235], [4.68449, 50.86235], [4.68449, 50.86235], [4.68449, 50.86234], [4.68449, 50.86234], [4.68449, 50.86233], [4.68448, 50.86233], [4.68448, 50.86233], [4.68448, 50.86232], [4.68448, 50.86232], [4.68448, 50.86231], [4.68448, 50.86231], [4.68448, 50.8623], [4.68448, 50.8623], [4.68448, 50.8623], [4.68447, 50.86229], [4.68447, 50.86229], [4.68447, 50.86228], [4.68447, 50.86228], [4.68447, 50.86228], [4.68447, 50.86227], [4.68447, 50.86227], [4.68447, 50.86226], [4.68447, 50.86226], [4.68446, 50.86225], [4.68446, 50.86225], [4.68446, 50.86224], [4.68446, 50.86224], [4.68446, 50.86224], [4.68446, 50.86223], [4.68446, 50.86223], [4.68446, 50.86223], [4.68446, 50.86222], [4.68445, 50.86222], [4.68445, 50.86221], [4.68445, 50.86221], [4.68445, 50.8622], [4.68445, 50.8622], [4.68445, 50.86219], [4.68445, 50.86219], [4.68445, 50.86219], [4.68445, 50.86218], [4.68444, 50.86218], [4.68444, 50.86218], [4.68444, 50.86217], [4.68444, 50.86217], [4.68444, 50.86216], [4.68444, 50.86216], [4.68444, 50.86215], [4.68444, 50.86215], [4.68444, 50.86214], [4.68443, 50.86214], [4.68443, 50.86214], [4.68443, 50.86213], [4.68443, 50.86213], [4.68443, 50.86213], [4.68443, 50.86212], [4.68443, 50.86212], [4.68443, 50.86211], [4.68443, 50.86211], [4.68442, 50.8621], [4.68442, 50.8621], [4.68442, 50.86209], [4.68442, 50.86209], [4.68442, 50.86209], [4.68442, 50.86208], [4.68442, 50.86208], [4.68442, 50.86207], [4.68442, 50.86207], [4.68441, 50.86207], [4.68441, 50.86206], [4.68441, 50.86206], [4.68441, 50.86205], [4.68441, 50.86205], [4.68441, 50.86204], [4.68441, 50.86204], [4.68441, 50.86204], [4.68441, 50.86203], [4.6844, 50.86203], [4.6844, 50.86203], [4.6844, 50.86202], [4.6844, 50.86202], [4.6844, 50.86201], [4.6844, 50.86201], [4.6844, 50.86201], [4.68441, 50.862], [4.68442, 50.86201], [4.68442, 50.86201], [4.68445, 50.86203], [4.68445, 50.86204], [4.68445, 50.86203], [4.68445, 50.86203], [4.68447, 50.86187], [4.68448, 50.86187], [4.68448, 50.86186]]]], "type": "MultiPolygon"}, "properties": {"fill": "#404588", "fill-opacity": 0.5, "stroke": "#404588", "stroke-opacity": 1, "stroke-width": 1, "title": "-21.00--18.00 "}, "type": "Feature"}, {"geometry": {"coordinates": [[[[4.68538, 50.86125], [4.68538, 50.86125], [4.68539, 50.86125], [4.68539, 50.86125], [4.6854, 50.86125], [4.68541, 50.86126], [4.68541, 50.86126], [4.68542, 50.86126], [4.68542, 50.86126], [4.68542, 50.86126], [4.68543, 50.86126], [4.68544, 50.86126], [4.68544, 50.86126], [4.68545, 50.86126], [4.68545, 50.86127], [4.68546, 50.86127], [4.68547, 50.86127], [4.68547, 50.86127], [4.68547, 50.86127], [4.68548, 50.86127], [4.68549, 50.86127], [4.68549, 50.86127], [4.6855, 50.86127], [4.6855, 50.86127], [4.68551, 50.86127], [4.68552, 50.86127], [4.68552, 50.86128], [4.68552, 50.86128], [4.68553, 50.86128], [4.68554, 50.86128], [4.68554, 50.86128], [4.68555, 50.86128], [4.68555, 50.86128], [4.68556, 50.86128], [4.68557, 50.86128], [4.68557, 50.86129], [4.68557, 50.86129], [4.68558, 50.86129], [4.68559, 50.86129], [4.68559, 50.86129], [4.6856, 50.86129], [4.68561, 50.86129], [4.68561, 50.86129], [4.68562, 50.86129], [4.68562, 50.86129], [4.68563, 50.86129], [4.68564, 50.86129], [4.68564, 50.8613], [4.68564, 50.8613], [4.68565, 50.8613], [4.68566, 50.8613], [4.68566, 50.8613], [4.68567, 50.8613], [4.68567, 50.8613], [4.68568, 50.8613], [4.68568, 50.8613], [4.68568, 50.8613], [4.68559, 50.86151], [4.68559, 50.86151], [4.68559, 50.86152], [4.68559, 50.86152], [4.68543, 50.86168], [4.68543, 50.86168], [4.68542, 50.86168], [4.68542, 50.86168], [4.68541, 50.86169], [4.68542, 50.86169], [4.68548, 50.86173], [4.68548, 50.86173], [4.68548, 50.86174], [4.68548, 50.86174], [4.68548, 50.86174], [4.68548, 50.86174], [4.68548, 50.86174], [4.6854, 50.8617], [4.6854, 50.8617], [4.68539, 50.8617], [4.68539, 50.8617], [4.68538, 50.86173], [4.68538, 50.86173], [4.68537, 50.86173], [4.68537, 50.86173], [4.6853, 50.86175], [4.6853, 50.86175], [4.6853, 50.86175], [4.68522, 50.86167], [4.68522, 50.86167], [4.68522, 50.86167], [4.68521, 50.86167], [4.685, 50.86156], [4.685, 50.86156], [4.68495, 50.86154], [4.68495, 50.86154], [4.68495, 50.86154], [4.68488, 50.86154], [4.68488, 50.86154], [4.68488, 50.86154], [4.68488, 50.86154], [4.68488, 50.86155], [4.68488, 50.86155], [4.68488, 50.86155], [4.68487, 50.86155], [4.68487, 50.86156], [4.68487, 50.86156], [4.68487, 50.86156], [4.68486, 50.86157], [4.68478, 50.86161], [4.68477, 50.86161], [4.68477, 50.86161], [4.68477, 50.86161], [4.68477, 50.86161], [4.68477, 50.86161], [4.68476, 50.86161], [4.68476, 50.86161], [4.68474, 50.86161], [4.68474, 50.86161], [4.68474, 50.86161], [4.68472, 50.86165], [4.68472, 50.86165], [4.68472, 50.86165], [4.68472, 50.86165], [4.68499, 50.86229], [4.68499, 50.86229], [4.68499, 50.86229], [4.68506, 50.86226], [4.68506, 50.86226], [4.68506, 50.86226], [4.68507, 50.86226], [4.68508, 50.86225], [4.68508, 50.86225], [4.68509, 50.86225], [4.6851, 50.86225], [4.6851, 50.86225], [4.6851, 50.86225], [4.6851, 50.86225], [4.6851, 50.86225], [4.68509, 50.86226], [4.68509, 50.86226], [4.68508, 50.86227], [4.68508, 50.86227], [4.68507, 50.86227], [4.68507, 50.86227], [4.68506, 50.86228], [4.68506, 50.86228], [4.68505, 50.86228], [4.68505, 50.86229], [4.68504, 50.86229], [4.68504, 50.86229], [4.68503, 50.8623], [4.68503, 50.8623], [4.68502, 50.8623], [4.68501, 50.86231], [4.68501, 50.86231], [4.68501, 50.86231], [4.685, 50.86232], [4.685, 50.86232], [4.68499, 50.86232], [4.68498, 50.86233], [4.68498, 50.86233], [4.68498, 50.86233], [4.68497, 50.86234], [4.68497, 50.86234], [4.68496, 50.86234], [4.68495, 50.86235], [4.68495, 50.86235], [4.68494, 50.86235], [4.68494, 50.86236], [4.68493, 50.86236], [4.68493, 50.86236], [4.68492, 50.86237], [4.68492, 50.86237], [4.68491, 50.86237], [4.6849, 50.86238], [4.6849, 50.86238], [4.6849, 50.86238], [4.6849, 50.86238], [4.6849, 50.86238], [4.6849, 50.86238], [4.6849, 50.86238], [4.6849, 50.86238], [4.68496, 50.86233], [4.68496, 50.86233], [4.68496, 50.86233], [4.68496, 50.86233], [4.68496, 50.86233], [4.68492, 50.86235], [4.68492, 50.86235], [4.68492, 50.86235], [4.68491, 50.86234], [4.68448, 50.86187], [4.68448, 50.86186], [4.68448, 50.86186], [4.68448, 50.86186], [4.68448, 50.86187], [4.68447, 50.86187], [4.68447, 50.86187], [4.68445, 50.86204], [4.68445, 50.86203], [4.68445, 50.86203], [4.68445, 50.86203], [4.68442, 50.86201], [4.68442, 50.86201], [4.68441, 50.862], [4.68441, 50.862], [4.6844, 50.86201], [4.6844, 50.86201], [4.6844, 50.862], [4.6844, 50.862], [4.6844, 50.86199], [4.68439, 50.86199], [4.68439, 50.86199], [4.68439, 50.86198], [4.68439, 50.86198], [4.68439, 50.86198], [4.68439, 50.86197], [4.68439, 50.86196], [4.68439, 50.86196], [4.68439, 50.86196], [4.68438, 50.86195], [4.68438, 50.86195], [4.68438, 50.86194], [4.68438, 50.86194], [4.68438, 50.86194], [4.68438, 50.86193], [4.68438, 50.86193], [4.68438, 50.86193], [4.68438, 50.86192], [4.68437, 50.86191], [4.68437, 50.86191], [4.68437, 50.86185], [4.68437, 50.86185], [4.68437, 50.86185], [4.68437, 50.86183], [4.68437, 50.86183], [4.68446, 50.86183], [4.68446, 50.86183], [4.68446, 50.86183], [4.68446, 50.86183], [4.68452, 50.86165], [4.68452, 50.86165], [4.68452, 50.86165], [4.68452, 50.86165], [4.68453, 50.86165], [4.68455, 50.86169], [4.68455, 50.86169], [4.68456, 50.86169], [4.68456, 50.86169], [4.68463, 50.86166], [4.68463, 50.86166], [4.68463, 50.86166], [4.68466, 50.86166], [4.68466, 50.86166], [4.68466, 50.86165], [4.68466, 50.86165], [4.68472, 50.86156], [4.68472, 50.86155], [4.68473, 50.86155], [4.68485, 50.86156], [4.68486, 50.86156], [4.68486, 50.86156], [4.68486, 50.86156], [4.68487, 50.86156], [4.68487, 50.86156], [4.68487, 50.86156], [4.68487, 50.86155], [4.68487, 50.86155], [4.68487, 50.86155], [4.68487, 50.86155], [4.68488, 50.86154], [4.68488, 50.86154], [4.68488, 50.86154], [4.68488, 50.86154], [4.68488, 50.86153], [4.68488, 50.86153], [4.68489, 50.86153], [4.68489, 50.86153], [4.68489, 50.86152], [4.68489, 50.86152], [4.68489, 50.86152], [4.68489, 50.86152], [4.68489, 50.86151], [4.68489, 50.86151], [4.68489, 50.8615], [4.68489, 50.8615], [4.68489, 50.86149], [4.68492, 50.86147], [4.68493, 50.86147], [4.68498, 50.86145], [4.68498, 50.86145], [4.68498, 50.86145], [4.68496, 50.86143], [4.68496, 50.86143], [4.68496, 50.86143], [4.68496, 50.86143], [4.68496, 50.86143], [4.68497, 50.86142], [4.68497, 50.86142], [4.68497, 50.86142], [4.68497, 50.86142], [4.68471, 50.86139], [4.6847, 50.86139], [4.6847, 50.86138], [4.6847, 50.86138], [4.68517, 50.86127], [4.68517, 50.86127], [4.68517, 50.86127], [4.68517, 50.86127], [4.68517, 50.86128], [4.68517, 50.86128], [4.68517, 50.86128], [4.68524, 50.8615], [4.68524, 50.86151], [4.68524, 50.86151], [4.68524, 50.86152], [4.68524, 50.86152], [4.68524, 50.86152], [4.68524, 50.86153], [4.68524, 50.86153], [4.68524, 50.86153], [4.68526, 50.86161], [4.68526, 50.86161], [4.68527, 50.86162], [4.68528, 50.86163], [4.68529, 50.86164], [4.68529, 50.86164], [4.68529, 50.86164], [4.6853, 50.86163], [4.6853, 50.86163], [4.6853, 50.86163], [4.6853, 50.86144], [4.6853, 50.86143], [4.6853, 50.86143], [4.68538, 50.86125]], [[4.68508, 50.86134], [4.68502, 50.86136], [4.68502, 50.86136], [4.68502, 50.86136], [4.68502, 50.86136], [4.68502, 50.86136], [4.68502, 50.86136], [4.68505, 50.86136], [4.68505, 50.86137], [4.68505, 50.86137], [4.68505, 50.86137], [4.68498, 50.86143], [4.68499, 50.86143], [4.68499, 50.86143], [4.68501, 50.86145], [4.68501, 50.86145], [4.68501, 50.86145], [4.68502, 50.86145], [4.68502, 50.86145], [4.68502, 50.86145], [4.68502, 50.86145], [4.68506, 50.86139], [4.68507, 50.86139], [4.68507, 50.86139], [4.68507, 50.86139], [4.68509, 50.8614], [4.68509, 50.86139], [4.68509, 50.86139], [4.68509, 50.86139], [4.68508, 50.86135], [4.68508, 50.86134], [4.68508, 50.86134]]], [[[4.68549, 50.86174], [4.68549, 50.86174], [4.68549, 50.86174], [4.68549, 50.86174]]]], "type": "MultiPolygon"}, "properties": {"fill": "#32648e", "fill-opacity": 0.5, "stroke": "#32648e", "stroke-opacity": 1, "stroke-width": 1, "title": "-18.00--15.00 "}, "type": "Feature"}, {"geometry": {"coordinates": [[[[4.68569, 50.8613], [4.68569, 50.8613], [4.68569, 50.8613], [4.6857, 50.8613], [4.68571, 50.86131], [4.68571, 50.86131], [4.68572, 50.86131], [4.68572, 50.86131], [4.68573, 50.86131], [4.68574, 50.86131], [4.68574, 50.86131], [4.68574, 50.86131], [4.68575, 50.86131], [4.68576, 50.86132], [4.68576, 50.86132], [4.68577, 50.86132], [4.68577, 50.86132], [4.68578, 50.86132], [4.68579, 50.86132], [4.68579, 50.86132], [4.68579, 50.86132], [4.6858, 50.86132], [4.68581, 50.86132], [4.68581, 50.86132], [4.68582, 50.86132], [4.68583, 50.86133], [4.68583, 50.86133], [4.68583, 50.86133], [4.68584, 50.86133], [4.68584, 50.86134], [4.68585, 50.86134], [4.68585, 50.86134], [4.68586, 50.86134], [4.68586, 50.86134], [4.68586, 50.86135], [4.68587, 50.86135], [4.68588, 50.86135], [4.68588, 50.86136], [4.68589, 50.86136], [4.68589, 50.86136], [4.68589, 50.86137], [4.6859, 50.86137], [4.6859, 50.86137], [4.68591, 50.86137], [4.68591, 50.86138], [4.68592, 50.86138], [4.68592, 50.86138], [4.68595, 50.86141], [4.68595, 50.86141], [4.68595, 50.86141], [4.68595, 50.86141], [4.68595, 50.86142], [4.6859, 50.86146], [4.6859, 50.86146], [4.6859, 50.86146], [4.6859, 50.86146], [4.68585, 50.86144], [4.68585, 50.86145], [4.68585, 50.86145], [4.6858, 50.86147], [4.6858, 50.86147], [4.6858, 50.86146], [4.6858, 50.86146], [4.6858, 50.86141], [4.6858, 50.86141], [4.6858, 50.86141], [4.6858, 50.86141], [4.68552, 50.86168], [4.68552, 50.86168], [4.68551, 50.86169], [4.68548, 50.8617], [4.68547, 50.8617], [4.68548, 50.8617], [4.68553, 50.86174], [4.68553, 50.86174], [4.68553, 50.86175], [4.68553, 50.86179], [4.68553, 50.86179], [4.68553, 50.86179], [4.68551, 50.86178], [4.68551, 50.86178], [4.68551, 50.86177], [4.68551, 50.86177], [4.68551, 50.86177], [4.6855, 50.86177], [4.6855, 50.86177], [4.6855, 50.86177], [4.68548, 50.86179], [4.68547, 50.86179], [4.68547, 50.86179], [4.68547, 50.86179], [4.68547, 50.86179], [4.68541, 50.86176], [4.6854, 50.86176], [4.6854, 50.86176], [4.68534, 50.86185], [4.68534, 50.86185], [4.68534, 50.86186], [4.68534, 50.86186], [4.68534, 50.86186], [4.68531, 50.86187], [4.68531, 50.86186], [4.68531, 50.86186], [4.68531, 50.86186], [4.68528, 50.86183], [4.68527, 50.86183], [4.68527, 50.86183], [4.68527, 50.86183], [4.68505, 50.86172], [4.68505, 50.86172], [4.68505, 50.86172], [4.68522, 50.8621], [4.68522, 50.8621], [4.68522, 50.8621], [4.68522, 50.8621], [4.68524, 50.8621], [4.68524, 50.8621], [4.68524, 50.8621], [4.68524, 50.86211], [4.68524, 50.86211], [4.68524, 50.86211], [4.68524, 50.86211], [4.6853, 50.86212], [4.6853, 50.86212], [4.6853, 50.86212], [4.6853, 50.86212], [4.6853, 50.86213], [4.68529, 50.86213], [4.68529, 50.86213], [4.68529, 50.86214], [4.68528, 50.86214], [4.68527, 50.86214], [4.68527, 50.86215], [4.68526, 50.86215], [4.68526, 50.86215], [4.68526, 50.86215], [4.68525, 50.86216], [4.68524, 50.86216], [4.68524, 50.86217], [4.68523, 50.86217], [4.68523, 50.86217], [4.68522, 50.86218], [4.68522, 50.86218], [4.68521, 50.86218], [4.68521, 50.86219], [4.6852, 50.86219], [4.6852, 50.86219], [4.68519, 50.8622], [4.68519, 50.8622], [4.68518, 50.8622], [4.68518, 50.8622], [4.68517, 50.86221], [4.68516, 50.86221], [4.68516, 50.86222], [4.68515, 50.86222], [4.68515, 50.86222], [4.68515, 50.86222], [4.68514, 50.86223], [4.68513, 50.86223], [4.68513, 50.86223], [4.68512, 50.86224], [4.68512, 50.86224], [4.68511, 50.86225], [4.68511, 50.86225], [4.6851, 50.86225], [4.6851, 50.86225], [4.6851, 50.86225], [4.6851, 50.86225], [4.6851, 50.86225], [4.68509, 50.86225], [4.68509, 50.86225], [4.68508, 50.86225], [4.68508, 50.86225], [4.68508, 50.86225], [4.68506, 50.86226], [4.68506, 50.86226], [4.68506, 50.86227], [4.68499, 50.86229], [4.68499, 50.86229], [4.68499, 50.86229], [4.68472, 50.86165], [4.68472, 50.86165], [4.68472, 50.86165], [4.68472, 50.86164], [4.68474, 50.86161], [4.68474, 50.86161], [4.68474, 50.86161], [4.68476, 50.86161], [4.68477, 50.86161], [4.68477, 50.86161], [4.68477, 50.86161], [4.68478, 50.86161], [4.68478, 50.86161], [4.68478, 50.86161], [4.68478, 50.86161], [4.68487, 50.86156], [4.68487, 50.86156], [4.68487, 50.86156], [4.68487, 50.86156], [4.68487, 50.86156], [4.68487, 50.86155], [4.68488, 50.86155], [4.68488, 50.86155], [4.68488, 50.86155], [4.68488, 50.86154], [4.68488, 50.86154], [4.68488, 50.86154], [4.68488, 50.86154], [4.68489, 50.86154], [4.68495, 50.86154], [4.68495, 50.86154], [4.68496, 50.86154], [4.68496, 50.86154], [4.685, 50.86156], [4.68522, 50.86167], [4.68522, 50.86167], [4.6853, 50.86175], [4.6853, 50.86175], [4.6853, 50.86175], [4.68537, 50.86173], [4.68538, 50.86173], [4.68538, 50.86172], [4.68539, 50.8617], [4.6854, 50.8617], [4.6854, 50.8617], [4.6854, 50.8617], [4.68548, 50.86174], [4.68548, 50.86174], [4.68548, 50.86174], [4.68548, 50.86174], [4.68548, 50.86173], [4.68547, 50.86173], [4.68541, 50.86169], [4.68542, 50.86168], [4.68542, 50.86168], [4.68542, 50.86168], [4.68543, 50.86168], [4.68543, 50.86168], [4.68559, 50.86152], [4.68559, 50.86152], [4.68559, 50.86151], [4.68559, 50.86151], [4.68559, 50.86151], [4.68569, 50.8613]], [[4.68505, 50.86172], [4.68505, 50.86172], [4.68505, 50.86172], [4.68505, 50.86172]], [[4.68548, 50.86174], [4.68549, 50.86174], [4.68549, 50.86174], [4.68548, 50.86174]], [[4.68501, 50.86192], [4.685, 50.86201], [4.685, 50.86201], [4.685, 50.86201], [4.685, 50.86202], [4.68509, 50.86222], [4.68509, 50.86222], [4.68509, 50.86222], [4.68509, 50.86221], [4.6851, 50.86221], [4.6851, 50.86221], [4.68511, 50.86221], [4.68511, 50.86221], [4.68518, 50.86215], [4.68518, 50.86214], [4.68518, 50.86214], [4.68518, 50.86214], [4.68501, 50.86192]]], [[[4.68508, 50.86134], [4.68508, 50.86134], [4.68508, 50.86135], [4.68508, 50.86135], [4.68509, 50.86139], [4.68509, 50.86139], [4.68509, 50.8614], [4.68508, 50.86139], [4.68507, 50.86139], [4.68507, 50.86139], [4.68506, 50.86139], [4.68506, 50.86139], [4.68502, 50.86145], [4.68502, 50.86145], [4.68501, 50.86145], [4.68501, 50.86145], [4.68501, 50.86145], [4.68501, 50.86145], [4.68498, 50.86143], [4.68499, 50.86143], [4.68505, 50.86137], [4.68505, 50.86137], [4.68505, 50.86136], [4.68505, 50.86136], [4.68502, 50.86136], [4.68502, 50.86136], [4.68502, 50.86136], [4.68502, 50.86136], [4.68502, 50.86136], [4.68503, 50.86136], [4.68508, 50.86134]]]], "type": "MultiPolygon"}, "properties": {"fill": "#277f8e", "fill-opacity": 0.5, "stroke": "#277f8e", "stroke-opacity": 1, "stroke-width": 1, "title": "-15.00--12.00 "}, "type": "Feature"}, {"geometry": {"coordinates": [[[[4.68593, 50.86139], [4.68594, 50.8614], [4.68595, 50.8614], [4.68595, 50.8614], [4.68596, 50.86141], [4.68596, 50.86141], [4.68596, 50.86141], [4.68597, 50.86142], [4.68597, 50.86142], [4.68598, 50.86142], [4.68598, 50.86142], [4.68599, 50.86142], [4.68599, 50.86143], [4.686, 50.86143], [4.686, 50.86143], [4.68601, 50.86144], [4.68601, 50.86144], [4.68602, 50.86144], [4.68602, 50.86145], [4.68603, 50.86145], [4.68603, 50.86145], [4.68603, 50.86146], [4.68603, 50.86146], [4.68602, 50.86146], [4.68602, 50.86147], [4.68602, 50.86147], [4.68601, 50.86147], [4.68601, 50.86148], [4.68601, 50.86148], [4.68601, 50.86148], [4.68601, 50.86148], [4.686, 50.86149], [4.686, 50.86149], [4.686, 50.8615], [4.68599, 50.8615], [4.68599, 50.8615], [4.68599, 50.8615], [4.68599, 50.86151], [4.68598, 50.86151], [4.68598, 50.86151], [4.68598, 50.86151], [4.68597, 50.86152], [4.68597, 50.86152], [4.68597, 50.86153], [4.68597, 50.86153], [4.68597, 50.86153], [4.68596, 50.86153], [4.68596, 50.86154], [4.68596, 50.86154], [4.68596, 50.86154], [4.68595, 50.86155], [4.68595, 50.86155], [4.68595, 50.86155], [4.68594, 50.86156], [4.68594, 50.86156], [4.68594, 50.86156], [4.68593, 50.86157], [4.68593, 50.86157], [4.68593, 50.86157], [4.68593, 50.86158], [4.68593, 50.86158], [4.68592, 50.86158], [4.68592, 50.86158], [4.68592, 50.86159], [4.68592, 50.86159], [4.68591, 50.86159], [4.68591, 50.8616], [4.68591, 50.8616], [4.6859, 50.8616], [4.6859, 50.86161], [4.6859, 50.86161], [4.6859, 50.86161], [4.68589, 50.86161], [4.6858, 50.8617], [4.6858, 50.8617], [4.68579, 50.8617], [4.68579, 50.8617], [4.68579, 50.8617], [4.68572, 50.86174], [4.68572, 50.86174], [4.68572, 50.86174], [4.68572, 50.86174], [4.68572, 50.86173], [4.68572, 50.86173], [4.68572, 50.86173], [4.68574, 50.86166], [4.68574, 50.86166], [4.68574, 50.86165], [4.68574, 50.86156], [4.68574, 50.86156], [4.68574, 50.86156], [4.68574, 50.86156], [4.68561, 50.86169], [4.68561, 50.86169], [4.6856, 50.86169], [4.68553, 50.86172], [4.68553, 50.86172], [4.68553, 50.86172], [4.68556, 50.86174], [4.68556, 50.86174], [4.68556, 50.86174], [4.68556, 50.8618], [4.68556, 50.86181], [4.68556, 50.86181], [4.68556, 50.86181], [4.68558, 50.86185], [4.68558, 50.86185], [4.68558, 50.86185], [4.68557, 50.86185], [4.68557, 50.86185], [4.68555, 50.86183], [4.68554, 50.86183], [4.68554, 50.86183], [4.68554, 50.86183], [4.68554, 50.86182], [4.68552, 50.86181], [4.68552, 50.86181], [4.68552, 50.86181], [4.68552, 50.8618], [4.68551, 50.8618], [4.68551, 50.8618], [4.68551, 50.86179], [4.68551, 50.86179], [4.68551, 50.86179], [4.6855, 50.86179], [4.68545, 50.86183], [4.68545, 50.86183], [4.68544, 50.86183], [4.68541, 50.86182], [4.68541, 50.86182], [4.68541, 50.86182], [4.68541, 50.86182], [4.68534, 50.86193], [4.68534, 50.86193], [4.68534, 50.86194], [4.68534, 50.86194], [4.68535, 50.86197], [4.68535, 50.86197], [4.68536, 50.86197], [4.68536, 50.86197], [4.68549, 50.86197], [4.68549, 50.86197], [4.68549, 50.86198], [4.68549, 50.86198], [4.68548, 50.86199], [4.68548, 50.86199], [4.68548, 50.86199], [4.68549, 50.86199], [4.6855, 50.862], [4.6855, 50.862], [4.68549, 50.86201], [4.68549, 50.86201], [4.68549, 50.86201], [4.68548, 50.86201], [4.68548, 50.86201], [4.68547, 50.86202], [4.68546, 50.86203], [4.68546, 50.86203], [4.68546, 50.86203], [4.68545, 50.86204], [4.68544, 50.86204], [4.68544, 50.86204], [4.68543, 50.86204], [4.68543, 50.86204], [4.68543, 50.86205], [4.68542, 50.86206], [4.68541, 50.86206], [4.68541, 50.86206], [4.6854, 50.86206], [4.6854, 50.86206], [4.6854, 50.86207], [4.68538, 50.86207], [4.68538, 50.86207], [4.68538, 50.86208], [4.68537, 50.86208], [4.68537, 50.86208], [4.68536, 50.86209], [4.68535, 50.86209], [4.68535, 50.86209], [4.68535, 50.8621], [4.68534, 50.86211], [4.68533, 50.86211], [4.68533, 50.86211], [4.68532, 50.86211], [4.68532, 50.86211], [4.68532, 50.86212], [4.68531, 50.86212], [4.6853, 50.86212], [4.6853, 50.86212], [4.6853, 50.86212], [4.6853, 50.86212], [4.6853, 50.86212], [4.68524, 50.86211], [4.68524, 50.86211], [4.68524, 50.86211], [4.68524, 50.8621], [4.68524, 50.8621], [4.68524, 50.8621], [4.68522, 50.8621], [4.68522, 50.8621], [4.68522, 50.8621], [4.68522, 50.8621], [4.68505, 50.86172], [4.68505, 50.86172], [4.68505, 50.86172], [4.68527, 50.86183], [4.68528, 50.86183], [4.68528, 50.86183], [4.68531, 50.86186], [4.68531, 50.86186], [4.68531, 50.86187], [4.68531, 50.86186], [4.68534, 50.86186], [4.68534, 50.86186], [4.68534, 50.86185], [4.68535, 50.86185], [4.6854, 50.86176], [4.68541, 50.86176], [4.68541, 50.86176], [4.68547, 50.86179], [4.68547, 50.86179], [4.68548, 50.86179], [4.68548, 50.86178], [4.6855, 50.86177], [4.6855, 50.86177], [4.68551, 50.86177], [4.68551, 50.86177], [4.68551, 50.86178], [4.68551, 50.86178], [4.68551, 50.86178], [4.68553, 50.86179], [4.68553, 50.86179], [4.68553, 50.86179], [4.68553, 50.86174], [4.68553, 50.86174], [4.68553, 50.86174], [4.68547, 50.8617], [4.68548, 50.8617], [4.68548, 50.8617], [4.68551, 50.86169], [4.68552, 50.86168], [4.68552, 50.86168], [4.68552, 50.86168], [4.6858, 50.86141], [4.6858, 50.86141], [4.6858, 50.86141], [4.6858, 50.86141], [4.6858, 50.86146], [4.6858, 50.86147], [4.6858, 50.86147], [4.6858, 50.86147], [4.68585, 50.86145], [4.68585, 50.86144], [4.68585, 50.86145], [4.6859, 50.86146], [4.6859, 50.86146], [4.6859, 50.86146], [4.6859, 50.86146], [4.68595, 50.86141], [4.68595, 50.86141], [4.68595, 50.86141], [4.68595, 50.86141], [4.68595, 50.86141], [4.68593, 50.86139]]], [[[4.68505, 50.86172], [4.68505, 50.86172], [4.68505, 50.86172], [4.68505, 50.86172]]], [[[4.68501, 50.86192], [4.68518, 50.86214], [4.68518, 50.86214], [4.68518, 50.86214], [4.68518, 50.86215], [4.68518, 50.86215], [4.68511, 50.86221], [4.6851, 50.86221], [4.6851, 50.86221], [4.68509, 50.86221], [4.68509, 50.86222], [4.68509, 50.86222], [4.68509, 50.86221], [4.685, 50.86201], [4.685, 50.86201], [4.685, 50.86201], [4.685, 50.862], [4.685, 50.862], [4.68501, 50.86192]]]], "type": "MultiPolygon"}, "properties": {"fill": "#1f998a", "fill-opacity": 0.5, "stroke": "#1f998a", "stroke-opacity": 1, "stroke-width": 1, "title": "-12.00--9.00 "}, "type": "Feature"}, {"geometry": {"coordinates": [[[[4.68574, 50.86156], [4.68574, 50.86156], [4.68574, 50.86156], [4.68574, 50.86156], [4.68574, 50.86166], [4.68574, 50.86166], [4.68574, 50.86166], [4.68572, 50.86173], [4.68572, 50.86174], [4.68572, 50.86174], [4.68572, 50.86174], [4.68572, 50.86174], [4.68572, 50.86174], [4.68579, 50.8617], [4.68579, 50.8617], [4.6858, 50.8617], [4.6858, 50.8617], [4.6858, 50.8617], [4.6859, 50.86161], [4.6859, 50.86161], [4.68589, 50.86162], [4.68589, 50.86162], [4.68589, 50.86162], [4.68588, 50.86163], [4.68588, 50.86163], [4.68588, 50.86163], [4.68588, 50.86164], [4.68587, 50.86164], [4.68587, 50.86164], [4.68587, 50.86164], [4.68586, 50.86165], [4.68586, 50.86165], [4.68586, 50.86166], [4.68586, 50.86166], [4.68586, 50.86166], [4.68585, 50.86166], [4.68585, 50.86167], [4.68585, 50.86167], [4.68585, 50.86167], [4.68584, 50.86168], [4.68584, 50.86168], [4.68584, 50.86168], [4.68583, 50.86169], [4.68583, 50.86169], [4.68583, 50.86169], [4.68583, 50.86169], [4.68583, 50.8617], [4.68582, 50.8617], [4.68581, 50.8617], [4.68581, 50.86171], [4.68581, 50.86171], [4.68581, 50.86171], [4.68581, 50.86172], [4.6858, 50.86172], [4.6858, 50.86172], [4.6858, 50.86173], [4.68579, 50.86173], [4.68579, 50.86173], [4.68579, 50.86174], [4.68579, 50.86174], [4.68578, 50.86174], [4.68578, 50.86174], [4.68578, 50.86175], [4.68577, 50.86175], [4.68577, 50.86175], [4.68577, 50.86176], [4.68577, 50.86176], [4.68577, 50.86176], [4.68576, 50.86177], [4.68576, 50.86177], [4.68576, 50.86177], [4.68576, 50.86177], [4.68575, 50.86178], [4.68575, 50.86178], [4.68575, 50.86178], [4.68574, 50.86179], [4.68574, 50.86179], [4.68574, 50.86179], [4.68574, 50.8618], [4.68574, 50.8618], [4.68573, 50.8618], [4.68573, 50.86181], [4.68573, 50.86181], [4.68572, 50.86181], [4.68572, 50.86182], [4.68572, 50.86182], [4.68572, 50.86182], [4.68571, 50.86182], [4.68571, 50.86183], [4.68571, 50.86183], [4.6857, 50.86183], [4.6857, 50.86184], [4.6857, 50.86184], [4.6857, 50.86184], [4.6857, 50.86185], [4.68569, 50.86185], [4.68569, 50.86185], [4.68569, 50.86186], [4.68568, 50.86186], [4.68568, 50.86186], [4.68568, 50.86186], [4.68568, 50.86187], [4.68567, 50.86187], [4.68567, 50.86187], [4.68567, 50.86188], [4.68566, 50.86188], [4.68566, 50.86188], [4.68566, 50.86189], [4.68566, 50.86189], [4.68566, 50.86189], [4.68565, 50.8619], [4.68565, 50.8619], [4.68565, 50.8619], [4.68565, 50.8619], [4.68564, 50.86191], [4.68564, 50.86191], [4.68564, 50.86191], [4.68563, 50.86192], [4.68563, 50.86192], [4.68563, 50.86192], [4.68562, 50.86193], [4.68562, 50.86193], [4.68561, 50.86193], [4.6856, 50.86194], [4.6856, 50.86194], [4.68559, 50.86194], [4.68559, 50.86194], [4.68558, 50.86194], [4.68558, 50.86195], [4.68557, 50.86196], [4.68557, 50.86196], [4.68556, 50.86196], [4.68555, 50.86197], [4.68555, 50.86197], [4.68555, 50.86197], [4.68554, 50.86198], [4.68554, 50.86198], [4.68553, 50.86198], [4.68552, 50.86199], [4.68552, 50.86199], [4.68552, 50.86199], [4.68551, 50.86199], [4.68551, 50.86199], [4.6855, 50.862], [4.6855, 50.862], [4.68548, 50.86199], [4.68548, 50.86199], [4.68548, 50.86199], [4.68549, 50.86198], [4.68549, 50.86197], [4.68549, 50.86197], [4.68548, 50.86197], [4.68535, 50.86197], [4.68535, 50.86197], [4.68535, 50.86197], [4.68534, 50.86194], [4.68534, 50.86193], [4.68534, 50.86193], [4.68534, 50.86193], [4.68541, 50.86182], [4.68541, 50.86182], [4.68541, 50.86182], [4.68542, 50.86182], [4.68545, 50.86183], [4.68545, 50.86183], [4.68545, 50.86183], [4.68545, 50.86183], [4.68551, 50.86179], [4.68551, 50.86179], [4.68551, 50.86179], [4.68551, 50.8618], [4.68551, 50.8618], [4.68552, 50.8618], [4.68552, 50.8618], [4.68552, 50.86181], [4.68552, 50.86181], [4.68552, 50.86181], [4.68552, 50.86181], [4.68554, 50.86183], [4.68554, 50.86183], [4.68555, 50.86183], [4.68555, 50.86183], [4.68558, 50.86185], [4.68558, 50.86185], [4.68558, 50.86185], [4.68556, 50.86181], [4.68556, 50.86181], [4.68556, 50.8618], [4.68556, 50.8618], [4.68556, 50.86174], [4.68556, 50.86174], [4.68556, 50.86174], [4.68553, 50.86172], [4.68553, 50.86172], [4.68553, 50.86172], [4.68561, 50.86169], [4.68561, 50.86169], [4.68574, 50.86156]], [[4.68564, 50.86171], [4.68564, 50.86171], [4.68564, 50.86171], [4.68564, 50.86172], [4.68564, 50.86172], [4.68559, 50.86173], [4.68559, 50.86173], [4.68559, 50.86174], [4.68559, 50.86174], [4.68559, 50.86174], [4.68559, 50.86174], [4.68559, 50.86175], [4.68559, 50.86175], [4.6856, 50.86177], [4.68561, 50.86178], [4.68561, 50.86178], [4.68561, 50.86178], [4.68561, 50.86178], [4.68565, 50.86171], [4.68564, 50.86171]], [[4.68551, 50.86181], [4.68551, 50.86181], [4.68542, 50.86188], [4.68542, 50.86188], [4.68542, 50.86188], [4.68542, 50.86188], [4.68542, 50.86188], [4.68542, 50.86188], [4.68542, 50.86188], [4.68542, 50.86189], [4.68542, 50.86189], [4.68547, 50.86189], [4.6856, 50.86189], [4.6856, 50.86189], [4.6856, 50.86189], [4.68554, 50.86183], [4.68553, 50.86183], [4.68553, 50.86183], [4.68552, 50.86183], [4.68552, 50.86182], [4.68552, 50.86182], [4.68552, 50.86182], [4.68552, 50.86182], [4.68551, 50.86181], [4.68551, 50.86181], [4.68551, 50.86181]]], [[[4.6859, 50.86161], [4.6859, 50.86161], [4.6859, 50.86161], [4.6859, 50.86161]]]], "type": "MultiPolygon"}, "properties": {"fill": "#2eb37c", "fill-opacity": 0.5, "stroke": "#2eb37c", "stroke-opacity": 1, "stroke-width": 1, "title": "-9.00--6.00 "}, "type": "Feature"}, {"geometry": {"coordinates": [[[[4.68565, 50.86171], [4.68565, 50.86171], [4.68565, 50.86172], [4.68561, 50.86178], [4.68561, 50.86178], [4.68561, 50.86178], [4.6856, 50.86177], [4.6856, 50.86177], [4.6856, 50.86177], [4.68559, 50.86174], [4.68559, 50.86174], [4.68559, 50.86174], [4.68559, 50.86174], [4.68559, 50.86173], [4.68559, 50.86173], [4.68559, 50.86173], [4.68559, 50.86173], [4.68564, 50.86172], [4.68564, 50.86171], [4.68564, 50.86171], [4.68565, 50.86171]]], [[[4.68551, 50.86181], [4.68551, 50.86181], [4.68551, 50.86181], [4.68552, 50.86182], [4.68552, 50.86182], [4.68552, 50.86182], [4.68552, 50.86182], [4.68552, 50.86183], [4.68552, 50.86183], [4.68553, 50.86183], [4.68553, 50.86183], [4.68553, 50.86183], [4.68554, 50.86183], [4.68554, 50.86183], [4.6856, 50.86189], [4.6856, 50.86189], [4.6856, 50.86189], [4.6856, 50.86189], [4.6856, 50.86189], [4.68544, 50.86189], [4.68542, 50.86189], [4.68542, 50.86188], [4.68542, 50.86188], [4.68542, 50.86188], [4.68542, 50.86188], [4.68542, 50.86188], [4.68542, 50.86188], [4.68542, 50.86188], [4.68551, 50.86181]]]], "type": "MultiPolygon"}, "properties": {"fill": "#63cb5f", "fill-opacity": 0.5, "stroke": "#63cb5f", "stroke-opacity": 1, "stroke-width": 1, "title": "-6.00--3.00 "}, "type": "Feature"}], "type": "FeatureCollection"});
+        
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": true, "position": "topright", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_751a5c6ed38442d5955c3cee6dd43c22);
+        
+</script>
