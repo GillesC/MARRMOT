@@ -3,6 +3,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from os.path import join as pjoin
 
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import numpy as np
 import pandas as pd
 from scipy.interpolate import griddata
@@ -65,12 +66,13 @@ if __name__ == '__main__':
             res = future.result()
             if res is not None:
                 evm, H_median, (pos_x, pos_y), conf, _ = res
-                points[conf].append([pos_y, pos_x])
+                points[conf].append([pos_x, pos_y])
                 evm_values[conf].append(evm)
                 power_values[conf].append(H_median)
 
         print("Done processing points")
 
+        img = mpimg.imread(pjoin(current_path, "..","img","map-heatmap","map.png"))
         grid_x, grid_y = np.mgrid[0:1:100j, 0:1:100j]
 
         power_min = 100
@@ -98,8 +100,8 @@ if __name__ == '__main__':
 
             plt.cla()
             fig, ax = plt.subplots()
-            # plt.imshow(img, extent=[0, 1, 0, 1])
-            [ax.add_artist(circles) for c in circles]
+            plt.imshow(img, extent=[0, 1, 0, 1])
+            [ax.add_artist(c) for c in circles]
             a = grid_h.T
             a = np.ma.array(a, mask=np.isnan(a))
             plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', vmin=power_min, vmax=power_max)
@@ -108,7 +110,7 @@ if __name__ == '__main__':
 
             plt.cla()
             plt.subplots()
-            # plt.imshow(img, extent=[0, 1, 0, 1])
+            plt.imshow(img, extent=[0, 1, 0, 1])
             a = grid_evm.T
             a = np.ma.array(a, mask=np.isnan(a))
             plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', cmap='viridis_r', vmin=evm_min, vmax=evm_max)
