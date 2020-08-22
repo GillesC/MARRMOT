@@ -185,6 +185,7 @@ if __name__ == '__main__':
             #            vmin=power_min, vmax=power_max)
             # # [plt.scatter(0, 0, s=4000) for p_x, p_y in zip(points_x[conf], points_y[conf])]
             # [ax.add_artist(c) for c in circles]
+
             # plt.colorbar()
             # plt.savefig(pjoin(current_path, f'heatmap_median_h_{conf}.pdf'))
             #
