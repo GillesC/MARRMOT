@@ -100,7 +100,7 @@ if __name__ == '__main__':
 
             plt.cla()
             fig, ax = plt.subplots()
-            plt.imshow(img, extent=[0, 1, 0, 1])
+            #plt.imshow(img, extent=[0, 1, 0, 1])
             [ax.add_artist(c) for c in circles]
             a = grid_h.T
             a = np.ma.array(a, mask=np.isnan(a))
@@ -110,7 +110,7 @@ if __name__ == '__main__':
 
             plt.cla()
             plt.subplots()
-            plt.imshow(img, extent=[0, 1, 0, 1])
+            #plt.imshow(img, extent=[0, 1, 0, 1])
             a = grid_evm.T
             a = np.ma.array(a, mask=np.isnan(a))
             plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', cmap='viridis_r', vmin=evm_min, vmax=evm_max)
