@@ -19,7 +19,8 @@ corner = (4.68669, 50.86327)
 delta_x = abs(origin[0] - corner[0])
 delta_y = abs(origin[1] - corner[1])
 
-points = {"ULA": [], "URA": []}
+points_x = {"ULA": [], "URA": []}
+points_y = {"ULA": [], "URA": []}
 
 evm_values = {"ULA": [], "URA": []}
 power_values = {"ULA": [], "URA": []}
@@ -42,8 +43,8 @@ def compute(meas):
     pos_x = loc["longitude"]
     pos_y = loc["latitude"]
 
-    pos_x = (pos_x - origin[0]) / delta_x
-    pos_y = (pos_y - origin[1]) / delta_x
+    #pos_x = (pos_x - origin[0]) / delta_x
+    #pos_y = (pos_y - origin[1]) / delta_x
 
     raw_evm = np.loadtxt(pjoin(meas, "raw-evm.txt"))[:, 0]
     if os.path.isfile(pjoin(meas, "small-channel.npy")):
@@ -66,14 +67,16 @@ if __name__ == '__main__':
             res = future.result()
             if res is not None:
                 evm, H_median, (pos_x, pos_y), conf, _ = res
-                points[conf].append([pos_x, pos_y])
+                points_x[conf].append(pos_x)
+                points_y[conf].append(pos_y)
                 evm_values[conf].append(evm)
                 power_values[conf].append(H_median)
 
         print("Done processing points")
 
         img = mpimg.imread(pjoin(current_path, "..","img","map-heatmap","map.png"))
-        grid_x, grid_y = np.mgrid[0:1:100j, 0:1:100j]
+
+
 
         power_min = 100
         power_max = -100
@@ -81,7 +84,7 @@ if __name__ == '__main__':
         evm_min = 100
         evm_max = -1
 
-        for conf in points.keys():
+        for conf in points_x.keys():
             if power_min > np.min(power_values[conf]):
                 power_min = np.min(power_values[conf])
             if power_max < np.max(power_values[conf]):
@@ -92,11 +95,16 @@ if __name__ == '__main__':
             if evm_max < np.max(evm_values[conf]):
                 evm_max = np.max(evm_values[conf])
 
-        for conf in points.keys():
-            grid_h = griddata(points[conf], power_values[conf], (grid_x, grid_y), method='linear')
-            grid_evm = griddata(points[conf], evm_values[conf], (grid_x, grid_y), method='linear')
+        for conf in points_x.keys():
+            x_arr = np.linspace(np.min(points_x[conf]), np.max(points_x[conf]), 500)
+            y_arr = np.linspace(np.min(points_y[conf]), np.max(points_y[conf]), 500)
+            grid_x, grid_y = np.meshgrid(x_arr, y_arr)
 
-            circles = [plt.Circle((p[0], p[1]), 0.01, fill=False) for p in points[conf]]
+
+            grid_h = griddata((points_x[conf], points_y[conf]), power_values[conf], (grid_x, grid_y), method='linear')
+            grid_evm = griddata((points_x[conf], points_y[conf]), evm_values[conf], (grid_x, grid_y), method='linear')
+
+            circles = [plt.Circle((p_x, p_y), 0.01, fill=False) for p_x, p_y in zip(points_x[conf], points_y[conf])]
 
             plt.cla()
             fig, ax = plt.subplots()
@@ -104,7 +112,7 @@ if __name__ == '__main__':
             [ax.add_artist(c) for c in circles]
             a = grid_h.T
             a = np.ma.array(a, mask=np.isnan(a))
-            plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', vmin=power_min, vmax=power_max)
+            plt.imshow(a, origin='lower', vmin=power_min, vmax=power_max)
             plt.colorbar()
             plt.savefig(pjoin(current_path, f'heatmap_median_h_{conf}.pdf'))
 
@@ -113,6 +121,6 @@ if __name__ == '__main__':
             #plt.imshow(img, extent=[0, 1, 0, 1])
             a = grid_evm.T
             a = np.ma.array(a, mask=np.isnan(a))
-            plt.imshow(a, extent=[0, 1, 0, 1], origin='lower', cmap='viridis_r', vmin=evm_min, vmax=evm_max)
+            plt.imshow(a, origin='lower', cmap='viridis_r', vmin=evm_min, vmax=evm_max)
             plt.colorbar()
             plt.savefig(pjoin(current_path, f'heatmap_median_evm_{conf}.pdf'))
