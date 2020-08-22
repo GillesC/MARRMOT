@@ -114,7 +114,7 @@ if __name__ == '__main__':
             a = grid_h
             a = np.ma.array(a, mask=np.isnan(a))
             plt.imshow(a, extent=[np.min(x_arr), np.max(x_arr), np.min(y_arr), np.max(y_arr)], origin='lower',
-                       vmin=power_min, vmax=power_max)
+                       vmin=power_min, vmax=power_max, aspect=np.max(x_arr)/np.max(y_arr))
             # [plt.scatter(0, 0, s=4000) for p_x, p_y in zip(points_x[conf], points_y[conf])]
             [ax.add_artist(c) for c in circles]
             plt.colorbar()
@@ -126,7 +126,7 @@ if __name__ == '__main__':
             a = grid_evm
             a = np.ma.array(a, mask=np.isnan(a))
             plt.imshow(a, extent=[np.min(x_arr), np.max(x_arr), np.min(y_arr), np.max(y_arr)], origin='lower',
-                       cmap='viridis_r', vmin=evm_min, vmax=evm_max)
+                       cmap='viridis_r', vmin=evm_min, vmax=evm_max, aspect=np.max(x_arr)/np.max(y_arr))
             [ax.add_artist(c) for c in circles]
             plt.colorbar()
             plt.savefig(pjoin(current_path, f'heatmap_median_evm_{conf}.pdf'))
