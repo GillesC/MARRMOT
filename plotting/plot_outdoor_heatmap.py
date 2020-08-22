@@ -43,8 +43,8 @@ def compute(meas):
     pos_x = loc["longitude"]
     pos_y = loc["latitude"]
 
-    #pos_x = (pos_x - origin[0]) / delta_x
-    #pos_y = (pos_y - origin[1]) / delta_x
+    # pos_x = (pos_x - origin[0]) / delta_x
+    # pos_y = (pos_y - origin[1]) / delta_x
 
     raw_evm = np.loadtxt(pjoin(meas, "raw-evm.txt"))[:, 0]
     if os.path.isfile(pjoin(meas, "small-channel.npy")):
@@ -74,9 +74,7 @@ if __name__ == '__main__':
 
         print("Done processing points")
 
-        img = mpimg.imread(pjoin(current_path, "..","img","map-heatmap","map.png"))
-
-
+        img = mpimg.imread(pjoin(current_path, "..", "img", "map-heatmap", "map.png"))
 
         power_min = 100
         power_max = -100
@@ -100,27 +98,35 @@ if __name__ == '__main__':
             y_arr = np.linspace(np.min(points_y[conf]), np.max(points_y[conf]), 500)
             grid_x, grid_y = np.meshgrid(x_arr, y_arr)
 
-
             grid_h = griddata((points_x[conf], points_y[conf]), power_values[conf], (grid_x, grid_y), method='linear')
             grid_evm = griddata((points_x[conf], points_y[conf]), evm_values[conf], (grid_x, grid_y), method='linear')
 
-            circles = [plt.Circle((p_x, p_y), 0.01, fill=False) for p_x, p_y in zip(points_x[conf], points_y[conf])]
+            circle_radius = (np.max(x_arr) - np.min(x_arr)) / 100
+
+            circles = [plt.Circle((p_x, p_y), circle_radius, fill=False) for p_x, p_y in
+                       zip(points_x[conf], points_y[conf])]
 
             plt.cla()
             fig, ax = plt.subplots()
-            #plt.imshow(img, extent=[0, 1, 0, 1])
-            [ax.add_artist(c) for c in circles]
-            a = grid_h.T
+            # plt.imshow(img, extent=[0, 1, 0, 1])
+            # [ax.add_artist(c) for c in circles]
+
+            a = grid_h
             a = np.ma.array(a, mask=np.isnan(a))
-            plt.imshow(a, origin='lower', vmin=power_min, vmax=power_max)
+            plt.imshow(a, extent=[np.min(x_arr), np.max(x_arr), np.min(y_arr), np.max(y_arr)], origin='lower',
+                       vmin=power_min, vmax=power_max)
+            # [plt.scatter(0, 0, s=4000) for p_x, p_y in zip(points_x[conf], points_y[conf])]
+            [ax.add_artist(c) for c in circles]
             plt.colorbar()
             plt.savefig(pjoin(current_path, f'heatmap_median_h_{conf}.pdf'))
 
             plt.cla()
             plt.subplots()
-            #plt.imshow(img, extent=[0, 1, 0, 1])
-            a = grid_evm.T
+            # plt.imshow(img, extent=[0, 1, 0, 1])
+            a = grid_evm
             a = np.ma.array(a, mask=np.isnan(a))
-            plt.imshow(a, origin='lower', cmap='viridis_r', vmin=evm_min, vmax=evm_max)
+            plt.imshow(a, extent=[np.min(x_arr), np.max(x_arr), np.min(y_arr), np.max(y_arr)], origin='lower',
+                       cmap='viridis_r', vmin=evm_min, vmax=evm_max)
+            [ax.add_artist(c) for c in circles]
             plt.colorbar()
             plt.savefig(pjoin(current_path, f'heatmap_median_evm_{conf}.pdf'))
