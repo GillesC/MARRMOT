@@ -114,7 +114,7 @@ if __name__ == '__main__':
             grid_h = griddata((points_x[conf], points_y[conf]), power_values[conf], (grid_x, grid_y), method='linear')
             grid_evm = griddata((points_x[conf], points_y[conf]), evm_values[conf], (grid_x, grid_y), method='linear')
 
-            contourf = plt.contourf(grid_x, grid_x, grid_h, alpha=0.5, linestyles='None',
+            contourf = plt.contourf(grid_x, grid_y, grid_h, alpha=0.5, linestyles='None',
                                     vmin=power_min, vmax=power_max)
 
             # Convert matplotlib contourf to geojson
@@ -166,7 +166,7 @@ if __name__ == '__main__':
                 }).add_to(m)
 
             # Fullscreen mode
-            plugins.Fullscreen(position='topright', force_separate_button=True).add_to(geomap)
+            plugins.Fullscreen(position='topright', force_separate_button=True).add_to(m)
 
             # Plot the data
             m.save(pjoin(current_path, f'heatmap_median_evm_{conf}.html'))
