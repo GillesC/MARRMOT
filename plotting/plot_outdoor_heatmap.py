@@ -2,6 +2,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from os.path import join as pjoin
 
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
@@ -111,7 +112,19 @@ if __name__ == '__main__':
             grid_h = griddata((points_x[conf], points_y[conf]), power_values[conf], (grid_x, grid_y), method='linear')
             grid_evm = griddata((points_x[conf], points_y[conf]), evm_values[conf], (grid_x, grid_y), method='linear')
 
-            contourf = plt.contourf(grid_x, grid_y, grid_h, alpha=0.5, linestyles='None',
+            vmin = power_min
+            vmax = power_max
+
+            levels = 20
+            import branca.colormap as cm
+
+            colormap = cm.LinearColormap(colors=cm._schemes["viridis"], vmin=vmin, vmax=vmax).to_step(levels)
+            colormap.caption = 'Gain [dB]'
+
+            # cm = branca.colormap.LinearColormap(colors, vmin=vmin, vmax=vmax).to_step(levels)
+
+            contourf = plt.contourf(grid_x, grid_y, grid_h, levels=levels, colors=colormap.colors, alpha=0.1,
+                                    linestyles='None',
                                     vmin=power_min, vmax=power_max)
 
             # Convert matplotlib contourf to geojson
@@ -120,15 +133,17 @@ if __name__ == '__main__':
                 min_angle_deg=3.0,
                 ndigits=5,
                 stroke_width=1,
-                fill_opacity=0.5)
-
+                fill_opacity=0.9)
 
             center = df.iloc[0]
 
             m = folium.Map(
                 location=[center["latitude"], center["longitude"]],
                 zoom_start=18,
+                tiles="cartodbpositron"
             )
+
+            m.add_child(colormap)
 
             colors = {
                 "BS": "black",
@@ -139,27 +154,100 @@ if __name__ == '__main__':
             }
 
             for index, row in df.iterrows():
-                popup = folium.Popup(
-                    f'<a href="https://dramco.be/projects/marrmot/balcony/measurements/{row["path"]}-{int(row["point"])}-a-ULA-868/snapshots.html" target="_blank">{row["location"]} ULA</a><br>'
-                    f'<a href="https://dramco.be/projects/marrmot/balcony/measurements/{row["path"]}-{int(row["point"])}-a-URA-868/snapshots.html" target="_blank">{row["location"]} URA</a>')
-                # do not show popup with BS
                 if index == 0:
                     popup = None
 
-                folium.Marker(
-                    icon=folium.Icon(color=colors[row["path"]]),
-                    location=[row["latitude"], row["longitude"]],
-                    popup=popup
-                ).add_to(m)
+                folium.CircleMarker(location=[row["latitude"], row["longitude"]],
+                                    radius=5,
+                                    weight=1).add_to(m)
+
+                # folium.Marker(
+                #     icon=folium.Icon(color=colors[row["path"]]),
+                #     location=[row["latitude"], row["longitude"]],
+                #     popup=popup
+                # ).add_to(m)
 
             # Plot the contour plot on folium
             folium.GeoJson(
                 geojson,
                 style_function=lambda x: {
-                    'color': x['properties']['stroke'],
+                    'color': None,  # x['properties']['stroke'],
                     'weight': x['properties']['stroke-width'],
                     'fillColor': x['properties']['fill'],
-                    'opacity': 0.6,
+                    'opacity': 0.9,
+                }).add_to(m)
+
+            # Fullscreen mode
+            plugins.Fullscreen(position='topright', force_separate_button=True).add_to(m)
+
+            # Plot the data
+            m.save(pjoin(current_path, f'heatmap_median_h_{conf}.html'))
+
+            vmin = evm_min
+            vmax = evm_max
+
+            levels = 20
+            import branca.colormap as cm
+
+            colors= cm._schemes["viridis"][::-1]
+
+            colormap = cm.LinearColormap(colors=colors, vmin=vmin, vmax=vmax).to_step(levels)
+            colormap.caption = 'EVM [%]'
+
+            # cm = branca.colormap.LinearColormap(colors, vmin=vmin, vmax=vmax).to_step(levels)
+
+            contourf = plt.contourf(grid_x, grid_y, grid_evm, levels=levels, colors=colormap.colors, alpha=0.1,
+                                    linestyles='None',
+                                    vmin=power_min, vmax=power_max)
+
+            # Convert matplotlib contourf to geojson
+            geojson = geojsoncontour.contourf_to_geojson(
+                contourf=contourf,
+                min_angle_deg=3.0,
+                ndigits=5,
+                stroke_width=1,
+                fill_opacity=0.9)
+
+            center = df.iloc[0]
+
+            m = folium.Map(
+                location=[center["latitude"], center["longitude"]],
+                zoom_start=18,
+                tiles="cartodbpositron"
+            )
+
+            m.add_child(colormap)
+
+            colors = {
+                "BS": "black",
+                "A": "red",
+                "B": "blue",
+                "C": "green",
+                "D": "purple"
+            }
+
+            for index, row in df.iterrows():
+                if index == 0:
+                    popup = None
+
+                folium.CircleMarker(location=[row["latitude"], row["longitude"]],
+                                    radius=5,
+                                    weight=1).add_to(m)
+
+                # folium.Marker(
+                #     icon=folium.Icon(color=colors[row["path"]]),
+                #     location=[row["latitude"], row["longitude"]],
+                #     popup=popup
+                # ).add_to(m)
+
+            # Plot the contour plot on folium
+            folium.GeoJson(
+                geojson,
+                style_function=lambda x: {
+                    'color': None,  # x['properties']['stroke'],
+                    'weight': x['properties']['stroke-width'],
+                    'fillColor': x['properties']['fill'],
+                    'opacity': 0.9,
                 }).add_to(m)
 
             # Fullscreen mode
@@ -167,7 +255,6 @@ if __name__ == '__main__':
 
             # Plot the data
             m.save(pjoin(current_path, f'heatmap_median_evm_{conf}.html'))
-
 
             # circle_radius = (np.max(x_arr) - np.min(x_arr)) / 100
             #
