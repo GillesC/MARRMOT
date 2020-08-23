@@ -65,8 +65,8 @@ def compute(meas):
 
     # [snapshots x freq points x BS antennas
     # remove faulty antenna 32
-    H = np.sum(H[:,:,:-1], axis=2)
-    H = 10 * np.log10(np.abs(H)^2)
+    H = np.sum(H[:, :, :-1], axis=(1,2))
+    H = 10 * np.log10(np.abs(H)**2)
 
     return np.median(raw_evm), np.median(H), (pos_x, pos_y), conf, freq
 
@@ -192,7 +192,7 @@ if __name__ == '__main__':
             levels = 20
             import branca.colormap as cm
 
-            colors= cm._schemes["viridis"][::-1]
+            colors = cm._schemes["viridis"][::-1]
 
             colormap = cm.LinearColormap(colors=colors, vmin=vmin, vmax=vmax).to_step(levels)
             colormap.caption = 'EVM [%]'
