@@ -63,7 +63,10 @@ def compute(meas):
     else:
         return None
 
-    H = 10 * np.log10(np.abs(H))
+    # [snapshots x freq points x BS antennas
+    # remove faulty antenna 32
+    H = np.sum(H[:,:,:-1], axis=2)
+    H = 10 * np.log10(np.abs(H)^2)
 
     return np.median(raw_evm), np.median(H), (pos_x, pos_y), conf, freq
 
