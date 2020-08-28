@@ -30,8 +30,9 @@ def _plot(d):
     H_norm = np.load(input)
     # [snapshots x freq points x BS antennas x users]
 
-    gain_50 = np.abs(H_norm[:, 0, :])
-    gain_51 = np.abs(H_norm[:, 1, :])
+    # remove last one bc faulty
+    gain_50 = np.abs(H_norm[:, 0, 0:31])
+    gain_51 = np.abs(H_norm[:, 1, 0:31])
 
     # if gain is 0 take the value of the other carrier freq.
     gain_50[gain_50 == 0] = gain_51[gain_50 == 0]
@@ -41,7 +42,7 @@ def _plot(d):
 
     fig = make_subplots(rows=2, cols=2,
                         specs=[[{'type': 'surface', 'rowspan': 2}, {'type': 'xy'}], [None, {'type': 'xy'}]],
-                        subplot_titles=["Channel gain", "EVM histogram","Normalised covariance matrix"])
+                        subplot_titles=["Channel gain", "EVM histogram", "Normalised covariance matrix"])
 
     fig.add_trace(go.Surface(z=z, cmin=z.min(), cmax=z.max(), showscale=True, colorbar=dict(x=0.45, y=0.5)), row=1,
                   col=1)
