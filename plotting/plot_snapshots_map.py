@@ -7,7 +7,9 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from tqdm import tqdm
 
-root_dir = "D:\Stack\measurement-data"
+from utils.load_yaml import load_root_dir
+
+root_dir = load_root_dir()
 subdir, dirs, files = next(os.walk(os.path.join(root_dir)))
 
 
@@ -42,7 +44,7 @@ def _plot(d):
 
     fig = make_subplots(rows=2, cols=2,
                         specs=[[{'type': 'surface', 'rowspan': 2}, {'type': 'xy'}], [None, {'type': 'xy'}]],
-                        subplot_titles=["Channel gain", "EVM histogram", "Normalised covariance matrix"])
+                        subplot_titles=["Channel gain", "EVM histogram", "Channel Correlation (HH^H/NF)"])
 
     fig.add_trace(go.Surface(z=z, cmin=z.min(), cmax=z.max(), showscale=True, colorbar=dict(x=0.45, y=0.5)), row=1,
                   col=1)

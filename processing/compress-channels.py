@@ -5,14 +5,24 @@ from tqdm import tqdm
 import numpy as np
 import scipy.io as sio
 
-root_dir = "D:\Stack\measurement-data"
+
+def load_config():
+    import yaml
+    with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "config.yml")) as file:
+        return yaml.full_load(file)
+
+
+cfg = load_config()
+root_dir = cfg["root_dir"]
 subdir, dirs, files = next(os.walk(os.path.join(root_dir)))
 
 
 def compress_channel(d):
-
+    if os.path.isfile(os.path.join(root_dir, d, "small-channel.npy")):
+        return
 
     path = os.path.join(root_dir, d, "channel.npy")
+
     # [snapshots x freq points x BS antennas x users]
     H = np.load(path)
     h_compressed = H[:, 50:52, :, 0]

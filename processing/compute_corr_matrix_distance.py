@@ -27,7 +27,6 @@ def compute_cmd(d):
     np.save(pjoin(root_dir, "measurements", d, "d_cmd.npy"), np.abs(d_cmd))
 
 
-
 if __name__ == '__main__':
     pbar = tqdm(total=len(dirs))
     with ProcessPoolExecutor(max_workers=10) as executor:

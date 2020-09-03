@@ -1,11 +1,14 @@
+root_dir: D:\Stack\measurement-data
 environments:
   - OE # Outdoor main Entrance
   - OB # Outdoor MICAS Balcony
   - IL\scanning\868-ULA # Indoor Lab
-  - IC # Indoor Cafeteria 
-
-num_antennas: 32
-num_sub_carriers: 100
+  - IC # Indoor Cafeteria
+num_bs_antennas: 32
+num_subcarriers: 100
+num_layers: 12
+num_rsrc_blocks: 100
+block_size: 12
 data_carriers:
   - 51
   - 52

@@ -18,7 +18,7 @@ def best_fit_distribution(data, bins='auto', ax=None, verbose=False):
 
     # Distributions to check
     DISTRIBUTIONS = [
-        st.rayleigh, st.rice, st.norm
+        st.rayleigh, st.rice, st.nakagami
     ]
 
     # Best holders

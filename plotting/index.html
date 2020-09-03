@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_aaf5aca2db504662b08621e5e2ebab52 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_aaf5aca2db504662b08621e5e2ebab52" ></div>
+        
+</body>
+<script>    
+    
+            var map_aaf5aca2db504662b08621e5e2ebab52 = L.map(
+                "map_aaf5aca2db504662b08621e5e2ebab52",
+                {
+                    center: [50.861978799999996, 4.685584400000001],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 18,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5001fbf888b6474493416850fd67db31 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var marker_59c90c8ddf5a476cad7822bab794c791 = L.marker(
+                [50.861978799999996, 4.685584400000001],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_75efd20046d74b83890eaa2c554a6849 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_59c90c8ddf5a476cad7822bab794c791.setIcon(icon_75efd20046d74b83890eaa2c554a6849);
+        
+    
+            var marker_e2d91b82fdab4c0bba6ded679d776059 = L.marker(
+                [50.86196470000001, 4.6857329000000005],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_33b33a5cd2c64305bee0542728168d44 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e2d91b82fdab4c0bba6ded679d776059.setIcon(icon_33b33a5cd2c64305bee0542728168d44);
+        
+    
+        var popup_0b01268df49a4020af4430ba48c62ab3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_82838b6e519b435da1c4ca8f9e38c815 = $(`<div id="html_82838b6e519b435da1c4ca8f9e38c815" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-1-a-ULA-2610" target="_blank">A1 (ESAT) ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-1-a-ULA-868" target="_blank">A1 (ESAT) ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-1-a-URA-2610" target="_blank">A1 (ESAT) URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-1-a-URA-868" target="_blank">A1 (ESAT) URA 868</a><br> </div>`)[0];
+            popup_0b01268df49a4020af4430ba48c62ab3.setContent(html_82838b6e519b435da1c4ca8f9e38c815);
+        
+
+        marker_e2d91b82fdab4c0bba6ded679d776059.bindPopup(popup_0b01268df49a4020af4430ba48c62ab3)
+        ;
+
+        
+    
+    
+            var marker_91a63092c1434c3a9275ec770c73e16c = L.marker(
+                [50.8619136, 4.6856383],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_feb3685801d240e1a994ac2df5188449 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_91a63092c1434c3a9275ec770c73e16c.setIcon(icon_feb3685801d240e1a994ac2df5188449);
+        
+    
+        var popup_0942ebda89d44aa5b6a443fcc61ef941 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e55e96040ad843518094fccdc4f31b2a = $(`<div id="html_e55e96040ad843518094fccdc4f31b2a" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-2-a-ULA-2610" target="_blank">A2 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-2-a-ULA-868" target="_blank">A2 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-2-a-URA-2610" target="_blank">A2 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-2-a-URA-868" target="_blank">A2 URA 868</a><br> </div>`)[0];
+            popup_0942ebda89d44aa5b6a443fcc61ef941.setContent(html_e55e96040ad843518094fccdc4f31b2a);
+        
+
+        marker_91a63092c1434c3a9275ec770c73e16c.bindPopup(popup_0942ebda89d44aa5b6a443fcc61ef941)
+        ;
+
+        
+    
+    
+            var marker_80b62f984e3246cabe5d8169c1a84462 = L.marker(
+                [50.86182879999999, 4.6855519999999995],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_bf878079e7ef4fa78f6e0e1c22abbb17 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_80b62f984e3246cabe5d8169c1a84462.setIcon(icon_bf878079e7ef4fa78f6e0e1c22abbb17);
+        
+    
+        var popup_9726883e3bd84de9bf1f8e0adf166c06 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9b5018b7c3304ca482cd442ca151bf8e = $(`<div id="html_9b5018b7c3304ca482cd442ca151bf8e" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-3-a-ULA-2610" target="_blank">A3 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-3-a-ULA-868" target="_blank">A3 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-3-a-URA-2610" target="_blank">A3 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-3-a-URA-868" target="_blank">A3 URA 868</a><br> </div>`)[0];
+            popup_9726883e3bd84de9bf1f8e0adf166c06.setContent(html_9b5018b7c3304ca482cd442ca151bf8e);
+        
+
+        marker_80b62f984e3246cabe5d8169c1a84462.bindPopup(popup_9726883e3bd84de9bf1f8e0adf166c06)
+        ;
+
+        
+    
+    
+            var marker_d8ce7daa3adc47a19fbc81caf3f1c7e1 = L.marker(
+                [50.86174570000001, 4.685499],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_97bccfc09f5f473b9028933f80110ea1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d8ce7daa3adc47a19fbc81caf3f1c7e1.setIcon(icon_97bccfc09f5f473b9028933f80110ea1);
+        
+    
+        var popup_9c66f213c44342dc9dd7468299bce139 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4f53f120ea9e44a2bee36d29f73d9be4 = $(`<div id="html_4f53f120ea9e44a2bee36d29f73d9be4" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-4-a-ULA-2610" target="_blank">A4 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-4-a-ULA-868" target="_blank">A4 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-4-a-URA-2610" target="_blank">A4 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-4-a-URA-868" target="_blank">A4 URA 868</a><br> </div>`)[0];
+            popup_9c66f213c44342dc9dd7468299bce139.setContent(html_4f53f120ea9e44a2bee36d29f73d9be4);
+        
+
+        marker_d8ce7daa3adc47a19fbc81caf3f1c7e1.bindPopup(popup_9c66f213c44342dc9dd7468299bce139)
+        ;
+
+        
+    
+    
+            var marker_da2d1288616c4a3da195e64bcb4caa79 = L.marker(
+                [50.8616782, 4.68539],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_356d5e854e5e48fa93b8b8c80ee53f33 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_da2d1288616c4a3da195e64bcb4caa79.setIcon(icon_356d5e854e5e48fa93b8b8c80ee53f33);
+        
+    
+        var popup_9c6a12a615fc4cf1beece418f329de83 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0df6e4f3b0884cbca72aeb0c61f2e6e0 = $(`<div id="html_0df6e4f3b0884cbca72aeb0c61f2e6e0" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-5-a-ULA-2610" target="_blank">A5 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-5-a-ULA-868" target="_blank">A5 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-5-a-URA-2610" target="_blank">A5 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-5-a-URA-868" target="_blank">A5 URA 868</a><br> </div>`)[0];
+            popup_9c6a12a615fc4cf1beece418f329de83.setContent(html_0df6e4f3b0884cbca72aeb0c61f2e6e0);
+        
+
+        marker_da2d1288616c4a3da195e64bcb4caa79.bindPopup(popup_9c6a12a615fc4cf1beece418f329de83)
+        ;
+
+        
+    
+    
+            var marker_924f6dc50db1437fbc4346aaab4fbef8 = L.marker(
+                [50.8616263, 4.6852851],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_e0788becf2a24878bb1aa4c49037467b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_924f6dc50db1437fbc4346aaab4fbef8.setIcon(icon_e0788becf2a24878bb1aa4c49037467b);
+        
+    
+        var popup_c3144ab5ace94db286d316b85762085f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f0aba30bf9ea4111836896e9ddbf54d0 = $(`<div id="html_f0aba30bf9ea4111836896e9ddbf54d0" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-6-a-ULA-2610" target="_blank">A6 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-6-a-ULA-868" target="_blank">A6 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-6-a-URA-2610" target="_blank">A6 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-6-a-URA-868" target="_blank">A6 URA 868</a><br> </div>`)[0];
+            popup_c3144ab5ace94db286d316b85762085f.setContent(html_f0aba30bf9ea4111836896e9ddbf54d0);
+        
+
+        marker_924f6dc50db1437fbc4346aaab4fbef8.bindPopup(popup_c3144ab5ace94db286d316b85762085f)
+        ;
+
+        
+    
+    
+            var marker_f5e80a2783364d4f8d6265baad4ebe1a = L.marker(
+                [50.8615607, 4.6851772],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_7ee7d23ea45c4ca18947932a226457a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f5e80a2783364d4f8d6265baad4ebe1a.setIcon(icon_7ee7d23ea45c4ca18947932a226457a9);
+        
+    
+        var popup_c281f1976d274bdf99db079c62ac3108 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_42478f01ddbd467d8dd3404a9be44fdb = $(`<div id="html_42478f01ddbd467d8dd3404a9be44fdb" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-7-a-ULA-2610" target="_blank">A7 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-7-a-ULA-868" target="_blank">A7 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-7-a-URA-2610" target="_blank">A7 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-7-a-URA-868" target="_blank">A7 URA 868</a><br> </div>`)[0];
+            popup_c281f1976d274bdf99db079c62ac3108.setContent(html_42478f01ddbd467d8dd3404a9be44fdb);
+        
+
+        marker_f5e80a2783364d4f8d6265baad4ebe1a.bindPopup(popup_c281f1976d274bdf99db079c62ac3108)
+        ;
+
+        
+    
+    
+            var marker_da5cd64545344fe783ba9968800f63fd = L.marker(
+                [50.861498600000004, 4.6850528],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_a6346be01be249bba199e812a312e157 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_da5cd64545344fe783ba9968800f63fd.setIcon(icon_a6346be01be249bba199e812a312e157);
+        
+    
+        var popup_cf852692dd904f5c9c532edf866ab770 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_274811aadcbc40abb1b69dc4bc978ebf = $(`<div id="html_274811aadcbc40abb1b69dc4bc978ebf" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-8-a-ULA-2610" target="_blank">A8 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-8-a-ULA-868" target="_blank">A8 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-8-a-URA-2610" target="_blank">A8 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-8-a-URA-868" target="_blank">A8 URA 868</a><br> </div>`)[0];
+            popup_cf852692dd904f5c9c532edf866ab770.setContent(html_274811aadcbc40abb1b69dc4bc978ebf);
+        
+
+        marker_da5cd64545344fe783ba9968800f63fd.bindPopup(popup_cf852692dd904f5c9c532edf866ab770)
+        ;
+
+        
+    
+    
+            var marker_c84f9e447c59411eabd51e1a8a90f232 = L.marker(
+                [50.8614297, 4.684957],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_eea44c7caa024d78823784204d01ebb7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c84f9e447c59411eabd51e1a8a90f232.setIcon(icon_eea44c7caa024d78823784204d01ebb7);
+        
+    
+        var popup_ba1dd6a620e04ef38b1ce163a9e868fa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f3b0a2ebc1da4de0bd9d3fb8bb823559 = $(`<div id="html_f3b0a2ebc1da4de0bd9d3fb8bb823559" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-9-a-ULA-2610" target="_blank">A9 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-9-a-ULA-868" target="_blank">A9 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-9-a-URA-2610" target="_blank">A9 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-9-a-URA-868" target="_blank">A9 URA 868</a><br> </div>`)[0];
+            popup_ba1dd6a620e04ef38b1ce163a9e868fa.setContent(html_f3b0a2ebc1da4de0bd9d3fb8bb823559);
+        
+
+        marker_c84f9e447c59411eabd51e1a8a90f232.bindPopup(popup_ba1dd6a620e04ef38b1ce163a9e868fa)
+        ;
+
+        
+    
+    
+            var marker_db83dd95fed0485a950c7106edd3fc05 = L.marker(
+                [50.8615562, 4.6848683],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_411676561c524737a7795093aad3c769 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_db83dd95fed0485a950c7106edd3fc05.setIcon(icon_411676561c524737a7795093aad3c769);
+        
+    
+        var popup_e94b0e2ad6044d2a8be2da3dfef1696f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_45d1abec860f4022a0bd1870a6474428 = $(`<div id="html_45d1abec860f4022a0bd1870a6474428" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-10-a-ULA-2610" target="_blank">A10 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-10-a-ULA-868" target="_blank">A10 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-10-a-URA-2610" target="_blank">A10 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-10-a-URA-868" target="_blank">A10 URA 868</a><br> </div>`)[0];
+            popup_e94b0e2ad6044d2a8be2da3dfef1696f.setContent(html_45d1abec860f4022a0bd1870a6474428);
+        
+
+        marker_db83dd95fed0485a950c7106edd3fc05.bindPopup(popup_e94b0e2ad6044d2a8be2da3dfef1696f)
+        ;
+
+        
+    
+    
+            var marker_7cebd419b16b441b837905a7b03bf64d = L.marker(
+                [50.861509000000005, 4.6847089],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_fcbb79cb67014bd8af0b4d2e8c6e7011 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7cebd419b16b441b837905a7b03bf64d.setIcon(icon_fcbb79cb67014bd8af0b4d2e8c6e7011);
+        
+    
+        var popup_f2185be98bd440d8a52c6b0b1118f722 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_34aa2e8869044ebb90bb1ecf7fde74c2 = $(`<div id="html_34aa2e8869044ebb90bb1ecf7fde74c2" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-11-a-ULA-2610" target="_blank">A11 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-11-a-ULA-868" target="_blank">A11 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-11-a-URA-2610" target="_blank">A11 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-11-a-URA-868" target="_blank">A11 URA 868</a><br> </div>`)[0];
+            popup_f2185be98bd440d8a52c6b0b1118f722.setContent(html_34aa2e8869044ebb90bb1ecf7fde74c2);
+        
+
+        marker_7cebd419b16b441b837905a7b03bf64d.bindPopup(popup_f2185be98bd440d8a52c6b0b1118f722)
+        ;
+
+        
+    
+    
+            var marker_72ee88a3c6e04420b034238feca2b653 = L.marker(
+                [50.861444899999995, 4.6845703],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_5a8deefc0951422f9519c1b556b2181f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_72ee88a3c6e04420b034238feca2b653.setIcon(icon_5a8deefc0951422f9519c1b556b2181f);
+        
+    
+        var popup_f5cf147d43e243ae87f3da758a7d73b0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d56132eda5ab4cff99380f647cce1177 = $(`<div id="html_d56132eda5ab4cff99380f647cce1177" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-12-a-ULA-2610" target="_blank">A12 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-12-a-ULA-868" target="_blank">A12 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-12-a-URA-2610" target="_blank">A12 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-12-a-URA-868" target="_blank">A12 URA 868</a><br> </div>`)[0];
+            popup_f5cf147d43e243ae87f3da758a7d73b0.setContent(html_d56132eda5ab4cff99380f647cce1177);
+        
+
+        marker_72ee88a3c6e04420b034238feca2b653.bindPopup(popup_f5cf147d43e243ae87f3da758a7d73b0)
+        ;
+
+        
+    
+    
+            var marker_4f2c4372f91349bdae4628548b974edd = L.marker(
+                [50.8614041, 4.684472599999999],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_4d8787f8f6eb4bd99d5b0e3bfdececc1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4f2c4372f91349bdae4628548b974edd.setIcon(icon_4d8787f8f6eb4bd99d5b0e3bfdececc1);
+        
+    
+        var popup_98b0cf9e9e1e4af7b8292871b2b75ee5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4b1306be83f64355a9f985db02a94db3 = $(`<div id="html_4b1306be83f64355a9f985db02a94db3" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-13-a-ULA-2610" target="_blank">A13 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-13-a-ULA-868" target="_blank">A13 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-13-a-URA-2610" target="_blank">A13 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-13-a-URA-868" target="_blank">A13 URA 868</a><br> </div>`)[0];
+            popup_98b0cf9e9e1e4af7b8292871b2b75ee5.setContent(html_4b1306be83f64355a9f985db02a94db3);
+        
+
+        marker_4f2c4372f91349bdae4628548b974edd.bindPopup(popup_98b0cf9e9e1e4af7b8292871b2b75ee5)
+        ;
+
+        
+    
+    
+            var marker_7bb4f3233b28480095f0ded2d99f4544 = L.marker(
+                [50.861346999999995, 4.684345400000001],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_82eaaf2e33b54060aca0129a025f58ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7bb4f3233b28480095f0ded2d99f4544.setIcon(icon_82eaaf2e33b54060aca0129a025f58ed);
+        
+    
+        var popup_396d83f4f87647fc8eea2ad0d99d1a93 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8181370e3d27451fb613dd5a31b174b5 = $(`<div id="html_8181370e3d27451fb613dd5a31b174b5" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-14-a-ULA-2610" target="_blank">A14 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-14-a-ULA-868" target="_blank">A14 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-14-a-URA-2610" target="_blank">A14 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\A-14-a-URA-868" target="_blank">A14 URA 868</a><br> </div>`)[0];
+            popup_396d83f4f87647fc8eea2ad0d99d1a93.setContent(html_8181370e3d27451fb613dd5a31b174b5);
+        
+
+        marker_7bb4f3233b28480095f0ded2d99f4544.bindPopup(popup_396d83f4f87647fc8eea2ad0d99d1a93)
+        ;
+
+        
+    
+    
+            var marker_d0cc8a7ef1bc4a77a5abd16d427f5317 = L.marker(
+                [50.86122460000001, 4.6852169],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_37a447c5e58e48c58582169b83e91fc3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d0cc8a7ef1bc4a77a5abd16d427f5317.setIcon(icon_37a447c5e58e48c58582169b83e91fc3);
+        
+    
+        var popup_39b380683c4c494d89434a9c63670f56 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f59f83ab6a7347f58dec142340563235 = $(`<div id="html_f59f83ab6a7347f58dec142340563235" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-1-a-ULA-2610" target="_blank">C1 (straatkant) ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-1-a-ULA-868" target="_blank">C1 (straatkant) ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-1-a-URA-2610" target="_blank">C1 (straatkant) URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-1-a-URA-868" target="_blank">C1 (straatkant) URA 868</a><br> </div>`)[0];
+            popup_39b380683c4c494d89434a9c63670f56.setContent(html_f59f83ab6a7347f58dec142340563235);
+        
+
+        marker_d0cc8a7ef1bc4a77a5abd16d427f5317.bindPopup(popup_39b380683c4c494d89434a9c63670f56)
+        ;
+
+        
+    
+    
+            var marker_9c223d1e08c54f6c9afd7f130d103c68 = L.marker(
+                [50.861297, 4.6851494],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_7833daf1f6a3452f947a23e5e29a2fc5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9c223d1e08c54f6c9afd7f130d103c68.setIcon(icon_7833daf1f6a3452f947a23e5e29a2fc5);
+        
+    
+        var popup_7ff7a3ab23fa43528832d794e2834228 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ad05b558312a47a58a6cb3e23d42e1c7 = $(`<div id="html_ad05b558312a47a58a6cb3e23d42e1c7" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-2-a-ULA-2610" target="_blank">C2 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-2-a-ULA-868" target="_blank">C2 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-2-a-URA-2610" target="_blank">C2 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-2-a-URA-868" target="_blank">C2 URA 868</a><br> </div>`)[0];
+            popup_7ff7a3ab23fa43528832d794e2834228.setContent(html_ad05b558312a47a58a6cb3e23d42e1c7);
+        
+
+        marker_9c223d1e08c54f6c9afd7f130d103c68.bindPopup(popup_7ff7a3ab23fa43528832d794e2834228)
+        ;
+
+        
+    
+    
+            var marker_b8daf3ce4c074b3fa2a6c456cc67ff68 = L.marker(
+                [50.8613554, 4.6850677],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_06664b7f0d12406684ccc2e5991c6e6a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b8daf3ce4c074b3fa2a6c456cc67ff68.setIcon(icon_06664b7f0d12406684ccc2e5991c6e6a);
+        
+    
+        var popup_ebcd6d75ce114faf8639bd01f25b095f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3b06f865eb954030a5839bd8ce9801a7 = $(`<div id="html_3b06f865eb954030a5839bd8ce9801a7" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-3-a-ULA-2610" target="_blank">C3 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-3-a-ULA-868" target="_blank">C3 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-3-a-URA-2610" target="_blank">C3 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-3-a-URA-868" target="_blank">C3 URA 868</a><br> </div>`)[0];
+            popup_ebcd6d75ce114faf8639bd01f25b095f.setContent(html_3b06f865eb954030a5839bd8ce9801a7);
+        
+
+        marker_b8daf3ce4c074b3fa2a6c456cc67ff68.bindPopup(popup_ebcd6d75ce114faf8639bd01f25b095f)
+        ;
+
+        
+    
+    
+            var marker_31e810ffd8c347bf80cb48f63aa600ce = L.marker(
+                [50.861425, 4.684993],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_ef88021013ee44189832c9f07f91be26 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_31e810ffd8c347bf80cb48f63aa600ce.setIcon(icon_ef88021013ee44189832c9f07f91be26);
+        
+    
+        var popup_d7f4d3b73b794b7f838d9ca40668bc31 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_da0da0ae76ef42539b4260d59a3f3fa8 = $(`<div id="html_da0da0ae76ef42539b4260d59a3f3fa8" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-4-a-ULA-2610" target="_blank">C4 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-4-a-ULA-868" target="_blank">C4 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-4-a-URA-2610" target="_blank">C4 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-4-a-URA-868" target="_blank">C4 URA 868</a><br> </div>`)[0];
+            popup_d7f4d3b73b794b7f838d9ca40668bc31.setContent(html_da0da0ae76ef42539b4260d59a3f3fa8);
+        
+
+        marker_31e810ffd8c347bf80cb48f63aa600ce.bindPopup(popup_d7f4d3b73b794b7f838d9ca40668bc31)
+        ;
+
+        
+    
+    
+            var marker_3b4eddc5874f4060bdee5f2f74a35a13 = L.marker(
+                [50.8614945, 4.6849062],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_1452eb14ce194ea3849c854944fd527f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3b4eddc5874f4060bdee5f2f74a35a13.setIcon(icon_1452eb14ce194ea3849c854944fd527f);
+        
+    
+        var popup_b01586830a7f4ff3b2612062060cf92e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_953a5b168bc442e494561e29d1b4f6aa = $(`<div id="html_953a5b168bc442e494561e29d1b4f6aa" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-5-a-ULA-2610" target="_blank">C5 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-5-a-ULA-868" target="_blank">C5 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-5-a-URA-2610" target="_blank">C5 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-5-a-URA-868" target="_blank">C5 URA 868</a><br> </div>`)[0];
+            popup_b01586830a7f4ff3b2612062060cf92e.setContent(html_953a5b168bc442e494561e29d1b4f6aa);
+        
+
+        marker_3b4eddc5874f4060bdee5f2f74a35a13.bindPopup(popup_b01586830a7f4ff3b2612062060cf92e)
+        ;
+
+        
+    
+    
+            var marker_f6b601e0819849129f29f0278792316d = L.marker(
+                [50.86156810000001, 4.6848678],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_e37ae5c00be14e888b085b883bd44365 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f6b601e0819849129f29f0278792316d.setIcon(icon_e37ae5c00be14e888b085b883bd44365);
+        
+    
+        var popup_141c3522bd1547cab5c3be605f282564 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1ed99f42f5fd421eb71a4632be6ab30b = $(`<div id="html_1ed99f42f5fd421eb71a4632be6ab30b" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-6-a-ULA-2610" target="_blank">C6 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-6-a-ULA-868" target="_blank">C6 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-6-a-URA-2610" target="_blank">C6 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-6-a-URA-868" target="_blank">C6 URA 868</a><br> </div>`)[0];
+            popup_141c3522bd1547cab5c3be605f282564.setContent(html_1ed99f42f5fd421eb71a4632be6ab30b);
+        
+
+        marker_f6b601e0819849129f29f0278792316d.bindPopup(popup_141c3522bd1547cab5c3be605f282564)
+        ;
+
+        
+    
+    
+            var marker_f49eb8ed27b3423ca79b4dbdc3309257 = L.marker(
+                [50.861626799999996, 4.6847433],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_f576b9df3b1b4925b0c566714bf80b6a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f49eb8ed27b3423ca79b4dbdc3309257.setIcon(icon_f576b9df3b1b4925b0c566714bf80b6a);
+        
+    
+        var popup_ee21c221d2274df1a974dfe3732fe389 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6eb472da99e14266b732ad768f4e08a7 = $(`<div id="html_6eb472da99e14266b732ad768f4e08a7" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-7-a-ULA-2610" target="_blank">C7 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-7-a-ULA-868" target="_blank">C7 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-7-a-URA-2610" target="_blank">C7 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-7-a-URA-868" target="_blank">C7 URA 868</a><br> </div>`)[0];
+            popup_ee21c221d2274df1a974dfe3732fe389.setContent(html_6eb472da99e14266b732ad768f4e08a7);
+        
+
+        marker_f49eb8ed27b3423ca79b4dbdc3309257.bindPopup(popup_ee21c221d2274df1a974dfe3732fe389)
+        ;
+
+        
+    
+    
+            var marker_4fbe0f900c804e5490cc3216691a1ab1 = L.marker(
+                [50.8617138, 4.6846441],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_08bfd5c72ea74162b6f2df24a060fe56 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4fbe0f900c804e5490cc3216691a1ab1.setIcon(icon_08bfd5c72ea74162b6f2df24a060fe56);
+        
+    
+        var popup_16b064d8c49e4c43bf798ac5f160ddd8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e82aae1f2dba4650b293c783edee47eb = $(`<div id="html_e82aae1f2dba4650b293c783edee47eb" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-8-a-ULA-2610" target="_blank">C8 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-8-a-ULA-868" target="_blank">C8 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-8-a-URA-2610" target="_blank">C8 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-8-a-URA-868" target="_blank">C8 URA 868</a><br> </div>`)[0];
+            popup_16b064d8c49e4c43bf798ac5f160ddd8.setContent(html_e82aae1f2dba4650b293c783edee47eb);
+        
+
+        marker_4fbe0f900c804e5490cc3216691a1ab1.bindPopup(popup_16b064d8c49e4c43bf798ac5f160ddd8)
+        ;
+
+        
+    
+    
+            var marker_6cb13e54139b4a229520da5b96ad4779 = L.marker(
+                [50.861782700000006, 4.6845495999999995],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_d6360561c63845e2b714c72669e60c7d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6cb13e54139b4a229520da5b96ad4779.setIcon(icon_d6360561c63845e2b714c72669e60c7d);
+        
+    
+        var popup_05d678384ccd43ae91e3a1c5d4e68d91 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_47ae1506d2644da69bf2542d1980f685 = $(`<div id="html_47ae1506d2644da69bf2542d1980f685" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-9-a-ULA-2610" target="_blank">C9 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-9-a-ULA-868" target="_blank">C9 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-9-a-URA-2610" target="_blank">C9 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-9-a-URA-868" target="_blank">C9 URA 868</a><br> </div>`)[0];
+            popup_05d678384ccd43ae91e3a1c5d4e68d91.setContent(html_47ae1506d2644da69bf2542d1980f685);
+        
+
+        marker_6cb13e54139b4a229520da5b96ad4779.bindPopup(popup_05d678384ccd43ae91e3a1c5d4e68d91)
+        ;
+
+        
+    
+    
+            var marker_15bb103e44724bc5a3331994d1b1532a = L.marker(
+                [50.861844700000006, 4.6844641],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_30d38aab0b4244e088e2be6d99aa2333 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_15bb103e44724bc5a3331994d1b1532a.setIcon(icon_30d38aab0b4244e088e2be6d99aa2333);
+        
+    
+        var popup_67406c2e49e14ae5b6060c571d6c78e0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a3b3ce6746db4ce2bcfa4c42a409dacb = $(`<div id="html_a3b3ce6746db4ce2bcfa4c42a409dacb" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-10-a-ULA-2610" target="_blank">C10 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-10-a-ULA-868" target="_blank">C10 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-10-a-URA-2610" target="_blank">C10 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-10-a-URA-868" target="_blank">C10 URA 868</a><br> </div>`)[0];
+            popup_67406c2e49e14ae5b6060c571d6c78e0.setContent(html_a3b3ce6746db4ce2bcfa4c42a409dacb);
+        
+
+        marker_15bb103e44724bc5a3331994d1b1532a.bindPopup(popup_67406c2e49e14ae5b6060c571d6c78e0)
+        ;
+
+        
+    
+    
+            var marker_be77069ee7724befbe92c07cc5f6bfa4 = L.marker(
+                [50.8619154, 4.6843721],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_1273d82f15c74787a43e13981267e31e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_be77069ee7724befbe92c07cc5f6bfa4.setIcon(icon_1273d82f15c74787a43e13981267e31e);
+        
+    
+        var popup_399eac12e4d247a8954dc59b9d4668dc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9f1f9adca7b14ee8be89cf4142da8a31 = $(`<div id="html_9f1f9adca7b14ee8be89cf4142da8a31" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-11-a-ULA-2610" target="_blank">C11 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-11-a-ULA-868" target="_blank">C11 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-11-a-URA-2610" target="_blank">C11 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-11-a-URA-868" target="_blank">C11 URA 868</a><br> </div>`)[0];
+            popup_399eac12e4d247a8954dc59b9d4668dc.setContent(html_9f1f9adca7b14ee8be89cf4142da8a31);
+        
+
+        marker_be77069ee7724befbe92c07cc5f6bfa4.bindPopup(popup_399eac12e4d247a8954dc59b9d4668dc)
+        ;
+
+        
+    
+    
+            var marker_ceacc772c740445fb68ec76ebb3463b4 = L.marker(
+                [50.8619804, 4.6842926],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_d1294da274b741a59f10448fbf490b9d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ceacc772c740445fb68ec76ebb3463b4.setIcon(icon_d1294da274b741a59f10448fbf490b9d);
+        
+    
+        var popup_4bdda526bc9f43709f046c192c0d8d7d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b68716c29f5540fba8839d63c4d2cbf4 = $(`<div id="html_b68716c29f5540fba8839d63c4d2cbf4" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-12-a-ULA-868" target="_blank">C12 ULA 868</a><br> </div>`)[0];
+            popup_4bdda526bc9f43709f046c192c0d8d7d.setContent(html_b68716c29f5540fba8839d63c4d2cbf4);
+        
+
+        marker_ceacc772c740445fb68ec76ebb3463b4.bindPopup(popup_4bdda526bc9f43709f046c192c0d8d7d)
+        ;
+
+        
+    
+    
+            var marker_d70ee79ff3d24408bf7fabad4ec7233a = L.marker(
+                [50.8620526, 4.6841921],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_eb49f6d10ae94c9891d8dc9d69cd56c7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d70ee79ff3d24408bf7fabad4ec7233a.setIcon(icon_eb49f6d10ae94c9891d8dc9d69cd56c7);
+        
+    
+        var popup_8c3c4eb2ba3a49ffaaa5f300718a4367 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c1ad9c6dd15a41a79c00f12face3165a = $(`<div id="html_c1ad9c6dd15a41a79c00f12face3165a" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-13-a-ULA-868" target="_blank">C13 ULA 868</a><br> </div>`)[0];
+            popup_8c3c4eb2ba3a49ffaaa5f300718a4367.setContent(html_c1ad9c6dd15a41a79c00f12face3165a);
+        
+
+        marker_d70ee79ff3d24408bf7fabad4ec7233a.bindPopup(popup_8c3c4eb2ba3a49ffaaa5f300718a4367)
+        ;
+
+        
+    
+    
+            var marker_bfc8ecdb71f348a79a2a8829da7a437f = L.marker(
+                [50.8621283, 4.6841208],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_2b1cf3f33e224d889ba2eb7926cba54a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_bfc8ecdb71f348a79a2a8829da7a437f.setIcon(icon_2b1cf3f33e224d889ba2eb7926cba54a);
+        
+    
+        var popup_d03317c5ae244df892b50b71c6a54f50 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1a1f5e696a8a40c09da59ead5dbea396 = $(`<div id="html_1a1f5e696a8a40c09da59ead5dbea396" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\C-14-a-ULA-868" target="_blank">C14 (kasteel) ULA 868</a><br> </div>`)[0];
+            popup_d03317c5ae244df892b50b71c6a54f50.setContent(html_1a1f5e696a8a40c09da59ead5dbea396);
+        
+
+        marker_bfc8ecdb71f348a79a2a8829da7a437f.bindPopup(popup_d03317c5ae244df892b50b71c6a54f50)
+        ;
+
+        
+    
+    
+            var marker_c236ef3f7fd74d4f90bd6477c29a50c3 = L.marker(
+                [50.8614528, 4.6860351],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_d548b6cdf4884692a445a2bc23ff0f24 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_c236ef3f7fd74d4f90bd6477c29a50c3.setIcon(icon_d548b6cdf4884692a445a2bc23ff0f24);
+        
+    
+        var popup_1d0dd3102c4d4c9599dac2996c7a6014 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1d1a202bf656488c84cc07fa4bd11863 = $(`<div id="html_1d1a202bf656488c84cc07fa4bd11863" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-1-a-ULA-2610" target="_blank">D1 (the lodge) ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-1-a-ULA-868" target="_blank">D1 (the lodge) ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-1-a-URA-2610" target="_blank">D1 (the lodge) URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-1-a-URA-868" target="_blank">D1 (the lodge) URA 868</a><br> </div>`)[0];
+            popup_1d0dd3102c4d4c9599dac2996c7a6014.setContent(html_1d1a202bf656488c84cc07fa4bd11863);
+        
+
+        marker_c236ef3f7fd74d4f90bd6477c29a50c3.bindPopup(popup_1d0dd3102c4d4c9599dac2996c7a6014)
+        ;
+
+        
+    
+    
+            var marker_c20b01df20b04ebca54bad54c27582ff = L.marker(
+                [50.86138820000001, 4.6859087],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_257f576bf5a147ba858088ddcee1025a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_c20b01df20b04ebca54bad54c27582ff.setIcon(icon_257f576bf5a147ba858088ddcee1025a);
+        
+    
+        var popup_63b1420ff5984292b7984d68828f0f69 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b28cc8d09c164eedb255f57c231234d4 = $(`<div id="html_b28cc8d09c164eedb255f57c231234d4" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-2-a-ULA-2610" target="_blank">D2 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-2-a-ULA-868" target="_blank">D2 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-2-a-URA-2610" target="_blank">D2 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-2-a-URA-868" target="_blank">D2 URA 868</a><br> </div>`)[0];
+            popup_63b1420ff5984292b7984d68828f0f69.setContent(html_b28cc8d09c164eedb255f57c231234d4);
+        
+
+        marker_c20b01df20b04ebca54bad54c27582ff.bindPopup(popup_63b1420ff5984292b7984d68828f0f69)
+        ;
+
+        
+    
+    
+            var marker_bdbbfdfbc90e48feac905d3d4ea0da7c = L.marker(
+                [50.8613252, 4.6858300999999996],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_a477f58e5e5d427184dacc38e27b67f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_bdbbfdfbc90e48feac905d3d4ea0da7c.setIcon(icon_a477f58e5e5d427184dacc38e27b67f2);
+        
+    
+        var popup_b05f3df77a68498ab95db6df0afd018d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8e877ccfeaa7416d9524691678be2986 = $(`<div id="html_8e877ccfeaa7416d9524691678be2986" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-3-a-ULA-2610" target="_blank">D3 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-3-a-ULA-868" target="_blank">D3 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-3-a-URA-2610" target="_blank">D3 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\D-3-a-URA-868" target="_blank">D3 URA 868</a><br> </div>`)[0];
+            popup_b05f3df77a68498ab95db6df0afd018d.setContent(html_8e877ccfeaa7416d9524691678be2986);
+        
+
+        marker_bdbbfdfbc90e48feac905d3d4ea0da7c.bindPopup(popup_b05f3df77a68498ab95db6df0afd018d)
+        ;
+
+        
+    
+    
+            var marker_dd111578466644668648355bae61b347 = L.marker(
+                [50.8612604, 4.685668499999999],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_ffdc24fd0ed54d559658f1742ddd493e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_dd111578466644668648355bae61b347.setIcon(icon_ffdc24fd0ed54d559658f1742ddd493e);
+        
+    
+        var popup_549d6de44955450687461954e7b9bc6b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e392bc49a881498db72a4629c077a486 = $(`<div id="html_e392bc49a881498db72a4629c077a486" style="width: 100.0%; height: 100.0%;"></div>`)[0];
+            popup_549d6de44955450687461954e7b9bc6b.setContent(html_e392bc49a881498db72a4629c077a486);
+        
+
+        marker_dd111578466644668648355bae61b347.bindPopup(popup_549d6de44955450687461954e7b9bc6b)
+        ;
+
+        
+    
+    
+            var marker_9a69abbdb0e04eeea5c1843cdb31ede2 = L.marker(
+                [50.8615925, 4.685877],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_c73c612674734224abed905b2c1a0b6b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9a69abbdb0e04eeea5c1843cdb31ede2.setIcon(icon_c73c612674734224abed905b2c1a0b6b);
+        
+    
+        var popup_af1d1dd68c6f49009e65811716a3ee78 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b1d9bad27b61401097ce57cf2bc6c0e3 = $(`<div id="html_b1d9bad27b61401097ce57cf2bc6c0e3" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-1-a-ULA-2610" target="_blank">B1 (straatkant) ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-1-a-ULA-868" target="_blank">B1 (straatkant) ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-1-a-URA-2610" target="_blank">B1 (straatkant) URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-1-a-URA-868" target="_blank">B1 (straatkant) URA 868</a><br> </div>`)[0];
+            popup_af1d1dd68c6f49009e65811716a3ee78.setContent(html_b1d9bad27b61401097ce57cf2bc6c0e3);
+        
+
+        marker_9a69abbdb0e04eeea5c1843cdb31ede2.bindPopup(popup_af1d1dd68c6f49009e65811716a3ee78)
+        ;
+
+        
+    
+    
+            var marker_b08c89180003435ea6194c3db117bb52 = L.marker(
+                [50.8616422, 4.685765],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_0bd3048c66d64ce79506cc88f402300c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b08c89180003435ea6194c3db117bb52.setIcon(icon_0bd3048c66d64ce79506cc88f402300c);
+        
+    
+        var popup_578676bf1a724fc083200b78fef8d9b4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_166552fe16f64c09a9b548f8b2108390 = $(`<div id="html_166552fe16f64c09a9b548f8b2108390" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-2-a-ULA-2610" target="_blank">B2 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-2-a-ULA-868" target="_blank">B2 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-2-a-URA-2610" target="_blank">B2 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-2-a-URA-868" target="_blank">B2 URA 868</a><br> </div>`)[0];
+            popup_578676bf1a724fc083200b78fef8d9b4.setContent(html_166552fe16f64c09a9b548f8b2108390);
+        
+
+        marker_b08c89180003435ea6194c3db117bb52.bindPopup(popup_578676bf1a724fc083200b78fef8d9b4)
+        ;
+
+        
+    
+    
+            var marker_018783d768854513b3a7caae60e71be8 = L.marker(
+                [50.86169279999999, 4.6856898000000005],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_9e3b5a0b605f404688db9707c73de40e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_018783d768854513b3a7caae60e71be8.setIcon(icon_9e3b5a0b605f404688db9707c73de40e);
+        
+    
+        var popup_78b90c141af643f09450e3dc0651255a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c94a38d065de4ed49633522dceacaad9 = $(`<div id="html_c94a38d065de4ed49633522dceacaad9" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-3-a-ULA-2610" target="_blank">B3 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-3-a-ULA-868" target="_blank">B3 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-3-a-URA-2610" target="_blank">B3 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-3-a-URA-868" target="_blank">B3 URA 868</a><br> </div>`)[0];
+            popup_78b90c141af643f09450e3dc0651255a.setContent(html_c94a38d065de4ed49633522dceacaad9);
+        
+
+        marker_018783d768854513b3a7caae60e71be8.bindPopup(popup_78b90c141af643f09450e3dc0651255a)
+        ;
+
+        
+    
+    
+            var marker_c56100153f364900a2a117ea19143f5e = L.marker(
+                [50.8617345, 4.6855961],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_e88e4085a1e4448ba20cd779517b45b1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c56100153f364900a2a117ea19143f5e.setIcon(icon_e88e4085a1e4448ba20cd779517b45b1);
+        
+    
+        var popup_2fa73acb1a3f41349d7d47d168df6b22 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_686d9c4e71194905b49f673e8eeab499 = $(`<div id="html_686d9c4e71194905b49f673e8eeab499" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-4-a-ULA-2610" target="_blank">B4 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-4-a-ULA-868" target="_blank">B4 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-4-a-URA-2610" target="_blank">B4 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-4-a-URA-868" target="_blank">B4 URA 868</a><br> </div>`)[0];
+            popup_2fa73acb1a3f41349d7d47d168df6b22.setContent(html_686d9c4e71194905b49f673e8eeab499);
+        
+
+        marker_c56100153f364900a2a117ea19143f5e.bindPopup(popup_2fa73acb1a3f41349d7d47d168df6b22)
+        ;
+
+        
+    
+    
+            var marker_64eb3a7d04344670a6b529dbf0eab1a0 = L.marker(
+                [50.861824299999995, 4.6855231],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_86c0e0edfc444db98e972eb1e4210938 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_64eb3a7d04344670a6b529dbf0eab1a0.setIcon(icon_86c0e0edfc444db98e972eb1e4210938);
+        
+    
+        var popup_3d48a3e1c3984b3c94a36a09f3e93ad2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e4d8cb654263458aa2fee71af7501d77 = $(`<div id="html_e4d8cb654263458aa2fee71af7501d77" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-5-a-ULA-2610" target="_blank">B5 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-5-a-ULA-868" target="_blank">B5 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-5-a-URA-2610" target="_blank">B5 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-5-a-URA-868" target="_blank">B5 URA 868</a><br> </div>`)[0];
+            popup_3d48a3e1c3984b3c94a36a09f3e93ad2.setContent(html_e4d8cb654263458aa2fee71af7501d77);
+        
+
+        marker_64eb3a7d04344670a6b529dbf0eab1a0.bindPopup(popup_3d48a3e1c3984b3c94a36a09f3e93ad2)
+        ;
+
+        
+    
+    
+            var marker_f8179c8d17af4c74a1f53f58c520062d = L.marker(
+                [50.8618802, 4.68542],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_3ffb1e1e3a714e4abde3d0abc1c7bf8c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f8179c8d17af4c74a1f53f58c520062d.setIcon(icon_3ffb1e1e3a714e4abde3d0abc1c7bf8c);
+        
+    
+        var popup_e8f1fc1a873549209ae282b71589a998 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7681b828278642cfb25b02545c02fb15 = $(`<div id="html_7681b828278642cfb25b02545c02fb15" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-6-a-ULA-2610" target="_blank">B6 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-6-a-ULA-868" target="_blank">B6 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-6-a-URA-2610" target="_blank">B6 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-6-a-URA-868" target="_blank">B6 URA 868</a><br> </div>`)[0];
+            popup_e8f1fc1a873549209ae282b71589a998.setContent(html_7681b828278642cfb25b02545c02fb15);
+        
+
+        marker_f8179c8d17af4c74a1f53f58c520062d.bindPopup(popup_e8f1fc1a873549209ae282b71589a998)
+        ;
+
+        
+    
+    
+            var marker_36de10bdb52e4e08be0ee1ae4418c030 = L.marker(
+                [50.8619484, 4.6853175],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_b56c2b533ada457899ed1e3af51be08f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_36de10bdb52e4e08be0ee1ae4418c030.setIcon(icon_b56c2b533ada457899ed1e3af51be08f);
+        
+    
+        var popup_f1815498d1f74c178069731c97471bed = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ffcc3e32ae994a888ee9c9d2ce089501 = $(`<div id="html_ffcc3e32ae994a888ee9c9d2ce089501" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-7-a-ULA-2610" target="_blank">B7 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-7-a-ULA-868" target="_blank">B7 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-7-a-URA-2610" target="_blank">B7 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-7-a-URA-868" target="_blank">B7 URA 868</a><br> </div>`)[0];
+            popup_f1815498d1f74c178069731c97471bed.setContent(html_ffcc3e32ae994a888ee9c9d2ce089501);
+        
+
+        marker_36de10bdb52e4e08be0ee1ae4418c030.bindPopup(popup_f1815498d1f74c178069731c97471bed)
+        ;
+
+        
+    
+    
+            var marker_bc024773857c48218f91cd025eed0feb = L.marker(
+                [50.862044299999994, 4.685304400000001],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_4bb10058c9f846a8ab62f8a227b52252 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_bc024773857c48218f91cd025eed0feb.setIcon(icon_4bb10058c9f846a8ab62f8a227b52252);
+        
+    
+        var popup_add80b5e2d4e4e5eabb8fd72549d18f1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bb3256fa896c4524b45a7359b5994d55 = $(`<div id="html_bb3256fa896c4524b45a7359b5994d55" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-8-a-ULA-2610" target="_blank">B8 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-8-a-ULA-868" target="_blank">B8 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-8-a-URA-2610" target="_blank">B8 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-8-a-URA-868" target="_blank">B8 URA 868</a><br> </div>`)[0];
+            popup_add80b5e2d4e4e5eabb8fd72549d18f1.setContent(html_bb3256fa896c4524b45a7359b5994d55);
+        
+
+        marker_bc024773857c48218f91cd025eed0feb.bindPopup(popup_add80b5e2d4e4e5eabb8fd72549d18f1)
+        ;
+
+        
+    
+    
+            var marker_6097f9fb78974784a13cf11f52802cdd = L.marker(
+                [50.862127799999996, 4.6852065000000005],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_2a00a327f73445209682eef605e762d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6097f9fb78974784a13cf11f52802cdd.setIcon(icon_2a00a327f73445209682eef605e762d5);
+        
+    
+        var popup_1e21fa91031e41d19fdec3f62b12ffbf = L.popup({"maxWidth": "100%"});
+
+        
+            var html_da17ad4c07524cf99fad864726e042ae = $(`<div id="html_da17ad4c07524cf99fad864726e042ae" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-9-a-ULA-2610" target="_blank">B9 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-9-a-ULA-868" target="_blank">B9 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-9-a-URA-2610" target="_blank">B9 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-9-a-URA-868" target="_blank">B9 URA 868</a><br> </div>`)[0];
+            popup_1e21fa91031e41d19fdec3f62b12ffbf.setContent(html_da17ad4c07524cf99fad864726e042ae);
+        
+
+        marker_6097f9fb78974784a13cf11f52802cdd.bindPopup(popup_1e21fa91031e41d19fdec3f62b12ffbf)
+        ;
+
+        
+    
+    
+            var marker_b36d749b3b97431187516cdaf181ab6b = L.marker(
+                [50.8621894, 4.6851213],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_1e670b4ac0354e71a723b75cc6433434 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b36d749b3b97431187516cdaf181ab6b.setIcon(icon_1e670b4ac0354e71a723b75cc6433434);
+        
+    
+        var popup_76647b4879694d84853dac4fd4cd8d88 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_61b89d12085949c98f3a775802edc1e6 = $(`<div id="html_61b89d12085949c98f3a775802edc1e6" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-10-a-ULA-2610" target="_blank">B10 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-10-a-ULA-868" target="_blank">B10 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-10-a-URA-2610" target="_blank">B10 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-10-a-URA-868" target="_blank">B10 URA 868</a><br> </div>`)[0];
+            popup_76647b4879694d84853dac4fd4cd8d88.setContent(html_61b89d12085949c98f3a775802edc1e6);
+        
+
+        marker_b36d749b3b97431187516cdaf181ab6b.bindPopup(popup_76647b4879694d84853dac4fd4cd8d88)
+        ;
+
+        
+    
+    
+            var marker_30762a1932c74707a256200c5c69d7d0 = L.marker(
+                [50.862275700000005, 4.6850522],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_45b060aa8a53458e8880253cb06af2a5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_30762a1932c74707a256200c5c69d7d0.setIcon(icon_45b060aa8a53458e8880253cb06af2a5);
+        
+    
+        var popup_cff56fac24154f31896cf3a74940af85 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f64e1ca978be4a7183904a8fd0e69e43 = $(`<div id="html_f64e1ca978be4a7183904a8fd0e69e43" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-11-a-ULA-2610" target="_blank">B11 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-11-a-ULA-868" target="_blank">B11 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-11-a-URA-2610" target="_blank">B11 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-11-a-URA-868" target="_blank">B11 URA 868</a><br> </div>`)[0];
+            popup_cff56fac24154f31896cf3a74940af85.setContent(html_f64e1ca978be4a7183904a8fd0e69e43);
+        
+
+        marker_30762a1932c74707a256200c5c69d7d0.bindPopup(popup_cff56fac24154f31896cf3a74940af85)
+        ;
+
+        
+    
+    
+            var marker_258960621e0a47779e1620c5f73c54f9 = L.marker(
+                [50.8623268, 4.6849453],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_825f2dd864cb43ec80b4cddb7a9040e8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_258960621e0a47779e1620c5f73c54f9.setIcon(icon_825f2dd864cb43ec80b4cddb7a9040e8);
+        
+    
+        var popup_a2115cd2572a44a7a4bdfb0d547885dc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c04a91c90553430c8f2b2b8e1f7ffba7 = $(`<div id="html_c04a91c90553430c8f2b2b8e1f7ffba7" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-12-a-ULA-2610" target="_blank">B12 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-12-a-ULA-868" target="_blank">B12 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-12-a-URA-2610" target="_blank">B12 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-12-a-URA-868" target="_blank">B12 URA 868</a><br> </div>`)[0];
+            popup_a2115cd2572a44a7a4bdfb0d547885dc.setContent(html_c04a91c90553430c8f2b2b8e1f7ffba7);
+        
+
+        marker_258960621e0a47779e1620c5f73c54f9.bindPopup(popup_a2115cd2572a44a7a4bdfb0d547885dc)
+        ;
+
+        
+    
+    
+            var marker_fcfd3e3a25084288a95d3054c68b8ef0 = L.marker(
+                [50.862389799999995, 4.6848591],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_784f8da46e3746c497b9e2019e370d62 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fcfd3e3a25084288a95d3054c68b8ef0.setIcon(icon_784f8da46e3746c497b9e2019e370d62);
+        
+    
+        var popup_c0ddbe39ba8f4eed8aa3c91ddd1c3dba = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1d7373dc3eec40818b4a70f007c38e36 = $(`<div id="html_1d7373dc3eec40818b4a70f007c38e36" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-13-a-ULA-2610" target="_blank">B13 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-13-a-ULA-868" target="_blank">B13 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-13-a-URA-2610" target="_blank">B13 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-13-a-URA-868" target="_blank">B13 URA 868</a><br> </div>`)[0];
+            popup_c0ddbe39ba8f4eed8aa3c91ddd1c3dba.setContent(html_1d7373dc3eec40818b4a70f007c38e36);
+        
+
+        marker_fcfd3e3a25084288a95d3054c68b8ef0.bindPopup(popup_c0ddbe39ba8f4eed8aa3c91ddd1c3dba)
+        ;
+
+        
+    
+    
+            var marker_5656cf5827594e89a051138b5da3867b = L.marker(
+                [50.862463299999995, 4.6847433],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_e5855fddff084e95929e788b324d3a10 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5656cf5827594e89a051138b5da3867b.setIcon(icon_e5855fddff084e95929e788b324d3a10);
+        
+    
+        var popup_693ef6e3af9e4ad2ba39f19c53b224e3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_117dc826c1f4491f9e6485768b3b039e = $(`<div id="html_117dc826c1f4491f9e6485768b3b039e" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-14-a-ULA-2610" target="_blank">B14 ULA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-14-a-ULA-868" target="_blank">B14 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-14-a-URA-2610" target="_blank">B14 URA 2610</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-14-a-URA-868" target="_blank">B14 URA 868</a><br> </div>`)[0];
+            popup_693ef6e3af9e4ad2ba39f19c53b224e3.setContent(html_117dc826c1f4491f9e6485768b3b039e);
+        
+
+        marker_5656cf5827594e89a051138b5da3867b.bindPopup(popup_693ef6e3af9e4ad2ba39f19c53b224e3)
+        ;
+
+        
+    
+    
+            var marker_81e728556d774ee0a0a7bb3698dde38e = L.marker(
+                [50.8625272, 4.684660500000001],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_842f5626338c4ccda08faa8103b690d1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_81e728556d774ee0a0a7bb3698dde38e.setIcon(icon_842f5626338c4ccda08faa8103b690d1);
+        
+    
+        var popup_a23d63b0d9bb4486b0474e8ff7e5b393 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c50ef2fca03c40c985aab3938891e929 = $(`<div id="html_c50ef2fca03c40c985aab3938891e929" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-15-a-ULA-868" target="_blank">B15 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-15-a-URA-868" target="_blank">B15 URA 868</a><br> </div>`)[0];
+            popup_a23d63b0d9bb4486b0474e8ff7e5b393.setContent(html_c50ef2fca03c40c985aab3938891e929);
+        
+
+        marker_81e728556d774ee0a0a7bb3698dde38e.bindPopup(popup_a23d63b0d9bb4486b0474e8ff7e5b393)
+        ;
+
+        
+    
+    
+            var marker_0abee83ec3074ae3ac83d4ef729e5210 = L.marker(
+                [50.862601899999994, 4.6845574999999995],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_a928e17b4b634f7e9161dc8f59648c74 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0abee83ec3074ae3ac83d4ef729e5210.setIcon(icon_a928e17b4b634f7e9161dc8f59648c74);
+        
+    
+        var popup_c5c1c42d1bc041629c4dad26e1c54c61 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1d5f2818233b490186638135d28bccff = $(`<div id="html_1d5f2818233b490186638135d28bccff" style="width: 100.0%; height: 100.0%;"><a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-16-a-ULA-868" target="_blank">B16 ULA 868</a><br> <a href="https://dramco.be/projects/marrmot/balcony/measurements/D:\Stack\measurement-data\B-16-a-URA-868" target="_blank">B16 URA 868</a><br> </div>`)[0];
+            popup_c5c1c42d1bc041629c4dad26e1c54c61.setContent(html_1d5f2818233b490186638135d28bccff);
+        
+
+        marker_0abee83ec3074ae3ac83d4ef729e5210.bindPopup(popup_c5c1c42d1bc041629c4dad26e1c54c61)
+        ;
+
+        
+    
+    
+            var marker_a2fadb4ea1d744b186e345f46c5d3197 = L.marker(
+                [50.862686, 4.684485400000001],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_e75db3f895cf4ddea018642ddf478311 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a2fadb4ea1d744b186e345f46c5d3197.setIcon(icon_e75db3f895cf4ddea018642ddf478311);
+        
+    
+        var popup_8591378d6d8b416ca6310fe5fed1f68c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3c6d4b94cb23471ca2a2054dfd1c429e = $(`<div id="html_3c6d4b94cb23471ca2a2054dfd1c429e" style="width: 100.0%; height: 100.0%;"></div>`)[0];
+            popup_8591378d6d8b416ca6310fe5fed1f68c.setContent(html_3c6d4b94cb23471ca2a2054dfd1c429e);
+        
+
+        marker_a2fadb4ea1d744b186e345f46c5d3197.bindPopup(popup_8591378d6d8b416ca6310fe5fed1f68c)
+        ;
+
+        
+    
+    
+            var marker_1f04bf51e4ce4242b45b5978cacc7942 = L.marker(
+                [50.862756899999994, 4.6843889],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_a452f04494af4316882e48dc492c5cc4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1f04bf51e4ce4242b45b5978cacc7942.setIcon(icon_a452f04494af4316882e48dc492c5cc4);
+        
+    
+        var popup_c170c80d382a48e69b5ab45da8400171 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d55bde1d33494051985e6596787d048a = $(`<div id="html_d55bde1d33494051985e6596787d048a" style="width: 100.0%; height: 100.0%;"></div>`)[0];
+            popup_c170c80d382a48e69b5ab45da8400171.setContent(html_d55bde1d33494051985e6596787d048a);
+        
+
+        marker_1f04bf51e4ce4242b45b5978cacc7942.bindPopup(popup_c170c80d382a48e69b5ab45da8400171)
+        ;
+
+        
+    
+    
+            var marker_7182051884dd4519a3b1c0555cdb99f9 = L.marker(
+                [50.8628484, 4.6842926],
+                {}
+            ).addTo(map_aaf5aca2db504662b08621e5e2ebab52);
+        
+    
+            var icon_1e5e983ddac0475382fb916692fb0042 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7182051884dd4519a3b1c0555cdb99f9.setIcon(icon_1e5e983ddac0475382fb916692fb0042);
+        
+    
+        var popup_7d93c1ab65cb4f25a1eb6925e0cbdadd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fed571a012dc44e0a4c7b93dd1a3dcef = $(`<div id="html_fed571a012dc44e0a4c7b93dd1a3dcef" style="width: 100.0%; height: 100.0%;"></div>`)[0];
+            popup_7d93c1ab65cb4f25a1eb6925e0cbdadd.setContent(html_fed571a012dc44e0a4c7b93dd1a3dcef);
+        
+
+        marker_7182051884dd4519a3b1c0555cdb99f9.bindPopup(popup_7d93c1ab65cb4f25a1eb6925e0cbdadd)
+        ;
+
+        
+    
+</script>

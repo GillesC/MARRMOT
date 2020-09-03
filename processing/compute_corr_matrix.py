@@ -5,37 +5,42 @@ from os.path import join as pjoin
 import numpy as np
 from tqdm import tqdm
 
-import seaborn as sns
-import matplotlib.pylab as plt
+from utils.load_yaml import load_root_dir
 
-root_dir = os.path.dirname(os.path.abspath(__file__))
-subdir, dirs, files = next(os.walk(os.path.join(root_dir, "measurements")))
+root_dir = load_root_dir()
+subdir, dirs, files = next(os.walk(os.path.join(root_dir)))
 
 
 def compute_cov_matrix(d):
-    path = pjoin(root_dir, "measurements", d)
-    input = pjoin(path, "norm-channel.npy")
+    path = pjoin(root_dir, d)
+    input = pjoin(path, "small-channel.npy")
     # [snapshots x freq points x BS antennas]
-    H_norm = np.load(input)
+    H = np.load(input)
 
-    (N, F, M) = tuple(H_norm.shape)
+    # Correlation in MIMO Antennas - MDPI
 
-    R = np.zeros(shape=(M-1, M-1), dtype=complex)
+    (N, F, M) = tuple(H.shape)
+
+    R = np.zeros(shape=(M - 1, M - 1), dtype=complex)
+    # Correlation in MIMO Antennas - MDPI
+    # channel correlation at RX side is expressed as: H H^H
+    # but as we average over freq and time it is the fading correlation
     for n in range(N):
         for f in range(F):
-            h = H_norm[n, f, :-1]
+            h = H[n, f, :-1]
             # reshaping is transposing as 1D vector transpose is still a 1D vector in numpy
             h_herm = h.conjugate().reshape(-1, 1)
             # cast to 2D to be able to do the dot product
             h = np.atleast_2d(h)
             R = R + np.dot(h_herm, h)
     R = R / (N * F)
-    norm = np.linalg.norm(R, ord="fro")
-    # normalise R so frobenius norm is = M
-    # see paper "Multi-User Massive MIMO Properties in Urban-Macro Channel Measurements"
-    R = (R / norm) * M
 
-    np.save(pjoin(path,"cov-matrix.npy"), R)
+    # norm = np.linalg.norm(R, ord="fro")
+    # # normalise R so frobenius norm is = M
+    # # see paper "Multi-User Massive MIMO Properties in Urban-Macro Channel Measurements"
+    # R = (R / norm) * M
+
+    np.save(pjoin(path, "cov-matrix.npy"), R)
 
     # R_dB = 10 * np.log10(np.abs(R))
     #

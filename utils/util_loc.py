@@ -2,8 +2,14 @@ def extract_info_from_dir(d):
     import os
     if os.path.exists(os.path.dirname(d)):
         d = os.path.basename(d)
-    path, point, num, conf, freq = tuple(d.split("-"))
-    return path, int(point), num, conf, freq
+    args = tuple(d.split("-"))
+
+    if args[1] == 0:
+        path, point, num, conf, freq = args
+    else:
+        path, point, conf, freq = args
+        num = 'a'
+    return path, int(point), num, conf, int(freq)
 
 
 def get_meas(path, point):

@@ -1,5 +1,12 @@
+import os
+
 import yaml
 from os.path import dirname, abspath, join as pjoin
+
+def load_root_dir():
+    import yaml
+    with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", "config.yml")) as file:
+        return yaml.full_load(file)["root_dir"]
 
 
 
