@@ -36,7 +36,7 @@ for index, row in df.iterrows():
         _, _, _, conf, freq = util_loc.extract_info_from_dir(d)
         popup_text += f'<a href="https://dramco.be/projects/marrmot/balcony/measurements/{os.path.basename(d)}/snapshots.html" target="_blank">{conf} {freq}</a><br> '
 
-    popup = folium.Popup(popup_text,max_width=200)
+    popup = folium.Popup(popup_text, max_width=200)
 
     # do not show popup with BS
     if index == 0:
@@ -48,4 +48,4 @@ for index, row in df.iterrows():
         popup=popup
     ).add_to(m)
 
-m.save(pjoin(root_dir,"index.html"))
+m.save(pjoin(root_dir, "index.html"))

@@ -47,6 +47,7 @@ def process_channel(d):
         return
 
     print(d, flush=True)
+    #TODO use genfromtext to load per block to save ram
     arr = np.loadtxt(input)
 
     remainder = arr.shape[0] % (2 * F * K)
@@ -55,8 +56,7 @@ def process_channel(d):
 
     if remainder != 0:
         print(f"We have some 'brol' discarding {remainder} lines, keep {N} snapshots")
-        arr = arr[:N*(2 * F * K)]
-
+        arr = arr[:N * (2 * F * K)]
 
     # Relevant subcarriers (100/user)
     subcarriers = F * K
@@ -115,6 +115,7 @@ def process_channel(d):
     del H_temp
 
     np.save(output + ".npy", H)
+    del H
     # to save space on the disk only sa ve .npy file
     # H_mat = {'H': H}
     # sio.savemat(output + ".mat", H_mat)
@@ -122,7 +123,10 @@ def process_channel(d):
 
 if __name__ == '__main__':
     pbar = tqdm(total=len(dirs))
-    with ProcessPoolExecutor(max_workers=10) as executor:
-        for d in dirs:
-            future = executor.submit(process_channel, d)
-            future.add_done_callback(lambda p: pbar.update())
+    # with ProcessPoolExecutor(max_workers=10) as executor:
+    #     for d in dirs:
+    #         future = executor.submit(process_channel, d)
+    #         future.add_done_callback(lambda p: pbar.update())
+    for d in dirs:
+        process_channel(d)
+        pbar.update()

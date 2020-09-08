@@ -4,12 +4,26 @@ def extract_info_from_dir(d):
         d = os.path.basename(d)
     args = tuple(d.split("-"))
 
-    if args[1] == 0:
-        path, point, num, conf, freq = args
-    else:
+    if int(args[1]) == 0:
         path, point, conf, freq = args
         num = 'a'
+    else:
+        path, point, num, conf, freq = args
     return path, int(point), num, conf, int(freq)
+
+
+def is_ula(d):
+    _, _, _, conf, _ = extract_info_from_dir(d)
+    return conf == "ULA"
+
+
+def is_cont_meas(d):
+    _, point, _, _, _ = extract_info_from_dir(d)
+
+    if point == 0:
+        return True
+    else:
+        return False
 
 
 def get_meas(path, point):
@@ -26,4 +40,3 @@ def get_meas(path, point):
     df = pd.read_csv(pjoin(root_dir, "..", "gps-loc.csv"))
     res = df.query(f"path == \"{path}\" and point == \'{point}\'")
     return res.iloc[0]
-
