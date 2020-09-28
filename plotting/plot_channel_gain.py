@@ -37,7 +37,6 @@ def _plot(d):
         fig = go.Figure(data=go.Surface(z=z, cmin=z.min(), cmax=z.max(), showscale=True))
 
 
-        dir_name = os.path.basename(os.path.dirname(output))
         fig.update_layout(
             scene=dict(
                 xaxis_title="Antenna #",
@@ -55,7 +54,7 @@ def _plot(d):
 
 if __name__ == '__main__':
     pbar = tqdm(total=len(dirs))
-    with ProcessPoolExecutor(max_workers=5) as executor:
+    with ProcessPoolExecutor(max_workers=10) as executor:
         for d in dirs:
             future = executor.submit(_plot, d)
             future.add_done_callback(lambda p: pbar.update())

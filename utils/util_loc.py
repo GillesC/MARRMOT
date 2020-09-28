@@ -12,6 +12,11 @@ def extract_info_from_dir(d):
     return path, int(point), num, conf, int(freq)
 
 
+def is_868(d):
+    _, _, _, _, freq = extract_info_from_dir(d)
+    return freq == 868
+
+
 def is_ula(d):
     _, _, _, conf, _ = extract_info_from_dir(d)
     return conf == "ULA"
