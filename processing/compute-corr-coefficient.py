@@ -26,7 +26,7 @@ def normalize(h):
     M = h.shape[2]
 
     for n in range(N):
-        h_norm[n, :, :] = h[n, :, :] / (np.sqrt((1 / (F * M)) * np.sum(np.abs(h[n, :, :]) ** 2)))
+        h_norm[n, :, :] = h[n, :, :] / (np.sqrt(np.sum(np.abs(h[n, :, :]) ** 2)))
 
     return h_norm
 
