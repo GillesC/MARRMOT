@@ -2,6 +2,7 @@ import os
 import random
 
 import numpy as np
+from tqdm import tqdm
 
 from utils.load_yaml import load_root_dir
 from utils.util_loc import is_cont_meas, is_ula, is_868
@@ -15,7 +16,7 @@ def compute_corr_coefficient(h1, h2):
     h1_H = np.conjugate(h1.reshape(1, -1))
     h2 = h2.reshape(-1, 1)
 
-    return np.asscalar(np.abs(np.dot(h1_H, h2)) / (np.linalg.norm(h1) * np.linalg.norm(h2)))
+    return np.asscalar(np.abs(np.dot(h1_H, h2))**2 / (np.linalg.norm(h1)**2 * np.linalg.norm(h2)**2))
 
 
 def normalize(h):
@@ -80,26 +81,28 @@ if __name__ == '__main__':
     res = {
         "ULA": np.zeros(shape=(31, num_simulations)),
         "URA": np.zeros(shape=(31, num_simulations)),
+        "iid-sim": np.zeros(shape=(31, num_simulations)),
         "iid": np.zeros(shape=(31, num_simulations)),
         # "iid_half": np.zeros(shape=(31, num_simulations)),
         # "iid_double": np.zeros(shape=(31, num_simulations)),
         # "iid_sim": np.zeros(shape=(31, num_simulations)),
     }
-
+    pbar = tqdm(total=num_simulations*31*4)
     for sim in range(0, num_simulations):
         for num_antennas in range(1, 32):
-            for conf, H_conf in zip(["ULA", "URA", "iid"], [H_ula, H_ura, None]):
+            for conf, H_conf in zip(["ULA", "URA", "iid-sim", "iid"], [H_ula, H_ura, None, None]):
                 if "iid" in conf:
                     # if conf == "iid_half":
                     #     var = np.sqrt(0.5)
                     # elif conf == "iid_double":
                     #     var = np.sqrt(2)
                     # else:
-                    var = 1
-                    h_1 = np.sqrt(1 / (2 * var)) * (
-                            np.random.normal(0, var, num_antennas) + 1j * np.random.normal(0, var, num_antennas))
-                    h_2 = np.sqrt(1 / (2 * var)) * (
-                            np.random.normal(0, var, num_antennas) + 1j * np.random.normal(0, var, num_antennas))
+                    if "iid-sim" == conf:
+                        var = 1
+                        h_1 = np.sqrt(1 / (2 * var)) * (
+                                np.random.normal(0, var, num_antennas) + 1j * np.random.normal(0, var, num_antennas))
+                        h_2 = np.sqrt(1 / (2 * var)) * (
+                                np.random.normal(0, var, num_antennas) + 1j * np.random.normal(0, var, num_antennas))
                 else:
                     num_pos = len(H_conf)
                     pos_1 = random.randint(0, num_pos - 1)
@@ -124,7 +127,10 @@ if __name__ == '__main__':
                     h_2 = h_2[time_2, freq, random_antennas]
 
                 c = compute_corr_coefficient(h_1, h_2)
+                if "iid" == conf:
+                    c = 1/num_antennas
                 res[conf][num_antennas - 1][sim] = c
+                pbar.update()
 
     plt.cla()
     fig, ax = plt.subplots()

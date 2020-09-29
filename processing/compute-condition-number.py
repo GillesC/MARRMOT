@@ -2,6 +2,7 @@ import os
 import random
 
 import numpy as np
+from tqdm import tqdm
 
 from utils.load_yaml import load_root_dir
 from utils.util_loc import is_cont_meas, is_ula, is_868
@@ -16,13 +17,10 @@ def normalize(h):
     # [snapshots x freq points x BS antennas]
     h_norm = np.zeros_like(h)
     N = h.shape[0]
-    F = h.shape[1]
-    M = h.shape[2]
 
     for n in range(N):
         # h_norm[n, :, :] = h[n, :, :] / ((1 / (F * M)) * np.sqrt(np.sum(np.abs(h[n, :, :]) ** 2)))
-        h_norm[n, :, :] = h[n, :, :] / ((1 / (F * M)) * np.linalg.norm(h[n, :, :]))
-
+        h_norm[n, :, :] = h[n, :, :] / np.linalg.norm(h[n, :, :])
     return h_norm
 
 
@@ -41,18 +39,18 @@ def compute_condition_num(H_list, M, K):
 
     # assert H_corr.shape == (K, K)
 
-    u, s, vh = np.linalg.svd(H_corr)
+    # u, s, vh = np.linalg.svd(H_corr)
 
-    # eigvals = np.abs(np.linalg.eigvals(H_corr))
-    # max_eigval = np.max(eigvals)
-    # min_eigval = np.min(eigvals)
-    #
-    # if min_eigval == 0:
-    #     return 0
-    #
-    # return min_eigval / max_eigval
+    eigvals = np.abs(np.linalg.eigvals(H_corr))
+    max_eigval = np.max(eigvals)
+    min_eigval = np.min(eigvals)
 
-    return np.min(s) / np.max(s)
+    if min_eigval == 0:
+        return 0
+
+    return min_eigval / max_eigval
+
+    # return np.min(s) / np.max(s)
 
 
 def load_channels(dirs):
@@ -110,11 +108,13 @@ if __name__ == '__main__':
         "iid": np.zeros(shape=(len(num_nodes), len(antenna_idx), num_simulations)),
     }
 
+    pbar = tqdm(total=num_simulations * len(num_nodes))
     for sim in range(0, num_simulations):
         for n_idx, K in enumerate(num_nodes):
+
             for M in antenna_idx + 1:
                 for conf, H_conf in zip(["ULA", "URA", "iid"], [H_ula, H_ura, None]):
-                    if "iid" == conf:
+                    if "iid" in conf:
                         channels = [np.sqrt(1 / 2) * (
                                 np.random.normal(0, 1, M) + 1j * np.random.normal(0, 1, M)) for n in
                                     range(K)]
@@ -140,6 +140,7 @@ if __name__ == '__main__':
 
                     c = compute_condition_num(channels, M, K)
                     res[conf][n_idx][M - 1][sim] = c
+            pbar.update()
 
     fig, ax = plt.subplots()
     from mpl_toolkits.axes_grid1.inset_locator import inset_axes
@@ -157,6 +158,8 @@ if __name__ == '__main__':
                 linestyle = "--"
             elif conf == "iid":
                 linestyle = "dotted"
+            elif conf == "iid-p":
+                linestyle = "-."
             ax.plot(np.arange(1, 32), avg_c, label=conf + " - " + str(num_nodes[k]), linewidth=1,
                     linestyle=linestyle,
                     alpha=0.5, color=colors[num_nodes[k]])
@@ -172,11 +175,11 @@ if __name__ == '__main__':
     #
     # mark_inset(ax, axins, loc1=2, loc2=4, fc="none", ec="0.5")
 
-    plt.legend(ncol=3)
+    plt.legend(ncol=4)
 
     from plotting import LatexifyMatplotlib as lm
 
-    lm.save("condition-number.tex", scale_legend=0.7, show=True, plt=plt)
+    lm.save("condition-number-v2.tex", scale_legend=0.7, show=True, plt=plt)
 
     fig, ax = plt.subplots()
     from mpl_toolkits.axes_grid1.inset_locator import inset_axes
@@ -194,6 +197,8 @@ if __name__ == '__main__':
                 linestyle = "--"
             elif conf == "iid":
                 linestyle = "dotted"
+            elif conf == "iid-p":
+                linestyle = "-."
             ax.plot(ecdf.x, ecdf.y, label=conf + " - " + str(num_nodes[k]), linewidth=1,
                     linestyle=linestyle,
                     alpha=0.5, color=colors[num_nodes[k]])
@@ -204,4 +209,4 @@ if __name__ == '__main__':
 
     from plotting import LatexifyMatplotlib as lm
 
-    lm.save("condition-number-cdf.tex", scale_legend=0.7, show=True, plt=plt)
+    lm.save("condition-number-cdf-v2.tex", scale_legend=0.7, show=True, plt=plt)

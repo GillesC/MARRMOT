@@ -134,7 +134,7 @@ def save(filename, scale_legend=None, show=False, fig=None, plt=None):
     if fig is None:
         fig = plt.gcf()
 
-    tikzplotlib.save(out, figure=fig, textsize=8, extra_axis_parameters=extra_axis_param, float_format=".5f")
+    tikzplotlib.save(out, figure=fig, textsize=8, extra_axis_parameters=extra_axis_param, float_format=".5f",table_row_sep=r"\\")
 
     if show:
         plt.show()
