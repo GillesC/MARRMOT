@@ -188,10 +188,19 @@ if __name__ == '__main__':
 
     colors = dict(zip(num_nodes, colors[:len(num_nodes)]))
 
+    MAX_POINTS = 1000
     # axins = inset_axes(ax, width="40%", height=1.5, loc=9)
     for conf, k_values in res.items():
         for k, values in enumerate(k_values):
             ecdf = ECDF(values[30, :])
+            num_points = len(ecdf.x)
+            step = num_points//MAX_POINTS
+
+            points = list(np.arange(0,num_points, step))
+            if (num_points-1) not in points:
+                points.append(num_points-1)
+
+
             linestyle = "-"
             if conf == "ULA":
                 linestyle = "--"
@@ -199,7 +208,7 @@ if __name__ == '__main__':
                 linestyle = "dotted"
             elif conf == "iid-p":
                 linestyle = "-."
-            ax.plot(ecdf.x, ecdf.y, label=conf + " - " + str(num_nodes[k]), linewidth=1,
+            ax.plot(ecdf.x[points], ecdf.y[points], label=conf + " - " + str(num_nodes[k]), linewidth=1,
                     linestyle=linestyle,
                     alpha=0.5, color=colors[num_nodes[k]])
 
