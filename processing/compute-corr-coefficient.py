@@ -22,13 +22,16 @@ def compute_corr_coefficient(h1, h2):
 def normalize(h):
     # [snapshots x freq points x BS antennas]
     h_norm = np.zeros_like(h)
+
+    if len(h.shape) == 1:
+        # ok we got a M-array
+        return h / np.linalg.norm(h)
+
     N = h.shape[0]
-    F = h.shape[1]
-    M = h.shape[2]
 
     for n in range(N):
-        h_norm[n, :, :] = h[n, :, :] / (np.sqrt(np.sum(np.abs(h[n, :, :]) ** 2)))
-
+        # h_norm[n, :, :] = h[n, :, :] / ((1 / (F * M)) * np.sqrt(np.sum(np.abs(h[n, :, :]) ** 2)))
+        h_norm[n, :, :] = h[n, :, :] / np.linalg.norm(h[n, :, :])
     return h_norm
 
 
@@ -142,10 +145,9 @@ if __name__ == '__main__':
         #     avg_c = np.sqrt(1 / np.arange(1, 32))
         # else:
         avg_c = np.nanmean(values, axis=1)
-        ax.plot(np.arange(1, 32), avg_c, marker='o', label=conf, linewidth=2, markersize=3,
-                alpha=0.5)
-        axins.plot(avg_c, marker='o', label=conf, linewidth=2, markersize=3,
-                   alpha=0.5)
+        ax.plot(np.arange(1, 32), avg_c, label=conf, linewidth=2)
+        # axins.plot(avg_c, marker='o', label=conf, linewidth=2, markersize=3,
+        #            alpha=0.5)
 
         # plt.plot(avg_c, label=conf, linestyle=linestyle)
 
@@ -160,4 +162,4 @@ if __name__ == '__main__':
 
     from plotting import LatexifyMatplotlib as lm
 
-    lm.save("corr-coefficient.tex", scale_legend=0.7, show=True, plt=plt)
+    lm.save("corr-coefficient-v3.tex", scale_legend=0.7, show=True, plt=plt)

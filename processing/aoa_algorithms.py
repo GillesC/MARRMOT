@@ -27,10 +27,16 @@ def music(cov_mat, K, M, angles):
     return pspectrum, psindB, peaks
 
 
+def mpm():
+    pass
+
+
+
 def esprit(cov_mat, K, M):
     # cov_mat is the signal covariance matrix, K is the number of sources, M is the number of antennas
     _, U = LA.eig(cov_mat)
     S = U[:, 0:K]
-    phi = LA.pinv(S[0:M - 1]) @ S[1:M]  # the original array is divided into two subarrays [0,1,...,N-2] and [1,2,...,N-1]
+    phi = LA.pinv(S[0:M - 1]) @ S[
+                                1:M]  # the original array is divided into two subarrays [0,1,...,N-2] and [1,2,...,N-1]
     eigs, _ = LA.eig(phi)
     return np.arcsin(np.angle(eigs) / np.pi)

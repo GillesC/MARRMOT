@@ -91,11 +91,11 @@ def format_axes(ax):
         ax.spines[spine].set_color(SPINE_COLOR)
         ax.spines[spine].set_linewidth(0.5)
 
+
     ax.xaxis.set_ticks_position('bottom')
     ax.yaxis.set_ticks_position('left')
 
-    for axis in [ax.xaxis, ax.yaxis]:
-        axis.set_tick_params(direction='out', color=SPINE_COLOR)
+
 
     return ax
 
@@ -129,10 +129,16 @@ def save(filename, scale_legend=None, show=False, fig=None, plt=None):
     ]
 
     if scale_legend:
+        scale_legend = float(scale_legend)
         extra_axis_param.extend([r"legend style={nodes={scale=" + str(scale_legend) + ", transform shape}}"])
 
     if fig is None:
         fig = plt.gcf()
+
+    ax = plt.gca()
+    # hack https://github.com/nschloe/tikzplotlib/issues/11
+    if ax.name == 'polar':
+        ax.spines["bottom"] = ax.spines["inner"]
 
     tikzplotlib.save(out, figure=fig, textsize=8, extra_axis_parameters=extra_axis_param, float_format=".5f",table_row_sep=r"\\")
 

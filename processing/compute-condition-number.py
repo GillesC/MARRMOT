@@ -16,6 +16,11 @@ subdir, dirs, files = next(os.walk(os.path.join(root_dir)))
 def normalize(h):
     # [snapshots x freq points x BS antennas]
     h_norm = np.zeros_like(h)
+
+    if len(h.shape) == 1:
+        # ok we got a M-array
+        return h / np.linalg.norm(h)
+
     N = h.shape[0]
 
     for n in range(N):
@@ -96,7 +101,7 @@ if __name__ == '__main__':
 
     antenna_idx = np.arange(0, 31)
 
-    num_simulations = 100000
+    num_simulations = 10000
     num_nodes = [2, 5, 10]
 
     H_ula, H_ura = load_channels(dirs)
@@ -115,9 +120,10 @@ if __name__ == '__main__':
             for M in antenna_idx + 1:
                 for conf, H_conf in zip(["ULA", "URA", "iid"], [H_ula, H_ura, None]):
                     if "iid" in conf:
-                        channels = [np.sqrt(1 / 2) * (
-                                np.random.normal(0, 1, M) + 1j * np.random.normal(0, 1, M)) for n in
+                        channels = [normalize(np.sqrt(1 / 2) * (
+                                np.random.normal(0, 1, M) + 1j * np.random.normal(0, 1, M))) for n in
                                     range(K)]
+
                     else:
                         positions = list(range(0, len(H_conf)))
                         np.random.shuffle(positions)
@@ -161,8 +167,7 @@ if __name__ == '__main__':
             elif conf == "iid-p":
                 linestyle = "-."
             ax.plot(np.arange(1, 32), avg_c, label=conf + " - " + str(num_nodes[k]), linewidth=1,
-                    linestyle=linestyle,
-                    alpha=0.5, color=colors[num_nodes[k]])
+                    linestyle=linestyle, color=colors[num_nodes[k]])
             # axins.plot(avg_c, marker='o', label=conf, linewidth=2, markersize=3,
             #            alpha=0.5)
 
@@ -179,7 +184,7 @@ if __name__ == '__main__':
 
     from plotting import LatexifyMatplotlib as lm
 
-    lm.save("condition-number-v2.tex", scale_legend=0.7, show=True, plt=plt)
+    lm.save("condition-number-v3-small.tex", scale_legend=0.7, show=True, plt=plt)
 
     fig, ax = plt.subplots()
     from mpl_toolkits.axes_grid1.inset_locator import inset_axes
@@ -193,6 +198,7 @@ if __name__ == '__main__':
     for conf, k_values in res.items():
         for k, values in enumerate(k_values):
             ecdf = ECDF(values[30, :])
+
             num_points = len(ecdf.x)
             step = num_points//MAX_POINTS
 
@@ -218,4 +224,4 @@ if __name__ == '__main__':
 
     from plotting import LatexifyMatplotlib as lm
 
-    lm.save("condition-number-cdf-v2.tex", scale_legend=0.7, show=True, plt=plt)
+    lm.save("condition-number-cdf-v3-small.tex", scale_legend=0.7, show=True, plt=plt)
