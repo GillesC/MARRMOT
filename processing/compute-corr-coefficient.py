@@ -16,22 +16,22 @@ def compute_corr_coefficient(h1, h2):
     h1_H = np.conjugate(h1.reshape(1, -1))
     h2 = h2.reshape(-1, 1)
 
-    return np.asscalar(np.abs(np.dot(h1_H, h2))**2 / (np.linalg.norm(h1)**2 * np.linalg.norm(h2)**2))
+    return np.abs(np.dot(h1_H, h2))**2 / (np.linalg.norm(h1)**2 * np.linalg.norm(h2)**2)
 
 
 def normalize(h):
     # [snapshots x freq points x BS antennas]
     h_norm = np.zeros_like(h)
 
-    if len(h.shape) == 1:
-        # ok we got a M-array
-        return h / np.linalg.norm(h)
+    # if len(h.shape) == 1:
+    #     # ok we got a M-array
+    #     return h / np.linalg.norm(h)
 
     N = h.shape[0]
+    F = h.shape[1]
+    M = h.shape[2]
 
-    for n in range(N):
-        # h_norm[n, :, :] = h[n, :, :] / ((1 / (F * M)) * np.sqrt(np.sum(np.abs(h[n, :, :]) ** 2)))
-        h_norm[n, :, :] = h[n, :, :] / np.linalg.norm(h[n, :, :])
+    h_norm = (h / np.linalg.norm(h)) * N * F * M
     return h_norm
 
 
@@ -117,8 +117,15 @@ if __name__ == '__main__':
                     # only two frequencies
                     freq = random.randint(0, 1)
 
-                    random.shuffle(antenna_idx)
-                    random_antennas = antenna_idx[:num_antennas]
+                    num_windows = (31 - num_antennas) + 1
+                    start_idx = list(range(num_windows))
+                    random.shuffle(start_idx)
+
+                    start_window = start_idx[0]
+
+                    random_antennas = np.arange(start_window, num_antennas + start_window)
+                    assert len(random_antennas) == num_antennas
+
 
                     h_1 = H_conf[pos_1]
                     h_2 = H_conf[pos_2]
@@ -137,9 +144,9 @@ if __name__ == '__main__':
 
     plt.cla()
     fig, ax = plt.subplots()
-    from mpl_toolkits.axes_grid1.inset_locator import inset_axes
+    #from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 
-    axins = inset_axes(ax, width="40%", height=1.5, loc=9)
+    #axins = inset_axes(ax, width="40%", height=1.5, loc=9)
     for conf, values in res.items():
         # if conf == "iid":
         #     avg_c = np.sqrt(1 / np.arange(1, 32))
@@ -151,15 +158,17 @@ if __name__ == '__main__':
 
         # plt.plot(avg_c, label=conf, linestyle=linestyle)
 
-    x1, x2, y1, y2 = 4, 8, 0.3, 0.5  # specify the limits
-    axins.set_xlim(x1, x2)  # apply the x-limits
-    axins.set_ylim(y1, y2)  # apply the y-limits
-    from mpl_toolkits.axes_grid1.inset_locator import mark_inset
+   # x1, x2, y1, y2 = 4, 8, 0.3, 0.5  # specify the limits
+    #axins.set_xlim(x1, x2)  # apply the x-limits
+    #axins.set_ylim(y1, y2)  # apply the y-limits
+    #from mpl_toolkits.axes_grid1.inset_locator import mark_inset
 
-    mark_inset(ax, axins, loc1=2, loc2=4, fc="none", ec="0.5")
+    #mark_inset(ax, axins, loc1=2, loc2=4, fc="none", ec="0.5")
 
     plt.legend()
+
 
     from plotting import LatexifyMatplotlib as lm
 
     lm.save("corr-coefficient-v3.tex", scale_legend=0.7, show=True, plt=plt)
+ # plt.show()

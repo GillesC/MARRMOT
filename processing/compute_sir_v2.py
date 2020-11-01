@@ -22,45 +22,35 @@ def sir(channels: np.ndarray, M, K, precoder):
 
     if precoder == "ZF":
         precoders = zf_precoder(channels.T, M, K)
+    else:
+        precoders = mr_precoder(channels, M, K)
 
     for k in range(K):
         h_k = channels[k]
         others = list(range(K))
         others.remove(k)  # remove user
         h_others = channels[others]
-        if precoder == "MR":
-            v_k = mr_precoder(h_k)
-        elif precoder == "ZF":
-            v_k = precoders[k]
-        else:
-            ValueError("Wrong argument for precoder")
+        v_k = precoders[k]/K # divide by K so we can compare results with different K's
 
         v_k_H = v_k.conj().T
 
         if np.all((v_k == 0)):
             sir_k = 0
         else:
-            sir_k = np.abs(v_k_H @ h_k) ** 2 / np.sum([np.abs(v_k_H @ h_i) ** 2 for h_i in h_others])
+            interference = np.sum([np.abs(v_k_H @ h_i) ** 2 for h_i in h_others]) + np.linalg.norm(v_k) ** 2
+            sir_k = np.abs(v_k_H @ h_k) ** 2 / interference
         sir[k] = sir_k
 
     return sir
 
 
-def mr_precoder(channel):
+def mr_precoder(channels, M, K):
     # the MR precoder is just v_k = h_k/ ||h_k||
-    if np.linalg.norm(channel) == 0:
-        return channel
-    return channel / np.linalg.norm(channel)
-
-
-# def zf_precoder_old(H, M, K):
-#     assert H.shape == (M, K)
-#     # the MR precoder is just v_k = H(H^H H)^-1 / norm
-#     pc = H @ np.linalg.inv((H.conj().T @ H))
-#     # normalize per column, i.e. per user
-#     for k in range(K):
-#         pc[:, k] /= np.linalg.norm(pc[:, k])
-#     return pc.T  # transpose so we return a KxM matrix
+    assert channels.shape[0] == K
+    pc = np.zeros_like(channels)
+    for i in range(K):
+        pc[i] = channels[i, :] / np.linalg.norm(channels[i, :])
+    return pc
 
 
 def zf_precoder(H, M, K):
@@ -119,11 +109,11 @@ if __name__ == '__main__':
 
     antenna_idx = np.arange(0, 31)
 
-    num_simulations = 10000
+    num_simulations = 100
     num_nodes = [2, 10]
 
     H_ula, H_ura = load_channels(dirs)
-    precoders = ["ZF","MR"]
+    precoders = ["ZF", "MR"]
     # preallocate the results
     res = {
         "ULA": np.zeros(shape=(len(precoders), len(num_nodes), len(antenna_idx), num_simulations)).tolist(),
