@@ -14,7 +14,7 @@
 % 9) Save the processed channel matrix in a .mat-file, or separate files
 % per UE
 """
-
+import glob
 import os
 from concurrent.futures import ProcessPoolExecutor
 from os.path import join as pjoin
@@ -39,16 +39,16 @@ block_size = cfg["block_size"]
 num_subcarriers = cfg["num_subcarriers"]
 
 
-def process_channel(d):
-    path = os.path.join(root_dir, d)
-    input = pjoin(path, "raw-channel.txt")
-    output = pjoin(path, "channel")
+def process_channel(input_file, pbar):
+    output = input_file.replace(".txt", "")
     if os.path.isfile(output + ".npy"):
         return
 
-    print(d, flush=True)
+    #print(d, flush=True)
     #TODO use genfromtext to load per block to save ram
-    arr = np.loadtxt(input)
+    arr = np.loadtxt(input_file)
+
+    pbar.update()
 
     remainder = arr.shape[0] % (2 * F * K)
     # calculate number of snapshots
@@ -90,6 +90,8 @@ def process_channel(d):
 
     H_temp = create_temp_channel(arr_complex, N, F, M, K, subcarriers)
 
+    pbar.update()
+
     del arr_complex
 
     # descramble M and K
@@ -122,11 +124,16 @@ def process_channel(d):
 
 
 if __name__ == '__main__':
-    pbar = tqdm(total=len(dirs))
+
     # with ProcessPoolExecutor(max_workers=10) as executor:
     #     for d in dirs:
     #         future = executor.submit(process_channel, d)
     #         future.add_done_callback(lambda p: pbar.update())
+
     for d in dirs:
-        process_channel(d)
-        pbar.update()
+        measurements = glob.glob(os.path.join(root_dir, d, 'raw-channel-*.txt'))
+        pbar = tqdm(total=len(measurements)*3)
+        for meas in measurements:
+            process_channel(meas, pbar)
+            pbar.update()
+        pbar.close()
